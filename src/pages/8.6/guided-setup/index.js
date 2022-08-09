@@ -84,7 +84,7 @@ const GuidedSetup = () => {
               <EuiFlexItem key={index}>
                 <EuiCard
                   display="subdued"
-                  image={`../images/${card.image}`}
+                  image={`/images/${card.image}`}
                   onClick={() => handleGuideClick(card.section)}
                   paddingSize="l"
                   textAlign="center"
