@@ -16,6 +16,7 @@ import {
 } from '@elastic/eui';
 import Header from '../../../components/header/header';
 import { loginStyles } from '../index.styles';
+import { Helmet } from 'react-helmet';
 
 const Signup = () => {
   const { euiTheme } = useEuiTheme();
@@ -31,6 +32,9 @@ const Signup = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Guided Onboarding Prototype</title>
+      </Helmet> 
       <Header accountType="signup" />
       <EuiFlexGroup direction="column" css={styles.header}>
         <EuiFlexItem>

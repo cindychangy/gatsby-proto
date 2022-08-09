@@ -16,6 +16,7 @@ import {
   EuiFlexItem,
   EuiButton,
 } from '@elastic/eui';
+import { Helmet } from 'react-helmet';
 import Header from '../../../components/header/header';
 import { profileStyles } from './profile.styles';
 import { EXPERIENCE, PURPOSE } from './profile.data';
@@ -35,6 +36,9 @@ const Profile = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Guided Onboarding Prototype</title>
+      </Helmet> 
       <Header signedIn />
       <div css={styles.formContainer}>
         <EuiPanel paddingSize="l">

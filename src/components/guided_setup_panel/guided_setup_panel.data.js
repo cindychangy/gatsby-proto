@@ -1,7 +1,7 @@
 export const GUIDE_SEARCH = {
   title: 'Search my data',
   media:
-    '<img src="platform-onboarding/images/media-mock-search.png">',
+    '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock-search.png">',
   intro:
     "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
   link: {

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   EuiCollapsibleNav,
   EuiCollapsibleNavGroup,
@@ -109,6 +110,9 @@ const KibanaLayout = ({
 
   return (
     <div css={styles.mainWrapper}>
+      <Helmet>
+        <title>Guided Onboarding Prototype</title>
+      </Helmet> 
       <EuiHeader
         position="fixed"
         theme="dark"

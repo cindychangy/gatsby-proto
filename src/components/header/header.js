@@ -7,6 +7,7 @@ import {
   EuiImage,
   EuiText,
   EuiButton,
+  EuiSpacer,
 } from '@elastic/eui';
 import { navigate, withPrefix } from 'gatsby';
 import { headerStyles } from './header.styles';
@@ -62,6 +63,7 @@ const Header = ({ accountType, signedIn }) => {
           alt="Elastic logo"
           css={styles.logo}
         />
+        <EuiSpacer size="s"/>
       </div>
     </>
   );
