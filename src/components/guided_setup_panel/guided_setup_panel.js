@@ -141,7 +141,7 @@ const GuidedSetupPanel = ({
                 <div css={styles.media}>
                   {guideComplete ? (
                     <img
-                      src="/images/guide_complete_image.png"
+                      src="./images/guide_complete_image.png"
                       alt="Well Done!"
                       css={guideComplete && mountedStyle}
                     />

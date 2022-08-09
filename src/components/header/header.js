@@ -57,7 +57,7 @@ const Header = ({ accountType, signedIn }) => {
         <EuiImage
           size={170}
           src={
-            login ? '/images/logo-elastic.png' : '/images/logo-elastic.png'
+            login ? './images/logo-elastic.png' : '.images/logo-elastic.png'
           }
           alt="Elastic logo"
           css={styles.logo}
