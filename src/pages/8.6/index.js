@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import React, { useState } from 'react';
-import { navigate } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 import {
   EuiFlexGroup,
   EuiFlexItem,
@@ -90,14 +90,14 @@ const Login = () => {
                   <EuiFlexItem>
                     <EuiButton
                       iconSide="left"
-                      iconType={'./images/icon-google.svg'}>
+                      iconType={withPrefix('/images/icon-google.svg')}>
                       Google
                     </EuiButton>
                   </EuiFlexItem>
                   <EuiFlexItem>
                     <EuiButton
                       iconSide="left"
-                      iconType={'./images/icon-microsoft.svg'}>
+                      iconType={withPrefix('/images/icon-microsoft.svg')}>
                       Microsoft
                     </EuiButton>
                   </EuiFlexItem>
