@@ -8,7 +8,7 @@ import {
   EuiText,
   EuiButton,
 } from '@elastic/eui';
-import { navigate } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 import { headerStyles } from './header.styles';
 
 const Header = ({ accountType, signedIn }) => {
@@ -57,7 +57,7 @@ const Header = ({ accountType, signedIn }) => {
         <EuiImage
           size={170}
           src={
-            login ? './images/logo-elastic.png' : '.images/logo-elastic.png'
+            login ? withPrefix('/images/logo-elastic.png') : withPrefix('images/logo-elastic.png')
           }
           alt="Elastic logo"
           css={styles.logo}

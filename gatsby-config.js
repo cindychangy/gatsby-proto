@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: `https://cindychangy.github.io/platform-onboarding/`,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {

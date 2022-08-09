@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react'
 import React, { useState } from 'react';
+import { withPrefix } from 'gatsby';
 import {
   EuiButtonEmpty,
   EuiFlexGroup,
@@ -133,7 +134,7 @@ const StepPlaceholder = ({
           anchorClass="search-tour-5"
           buttonText="End Tour"
           content="Reprehenderit aute laborum ea amet proident voluptate minim do cillum anim."
-          image="./images/tour-obs-01.gif"
+          image={withPrefix('/images/tour-obs-01.gif')}
           position="rightUp"
           title="Review your search engine analytics"
           key={1}

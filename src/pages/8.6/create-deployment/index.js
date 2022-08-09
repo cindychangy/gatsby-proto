@@ -16,7 +16,7 @@ import {
 } from '@elastic/eui';
 import Navbar from '../../../components/navbar/navbar';
 import { deploymentStyles } from './create-deployment.styles';
-import { navigate } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 
 const BREADCRUMBS = [
   {
@@ -73,7 +73,7 @@ const CreateDeployment = () => {
           <EuiSpacer size="l" />
           <EuiFlexGroup gutterSize="s">
             <EuiFlexItem grow={false}>
-              <EuiIcon type="./images/icon-gcp.svg" size="xxl" />
+              <EuiIcon type={withPrefix('/images/icon-gcp.svg')} size="xxl" />
             </EuiFlexItem>
             <EuiFlexItem>
               <EuiText size="s">

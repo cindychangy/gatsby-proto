@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import React, { useEffect, useState } from 'react';
+import { withPrefix } from 'gatsby';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -141,7 +142,7 @@ const GuidedSetupPanel = ({
                 <div css={styles.media}>
                   {guideComplete ? (
                     <img
-                      src="./images/guide_complete_image.png"
+                      src={withPrefix('/images/guide_complete_image.png')}
                       alt="Well Done!"
                       css={guideComplete && mountedStyle}
                     />

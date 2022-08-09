@@ -10,9 +10,14 @@ import {
   EuiTitle,
 } from "@elastic/eui";
 import { navigate } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 const VersionSelector = () => {
   return (
+    <>
+    <Helmet>
+      <title>Guided Onboarding Prototype</title>
+    </Helmet> 
     <EuiPageTemplate template="centeredBody">
       <EuiText color="subded" size="s" grow={false}>
         <EuiTextColor color="default">
@@ -71,6 +76,7 @@ const VersionSelector = () => {
         v8.6 (Nov 15, 2022) <EuiBadge color="primary">In-progress</EuiBadge>
       </EuiButton>
     </EuiPageTemplate>
+    </>
   );
 };
 
