@@ -9,10 +9,10 @@ module.exports = {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: {
-          patterns: [`**/*.styles.(js|ts)?(x)`, `**/*.data.(js|ts)?(x)`],
-          options: { nocase: true },
-        },
+        ignore:  [ 
+          '**/**.styles.js',
+          '**/**.data.js',
+        ],
       },
     },
   ],
