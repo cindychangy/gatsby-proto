@@ -1,8 +1,8 @@
 {
-  "name": "my-gatsby-site",
+  "name": "platform-onboarding",
   "version": "1.0.0",
   "private": true,
-  "description": "my-gatsby-site",
+  "description": "platform-onboarding",
   "author": "Cindy Chang ",
   "keywords": [
     "gatsby"
@@ -15,8 +15,24 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^4.20.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "^55.1.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "gatsby": "^4.13.1",
+    "gatsby-plugin-emotion": "^7.13.0",
+    "moment": "^2.29.3",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@emotion/core": "^11.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.30.1",
+    "gh-pages": "^3.2.3",
+    "prettier": "^2.7.1"
   }
 }
