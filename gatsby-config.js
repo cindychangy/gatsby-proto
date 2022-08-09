@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: "/cindychangy",
   siteMetadata: {
-    title: `My Gatsby Site`,
+    title: `UX Platform Onboarding Prototype`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [],
