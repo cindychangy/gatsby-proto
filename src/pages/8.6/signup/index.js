@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { navigate, withPrefix } from 'gatsby';
+import React, { useState } from "react";
+import { navigate, withPrefix } from "gatsby";
 import {
   EuiFlexGroup,
   EuiFlexItem,
@@ -13,10 +13,9 @@ import {
   EuiFieldText,
   EuiHorizontalRule,
   useEuiTheme,
-} from '@elastic/eui';
-import Header from '../../../components/header/header';
-import { loginStyles } from '../index.styles';
-import { Helmet } from 'react-helmet';
+} from "@elastic/eui";
+import Header from "../../../components/header/header";
+import { loginStyles } from "../index.styles";
 
 const Signup = () => {
   const { euiTheme } = useEuiTheme();
@@ -26,18 +25,15 @@ const Signup = () => {
   const handleClick = () => {
     setIsLoading(true);
     setTimeout(() => {
-      navigate('/profile');
+      navigate("/profile");
     }, 1000);
   };
 
   return (
     <>
-      <Helmet>
-        <title>Guided Onboarding Prototype</title>
-      </Helmet> 
       <Header accountType="signup" />
       <EuiFlexGroup direction="column" css={styles.header}>
-        <EuiSpacer size="m"/>
+        <EuiSpacer size="m" />
         <EuiFlexItem>
           <EuiTitle size="m">
             <h1>Welcome to Elastic Cloud</h1>
@@ -53,7 +49,8 @@ const Signup = () => {
         <EuiFlexGroup
           direction="row"
           justifyContent="center"
-          alignItems="flexStart">
+          alignItems="flexStart"
+        >
           <EuiFlexItem grow={false}>
             <EuiPanel paddingSize="l" css={styles.formPanel}>
               <EuiTitle size="s">
@@ -78,13 +75,15 @@ const Signup = () => {
                 fill
                 fullWidth
                 isLoading={isLoading}
-                onClick={() => handleClick()}>
+                onClick={() => handleClick()}
+              >
                 Start free trial
               </EuiButton>
               <EuiFlexGroup
                 alignItems="center"
                 gutterSize="s"
-                responsive={false}>
+                responsive={false}
+              >
                 <EuiFlexItem>
                   <EuiHorizontalRule />
                 </EuiFlexItem>
@@ -101,14 +100,16 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('/images/icon-google.svg')}>
+                    iconType={withPrefix("/images/icon-google.svg")}
+                  >
                     Google
                   </EuiButton>
                 </EuiFlexItem>
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('/images/icon-microsoft.svg')}>
+                    iconType={withPrefix("/images/icon-microsoft.svg")}
+                  >
                     Microsoft
                   </EuiButton>
                 </EuiFlexItem>
@@ -149,12 +150,14 @@ const Signup = () => {
               <EuiFlexGroup
                 direction="column"
                 gutterSize="s"
-                responsive={false}>
+                responsive={false}
+              >
                 <EuiSpacer size="l" />
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('/images/icon-aws.svg')}>
+                    iconType={withPrefix("/images/icon-aws.svg")}
+                  >
                     Amazon Web Services
                   </EuiButton>
                   <EuiSpacer size="m" />
@@ -162,7 +165,8 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('/images/icon-google.svg')}>
+                    iconType={withPrefix("/images/icon-google.svg")}
+                  >
                     Google Cloud
                   </EuiButton>
                   <EuiSpacer size="m" />
@@ -170,7 +174,8 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('/images/icon-azure.svg')}>
+                    iconType={withPrefix("/images/icon-azure.svg")}
+                  >
                     Microsoft Azure
                   </EuiButton>
                   <EuiSpacer size="m" />

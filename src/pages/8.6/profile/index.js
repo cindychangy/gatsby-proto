@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
-import React, { useState } from 'react';
-import { navigate } from 'gatsby';
+import { jsx } from "@emotion/react";
+import React, { useState } from "react";
+import { navigate } from "gatsby";
 import {
   EuiPanel,
   EuiText,
@@ -15,30 +15,26 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
   EuiButton,
-} from '@elastic/eui';
-import { Helmet } from 'react-helmet';
-import Header from '../../../components/header/header';
-import { profileStyles } from './profile.styles';
-import { EXPERIENCE, PURPOSE } from './profile.data';
+} from "@elastic/eui";
+import Header from "../../../components/header/header";
+import { profileStyles } from "./profile.styles";
+import { EXPERIENCE, PURPOSE } from "./profile.data";
 
 const Profile = () => {
   const styles = profileStyles();
-  const [experience, setExperience] = useState('');
-  const [purpose, setPurpose] = useState('');
+  const [experience, setExperience] = useState("");
+  const [purpose, setPurpose] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
     setIsLoading(true);
     setTimeout(() => {
-      navigate('/8.6/create-deployment');
+      navigate("/8.6/create-deployment");
     }, 500);
   };
 
   return (
     <>
-      <Helmet>
-        <title>Guided Onboarding Prototype</title>
-      </Helmet> 
       <Header signedIn />
       <div css={styles.formContainer}>
         <EuiPanel paddingSize="l">
@@ -105,7 +101,8 @@ const Profile = () => {
                   <EuiButton
                     fill
                     isLoading={isLoading}
-                    onClick={() => handleClick()}>
+                    onClick={() => handleClick()}
+                  >
                     Next
                   </EuiButton>
                 </EuiFlexItem>

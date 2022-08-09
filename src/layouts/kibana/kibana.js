@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react'
-import { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { jsx, css } from "@emotion/react";
+import { useState } from "react";
 import {
   EuiCollapsibleNav,
   EuiCollapsibleNavGroup,
@@ -17,10 +16,10 @@ import {
   EuiTitle,
   EuiPageTemplate,
   useEuiTheme,
-} from '@elastic/eui';
-import GuidedSetupPanel from '../../components/guided_setup_panel/guided_setup_panel';
-import { kibanaLayoutStyles } from './kibana.styles';
-import '../../styles/global.css';
+} from "@elastic/eui";
+import GuidedSetupPanel from "../../components/guided_setup_panel/guided_setup_panel";
+import { kibanaLayoutStyles } from "./kibana.styles";
+import "../../styles/global.css";
 
 const pathPrefix = process.env.PATH_PREFIX;
 
@@ -44,7 +43,7 @@ const KibanaLayout = ({
   const styles = kibanaLayoutStyles(euiTheme);
   const [navIsOpen, setNavIsOpen] = useState(false);
 
-  const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' });
+  const collapsibleNavId = useGeneratedHtmlId({ prefix: "collapsibleNav" });
 
   const collapsibleNav = (
     <EuiCollapsibleNav
@@ -60,11 +59,13 @@ const KibanaLayout = ({
       button={
         <EuiHeaderSectionItemButton
           aria-label="Toggle main navigation"
-          onClick={() => setNavIsOpen(!navIsOpen)}>
-          <EuiIcon type={'menu'} size="m" aria-hidden="true" />
+          onClick={() => setNavIsOpen(!navIsOpen)}
+        >
+          <EuiIcon type={"menu"} size="m" aria-hidden="true" />
         </EuiHeaderSectionItemButton>
       }
-      onClose={() => setNavIsOpen(false)}>
+      onClose={() => setNavIsOpen(false)}
+    >
       {/* Dark deployments section */}
       <EuiFlexItem grow={false} style={{ flexShrink: 0 }}>
         <EuiCollapsibleNavGroup isCollapsible={false} background="dark">
@@ -75,11 +76,11 @@ const KibanaLayout = ({
             size="s"
             listItems={[
               {
-                label: 'Manage deployment',
-                href: '#',
-                iconType: 'logoCloud',
+                label: "Manage deployment",
+                href: "#",
+                iconType: "logoCloud",
                 iconProps: {
-                  color: 'ghost',
+                  color: "ghost",
                 },
               },
             ]}
@@ -94,14 +95,16 @@ const KibanaLayout = ({
             <a
               className="eui-textInheritColor"
               href="#/navigation/collapsible-nav"
-              onClick={e => e.stopPropagation()}>
+              onClick={(e) => e.stopPropagation()}
+            >
               Analytics
             </a>
           }
           buttonElement="div"
           iconType="logoKibana"
           isCollapsible={true}
-          initialIsOpen="Kibana"></EuiCollapsibleNavGroup>
+          initialIsOpen="Kibana"
+        ></EuiCollapsibleNavGroup>
       </EuiFlexItem>
     </EuiCollapsibleNav>
   );
@@ -110,9 +113,6 @@ const KibanaLayout = ({
 
   return (
     <div css={styles.mainWrapper}>
-      <Helmet>
-        <title>Guided Onboarding Prototype</title>
-      </Helmet> 
       <EuiHeader
         position="fixed"
         theme="dark"
@@ -122,11 +122,12 @@ const KibanaLayout = ({
               <EuiHeaderLogo
                 key="elastic-logo"
                 iconType="logoElastic"
-                href={`${pathPrefix}/kibana`}>
+                href={`${pathPrefix}/kibana`}
+              >
                 Elastic
               </EuiHeaderLogo>,
             ],
-            borders: 'none',
+            borders: "none",
           },
           {
             items: [
@@ -144,11 +145,12 @@ const KibanaLayout = ({
               />,
               <EuiHeaderSectionItemButton
                 key={useGeneratedHtmlId()}
-                aria-label="Account menu">
+                aria-label="Account menu"
+              >
                 <EuiAvatar name="John Username" size="s" />
               </EuiHeaderSectionItemButton>,
             ],
-            borders: 'none',
+            borders: "none",
           },
         ]}
       />
@@ -158,18 +160,19 @@ const KibanaLayout = ({
         sections={[
           {
             items: leftSectionItems,
-            borders: 'right',
+            borders: "right",
           },
           {
             items: [
               <EuiHeaderSectionItemButton
                 key={useGeneratedHtmlId()}
-                aria-label="Account menu">
+                aria-label="Account menu"
+              >
                 <EuiAvatar type="space" name="Default Space" size="s" />
               </EuiHeaderSectionItemButton>,
             ],
             breadcrumbs: breadcrumbs,
-            borders: 'right',
+            borders: "right",
           },
         ]}
       />
