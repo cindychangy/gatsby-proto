@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import React, { useEffect, useState } from 'react';
-import { withPrefix } from 'gatsby';
+import { jsx } from "@emotion/react";
+import React, { useEffect, useState } from "react";
+import { withPrefix } from "gatsby";
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -18,16 +18,16 @@ import {
   EuiFlexItem,
   useEuiTheme,
   EuiHorizontalRule,
-} from '@elastic/eui';
-import PanelSection from './panel_section/panel_section';
-import { GuidedSetupPanelStyles } from './guided_setup_panel.styles';
+} from "@elastic/eui";
+import PanelSection from "./panel_section/panel_section";
+import { GuidedSetupPanelStyles } from "./guided_setup_panel.styles";
 
 import {
   GUIDE_SEARCH,
   GUIDE_OBSERVABILITY,
   GUIDE_SECURITY,
   GUIDE_MONITORING,
-} from './guided_setup_panel.data';
+} from "./guided_setup_panel.data";
 
 const GuidedSetupPanel = ({
   guideOpen,
@@ -49,24 +49,24 @@ const GuidedSetupPanel = ({
 
   const [guideComplete, setGuideComplete] = useState(false);
 
-  const mountedStyle = { animation: 'transitionIn 550ms ease-in' };
+  const mountedStyle = { animation: "transitionIn 550ms ease-in" };
 
   //TBD - what data to set by default
   let data = GUIDE_OBSERVABILITY;
 
-  if (section === 'Search') {
+  if (section === "Search") {
     data = GUIDE_SEARCH;
   }
 
-  if (section === 'Observability') {
+  if (section === "Observability") {
     data = GUIDE_OBSERVABILITY;
   }
 
-  if (section === 'Security') {
+  if (section === "Security") {
     data = GUIDE_SECURITY;
   }
 
-  if (section === 'Monitoring') {
+  if (section === "Monitoring") {
     data = GUIDE_MONITORING;
   }
 
@@ -75,7 +75,7 @@ const GuidedSetupPanel = ({
       setTimeout(() => {
         setStepCompleted(true);
         setNewProgress(currentProgress + 25);
-        setGuideProgress[`step-${stepNumber}`] = 'done';
+        setGuideProgress[`step-${stepNumber}`] = "done";
 
         //so whack, but setting a way to auto toggle to next step
         if (stepNumber === 1) {
@@ -109,8 +109,9 @@ const GuidedSetupPanel = ({
           onClick={onClick}
           key="onboarding-setup-button"
           disabled={buttonDisabled}
-          fill>
-          Guided Setup{isSetupPage ? '' : `: Step ${stepNumber}`}
+          fill
+        >
+          Guided Setup{isSetupPage ? "" : `: Step ${stepNumber}`}
         </EuiButton>
       </div>
       {!!guideOpen && (
@@ -130,7 +131,7 @@ const GuidedSetupPanel = ({
               <EuiSpacer size="m" />
               <EuiTitle size="m">
                 <h2 css={guideComplete && mountedStyle}>
-                  {guideComplete ? 'Well done!' : data.title}
+                  {guideComplete ? "Well done!" : data.title}
                 </h2>
               </EuiTitle>
               <EuiSpacer size="s" />
@@ -142,7 +143,7 @@ const GuidedSetupPanel = ({
                 <div css={styles.media}>
                   {guideComplete ? (
                     <img
-                      src={withPrefix('/images/guide_complete_image.png')}
+                      src={withPrefix("/images/guide_complete_image.png")}
                       alt="Well Done!"
                       css={guideComplete && mountedStyle}
                     />
@@ -170,7 +171,8 @@ const GuidedSetupPanel = ({
                     iconType="popout"
                     iconSide="right"
                     href={data.link.url}
-                    style={{ marginLeft: '-8px' }}>
+                    style={{ marginLeft: "-8px" }}
+                  >
                     {data.link.title}
                   </EuiButtonEmpty>
                 </>
@@ -188,7 +190,7 @@ const GuidedSetupPanel = ({
                   <EuiSpacer size="xxl" />
                 </>
               )}
-              {data.steps.map(step => (
+              {data.steps.map((step) => (
                 <PanelSection
                   key={step.order}
                   step={step}
@@ -198,13 +200,12 @@ const GuidedSetupPanel = ({
                   stepNumber={stepNumber}
                   section={section}
                   completedSteps={completedSteps}
-                  // @ts-ignore
                   forceState={
                     toggleStep === step.order
-                      ? 'open'
-                      : '' ||
+                      ? "open"
+                      : "" ||
                         (isSetupPage && stepNumber === 1) ||
-                        (toggleStep - 1 === step.order && 'closed')
+                        (toggleStep - 1 === step.order && "closed")
                   }
                   guideProgress={guideProgress}
                 />
@@ -217,9 +218,7 @@ const GuidedSetupPanel = ({
                     </EuiButton>
                   </EuiFlexItem>
                   <EuiFlexItem grow={false}>
-                    <EuiButton
-                      href="/8.6/guided-setup"
-                      fill>
+                    <EuiButton href="/8.6/guided-setup" fill>
                       Start a New Guide
                     </EuiButton>
                   </EuiFlexItem>
@@ -228,8 +227,8 @@ const GuidedSetupPanel = ({
             </EuiFlyoutBody>
             <EuiFlyoutFooter>
               <EuiText color="subdued" textAlign="center">
-                Got questions? We’re here to help -{' '}
-                <a href="#" style={{ fontWeight: '400' }}>
+                Got questions? We’re here to help -{" "}
+                <a href="#" style={{ fontWeight: "400" }}>
                   contact us
                 </a>
                 .
