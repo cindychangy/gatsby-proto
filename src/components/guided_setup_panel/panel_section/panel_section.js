@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react';
-import { useEffect } from 'react';
-import { navigate } from 'gatsby';
+import { jsx } from "@emotion/react";
+import { useEffect } from "react";
+import { navigate } from "gatsby";
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -14,8 +14,8 @@ import {
   EuiPanel,
   EuiIcon,
   useEuiTheme,
-} from '@elastic/eui';
-import { GuidedSetupPanelStyles } from '../guided_setup_panel.styles';
+} from "@elastic/eui";
+import { GuidedSetupPanelStyles } from "../guided_setup_panel.styles";
 
 const PanelSection = ({
   step,
@@ -31,14 +31,14 @@ const PanelSection = ({
   const styles = GuidedSetupPanelStyles(euiTheme);
 
   const currentStep = stepNumber === step.order;
-  const finishedStep = completedSteps[`step-${step.order}`] === 'done';
+  const finishedStep = completedSteps[`step-${step.order}`] === "done";
 
   useEffect(() => {
     setTimeout(() => {
       document
-        .getElementById('currentStep')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }, 0);
+        .getElementById("currentStep")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }, 200);
   }, []);
 
   const numberStyles = [
@@ -51,11 +51,12 @@ const PanelSection = ({
   ];
 
   return (
-    <div id={currentStep && 'currentStep'}>
+    <div id={currentStep && "currentStep"}>
       <EuiFlexGroup
         gutterSize="none"
         responsive={false}
-        aria-label={`step-${step.order}`}>
+        aria-label={`step-${step.order}`}
+      >
         <EuiFlexItem grow={1}>
           <EuiAccordion
             id={`step-${step.order}`}
@@ -70,7 +71,8 @@ const PanelSection = ({
                     ) : (
                       <EuiText
                         size="s"
-                        style={{ fontWeight: 500, lineHeight: 1.4 }}>
+                        style={{ fontWeight: 500, lineHeight: 1.4 }}
+                      >
                         {step.order}
                       </EuiText>
                     )}
@@ -82,12 +84,12 @@ const PanelSection = ({
               </EuiFlexGroup>
             }
             paddingSize="none"
-            initialIsOpen={isSetupPage && step.order === 1}>
+            initialIsOpen={isSetupPage && step.order === 1}
+          >
             <EuiPanel
               paddingSize="none"
-              css={
-                confetti && currentStep && !stepCompleted && styles.confetti
-              }>
+              css={confetti && currentStep && !stepCompleted && styles.confetti}
+            >
               <EuiSpacer size="s" />
               <EuiText
                 size="s"
@@ -98,7 +100,8 @@ const PanelSection = ({
                   iconType="popout"
                   iconSide="right"
                   iconSize="s"
-                  href={step.link.url}>
+                  href={step.link.url}
+                >
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>
               )}
@@ -112,10 +115,13 @@ const PanelSection = ({
                     <EuiButton
                       fill
                       onClick={() =>
-                        section === 'Search'
-                          ? navigate(`/8.6/guided-setup/search/${step.stepPath}`)
-                          : navigate('#')
-                      }>
+                        section === "Search"
+                          ? navigate(
+                              `/8.6/guided-setup/search/${step.stepPath}`
+                            )
+                          : navigate("#")
+                      }
+                    >
                       Start
                     </EuiButton>
                   </EuiFlexItem>

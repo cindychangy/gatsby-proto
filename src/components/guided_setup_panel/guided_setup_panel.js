@@ -96,7 +96,7 @@ const GuidedSetupPanel = ({
             setGuideComplete(true);
           }, 500);
         }
-      }, 2000);
+      }, 2500);
     }
   }, [confetti, currentProgress]);
 
