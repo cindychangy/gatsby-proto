@@ -141,18 +141,20 @@ const GuidedSetupPanel = ({
             <EuiFlyoutBody>
               {data.media && (
                 <div css={styles.media}>
-                  {guideComplete ? (
-                    <img
-                      src={withPrefix("/images/guide_complete_image.png")}
-                      alt="Well Done!"
-                      css={guideComplete && mountedStyle}
-                    />
-                  ) : (
+                  {guideComplete ? null : (
                     <div dangerouslySetInnerHTML={{ __html: data.media }} />
                   )}
                   <EuiSpacer size="m" />
                 </div>
               )}
+              {/* {data.media && !guideComplete && (
+                <>
+                  <div css={styles.media}>
+                    <div dangerouslySetInnerHTML={{ __html: data.media }} />
+                  </div>
+                  <EuiSpacer size="m" />
+                </>
+              )} */}
               <EuiText size="m">
                 {guideComplete ? (
                   <p css={guideComplete && mountedStyle}>
