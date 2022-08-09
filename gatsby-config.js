@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/platform-onboarding",
+  pathPrefix: `/platform-onboarding`,
   siteMetadata: {
     title: `UX Platform Onboarding Prototype`,
     siteUrl: `https://cindychangy.github.io/platform-onboarding/`,
