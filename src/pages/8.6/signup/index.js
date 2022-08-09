@@ -37,6 +37,7 @@ const Signup = () => {
       </Helmet> 
       <Header accountType="signup" />
       <EuiFlexGroup direction="column" css={styles.header}>
+        <EuiSpacer size="m"/>
         <EuiFlexItem>
           <EuiTitle size="m">
             <h1>Welcome to Elastic Cloud</h1>
@@ -100,14 +101,14 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('./images/icon-google.svg')}>
+                    iconType={withPrefix('/images/icon-google.svg')}>
                     Google
                   </EuiButton>
                 </EuiFlexItem>
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('./images/icon-microsoft.svg')}>
+                    iconType={withPrefix('/images/icon-microsoft.svg')}>
                     Microsoft
                   </EuiButton>
                 </EuiFlexItem>
@@ -153,7 +154,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('./images/icon-aws.svg')}>
+                    iconType={withPrefix('/images/icon-aws.svg')}>
                     Amazon Web Services
                   </EuiButton>
                   <EuiSpacer size="m" />
@@ -161,7 +162,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('./images/icon-google.svg')}>
+                    iconType={withPrefix('/images/icon-google.svg')}>
                     Google Cloud
                   </EuiButton>
                   <EuiSpacer size="m" />
@@ -169,7 +170,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix('./images/icon-azure.svg')}>
+                    iconType={withPrefix('/images/icon-azure.svg')}>
                     Microsoft Azure
                   </EuiButton>
                   <EuiSpacer size="m" />

@@ -63,7 +63,6 @@ const Header = ({ accountType, signedIn }) => {
           alt="Elastic logo"
           css={styles.logo}
         />
-        <EuiSpacer size="s"/>
       </div>
     </>
   );
