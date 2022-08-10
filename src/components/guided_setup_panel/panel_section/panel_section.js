@@ -38,7 +38,7 @@ const PanelSection = ({
       document
         .getElementById('currentStep')
         ?.scrollIntoView({ behavior: 'smooth' });
-    }, 200);
+    }, 10);
   }, []);
 
   const numberStyles = [

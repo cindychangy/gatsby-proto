@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import React, { useEffect, useState } from 'react';
-import { withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -49,7 +49,7 @@ const GuidedSetupPanel = ({
 
   const [guideComplete, setGuideComplete] = useState(false);
 
-  const mountedStyle = { animation: 'transitionIn 550ms ease-in' };
+  const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
 
   //TBD - what data to set by default
   let data = GUIDE_OBSERVABILITY;
@@ -94,7 +94,7 @@ const GuidedSetupPanel = ({
           setToggleStep(5);
           setTimeout(() => {
             setGuideComplete(true);
-          }, 500);
+          }, 0);
         }
       }, 2500);
     }
@@ -142,19 +142,13 @@ const GuidedSetupPanel = ({
               {data.media && (
                 <div css={styles.media}>
                   {guideComplete ? null : (
-                    <div dangerouslySetInnerHTML={{ __html: data.media }} />
+                    <>
+                      <div dangerouslySetInnerHTML={{ __html: data.media }} />
+                      <EuiSpacer size="m" />
+                    </>
                   )}
-                  <EuiSpacer size="m" />
                 </div>
               )}
-              {/* {data.media && !guideComplete && (
-                <>
-                  <div css={styles.media}>
-                    <div dangerouslySetInnerHTML={{ __html: data.media }} />
-                  </div>
-                  <EuiSpacer size="m" />
-                </>
-              )} */}
               <EuiText size="m">
                 {guideComplete ? (
                   <p css={guideComplete && mountedStyle}>
@@ -220,7 +214,10 @@ const GuidedSetupPanel = ({
                     </EuiButton>
                   </EuiFlexItem>
                   <EuiFlexItem grow={false}>
-                    <EuiButton href="/8.6/guided-setup" fill>
+                    <EuiButton
+                      onClick={() => navigate('/8.6/guided-setup')}
+                      fill
+                    >
                       Start a New Guide
                     </EuiButton>
                   </EuiFlexItem>
