@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const kibanaLayoutStyles = euiTheme => ({
+export const kibanaLayoutStyles = (euiTheme) => ({
   mainWrapper: css`
     padding-top: 96px; // two top navs
     min-height: 100%;

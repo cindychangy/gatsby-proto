@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const GuidedSetupStyles = euiTheme => ({
+export const GuidedSetupStyles = (euiTheme) => ({
   container: css`
     padding: 10px 10px 0;
   `,

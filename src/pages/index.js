@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from 'react';
 import {
   EuiBadge,
   EuiButton,
@@ -8,7 +8,7 @@ import {
   EuiText,
   EuiTextColor,
   EuiTitle,
-} from "@elastic/eui";
+} from '@elastic/eui';
 import { navigate } from 'gatsby';
 
 const VersionSelector = () => {
@@ -55,19 +55,29 @@ const VersionSelector = () => {
         <h1>Which version would you like to explore?</h1>
       </EuiTitle>
       <EuiSpacer size="m" />
-      <EuiButton onClick={() => navigate("https://super-succotash-b4d4021d.pages.github.io/8.3")} fullWidth>
+      <EuiButton
+        onClick={() =>
+          navigate('https://super-succotash-b4d4021d.pages.github.io/8.3')
+        }
+        fullWidth
+      >
         v8.3 (May 24, 2022)
       </EuiButton>
       <EuiSpacer size="s" />
-      <EuiButton onClick={() => navigate("https://super-succotash-b4d4021d.pages.github.io/8.4/")} fullWidth>
+      <EuiButton
+        onClick={() =>
+          navigate('https://super-succotash-b4d4021d.pages.github.io/8.4/')
+        }
+        fullWidth
+      >
         v8.4 (Jul 26, 2022) <EuiBadge color="primary">In-progress</EuiBadge>
       </EuiButton>
       <EuiSpacer size="s" />
-      <EuiButton disabled onClick={() => navigate("/8.5")} fullWidth>
+      <EuiButton disabled onClick={() => navigate('/8.5')} fullWidth>
         v8.5 (Sep 20, 2022) - Prototype coming soon
       </EuiButton>
       <EuiSpacer size="s" />
-      <EuiButton onClick={() => navigate("/8.6")} fullWidth>
+      <EuiButton onClick={() => navigate('/8.6')} fullWidth>
         v8.6 (Nov 15, 2022) <EuiBadge color="primary">In-progress</EuiBadge>
       </EuiButton>
     </EuiPageTemplate>

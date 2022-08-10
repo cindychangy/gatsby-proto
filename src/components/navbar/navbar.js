@@ -25,7 +25,8 @@ const Navbar = ({ breadcrumbs }) => {
             items: [
               <EuiHeaderSectionItemButton
                 aria-label="Account menu"
-                key="account">
+                key="account"
+              >
                 <EuiAvatar name="John Username" size="s" />
               </EuiHeaderSectionItemButton>,
             ],
@@ -39,7 +40,8 @@ const Navbar = ({ breadcrumbs }) => {
             items: [
               <EuiHeaderSectionItemButton
                 aria-label="Account menu"
-                key="account-menu">
+                key="account-menu"
+              >
                 <EuiAvatar type="space" name="Default Space" size="s" />
               </EuiHeaderSectionItemButton>,
             ],

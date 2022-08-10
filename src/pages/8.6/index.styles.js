@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const loginStyles = euiTheme => ({
+export const loginStyles = (euiTheme) => ({
   container: css`
     padding: 30px 40px 0 0;
   `,

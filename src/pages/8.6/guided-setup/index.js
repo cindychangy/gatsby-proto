@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { jsx } from '@emotion/react';
 import { useState } from 'react';
 import {
   EuiSpacer,
@@ -64,7 +64,8 @@ const GuidedSetup = () => {
       buttonDisabled={buttonDisabled}
       onClick={() => handleGuideClick(section)}
       completedSteps={COMPLETED_STEPS}
-      isSetupPage={isSetupPage}>
+      isSetupPage={isSetupPage}
+    >
       <EuiSpacer size="xxl" />
       <EuiPanel paddingSize="l">
         <div css={styles.container}>

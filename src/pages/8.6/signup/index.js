@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { navigate, withPrefix } from "gatsby";
+import React, { useState } from 'react';
+import { navigate, withPrefix } from 'gatsby';
 import {
   EuiFlexGroup,
   EuiFlexItem,
@@ -13,9 +13,9 @@ import {
   EuiFieldText,
   EuiHorizontalRule,
   useEuiTheme,
-} from "@elastic/eui";
-import Header from "../../../components/header/header";
-import { loginStyles } from "../index.styles";
+} from '@elastic/eui';
+import Header from '../../../components/header/header';
+import { loginStyles } from '../index.styles';
 
 const Signup = () => {
   const { euiTheme } = useEuiTheme();
@@ -25,7 +25,7 @@ const Signup = () => {
   const handleClick = () => {
     setIsLoading(true);
     setTimeout(() => {
-      navigate("/profile");
+      navigate('/profile');
     }, 1000);
   };
 
@@ -100,7 +100,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix("/images/icon-google.svg")}
+                    iconType={withPrefix('/images/icon-google.svg')}
                   >
                     Google
                   </EuiButton>
@@ -108,7 +108,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix("/images/icon-microsoft.svg")}
+                    iconType={withPrefix('/images/icon-microsoft.svg')}
                   >
                     Microsoft
                   </EuiButton>
@@ -156,7 +156,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix("/images/icon-aws.svg")}
+                    iconType={withPrefix('/images/icon-aws.svg')}
                   >
                     Amazon Web Services
                   </EuiButton>
@@ -165,7 +165,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix("/images/icon-google.svg")}
+                    iconType={withPrefix('/images/icon-google.svg')}
                   >
                     Google Cloud
                   </EuiButton>
@@ -174,7 +174,7 @@ const Signup = () => {
                 <EuiFlexItem>
                   <EuiButton
                     iconSide="left"
-                    iconType={withPrefix("/images/icon-azure.svg")}
+                    iconType={withPrefix('/images/icon-azure.svg')}
                   >
                     Microsoft Azure
                   </EuiButton>

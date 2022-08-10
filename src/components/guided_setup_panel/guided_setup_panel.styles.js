@@ -7,7 +7,7 @@ Styles here are split up into 2 parts.
 2. GuidedSetupPanelStyles at the bottom of the page are custom styles for this component.
 */
 
-export const GuidedSetupPanelStyles = euiTheme => ({
+export const GuidedSetupPanelStyles = (euiTheme) => ({
   buttonContainer: css`
     margin: 0 20px;
   `,

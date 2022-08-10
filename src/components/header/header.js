@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { jsx } from '@emotion/react';
 import React from 'react';
 import {
   EuiFlexGroup,
@@ -49,7 +49,8 @@ const Header = ({ accountType, signedIn }) => {
                   login
                     ? () => handleClick('/8.6/signup')
                     : () => handleClick('/8.6')
-                }>
+                }
+              >
                 {login ? 'Sign up' : 'Log in'}
               </EuiButton>
             </EuiFlexItem>
@@ -58,7 +59,9 @@ const Header = ({ accountType, signedIn }) => {
         <EuiImage
           size={170}
           src={
-            login ? withPrefix('/images/logo-elastic.png') : withPrefix('images/logo-elastic.png')
+            login
+              ? withPrefix('/images/logo-elastic.png')
+              : withPrefix('images/logo-elastic.png')
           }
           alt="Elastic logo"
           css={styles.logo}

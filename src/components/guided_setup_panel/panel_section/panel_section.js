@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
-import { useEffect } from "react";
-import { navigate } from "gatsby";
+import { jsx } from '@emotion/react';
+import { useEffect } from 'react';
+import { navigate } from 'gatsby';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -14,8 +14,8 @@ import {
   EuiPanel,
   EuiIcon,
   useEuiTheme,
-} from "@elastic/eui";
-import { GuidedSetupPanelStyles } from "../guided_setup_panel.styles";
+} from '@elastic/eui';
+import { GuidedSetupPanelStyles } from '../guided_setup_panel.styles';
 
 const PanelSection = ({
   step,
@@ -31,13 +31,13 @@ const PanelSection = ({
   const styles = GuidedSetupPanelStyles(euiTheme);
 
   const currentStep = stepNumber === step.order;
-  const finishedStep = completedSteps[`step-${step.order}`] === "done";
+  const finishedStep = completedSteps[`step-${step.order}`] === 'done';
 
   useEffect(() => {
     setTimeout(() => {
       document
-        .getElementById("currentStep")
-        ?.scrollIntoView({ behavior: "smooth" });
+        .getElementById('currentStep')
+        ?.scrollIntoView({ behavior: 'smooth' });
     }, 200);
   }, []);
 
@@ -51,7 +51,7 @@ const PanelSection = ({
   ];
 
   return (
-    <div id={currentStep && "currentStep"}>
+    <div id={currentStep && 'currentStep'}>
       <EuiFlexGroup
         gutterSize="none"
         responsive={false}
@@ -115,11 +115,11 @@ const PanelSection = ({
                     <EuiButton
                       fill
                       onClick={() =>
-                        section === "Search"
+                        section === 'Search'
                           ? navigate(
                               `/8.6/guided-setup/search/${step.stepPath}`
                             )
-                          : navigate("#")
+                          : navigate('#')
                       }
                     >
                       Start

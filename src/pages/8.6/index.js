@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/react'
+import { jsx } from '@emotion/react';
 import React, { useState } from 'react';
 import { navigate, withPrefix } from 'gatsby';
 import {
@@ -40,7 +40,8 @@ const Login = () => {
         <EuiFlexGroup
           direction="row"
           justifyContent="center"
-          alignItems="flexStart">
+          alignItems="flexStart"
+        >
           <EuiFlexItem grow={false}>
             <EuiPanel paddingSize="l" css={styles.formPanel}>
               <div css={styles.panelSpace}>
@@ -63,7 +64,8 @@ const Login = () => {
                   fill
                   fullWidth
                   isLoading={isLoading}
-                  onClick={() => handleClick()}>
+                  onClick={() => handleClick()}
+                >
                   Log in
                 </EuiButton>
                 <EuiSpacer size="m" />
@@ -73,7 +75,8 @@ const Login = () => {
                 <EuiFlexGroup
                   alignItems="center"
                   gutterSize="s"
-                  responsive={false}>
+                  responsive={false}
+                >
                   <EuiFlexItem>
                     <EuiHorizontalRule />
                   </EuiFlexItem>
@@ -90,14 +93,16 @@ const Login = () => {
                   <EuiFlexItem>
                     <EuiButton
                       iconSide="left"
-                      iconType={withPrefix('/images/icon-google.svg')}>
+                      iconType={withPrefix('/images/icon-google.svg')}
+                    >
                       Google
                     </EuiButton>
                   </EuiFlexItem>
                   <EuiFlexItem>
                     <EuiButton
                       iconSide="left"
-                      iconType={withPrefix('/images/icon-microsoft.svg')}>
+                      iconType={withPrefix('/images/icon-microsoft.svg')}
+                    >
                       Microsoft
                     </EuiButton>
                   </EuiFlexItem>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/react'
+import { jsx, css } from '@emotion/react';
 import React, { useState } from 'react';
 import { withPrefix } from 'gatsby';
 import {
@@ -15,7 +15,7 @@ import {
   EuiTitle,
   EuiTourStep,
 } from '@elastic/eui';
-import KibanaLayout from '../../layouts/kibana/kibana';;
+import KibanaLayout from '../../layouts/kibana/kibana';
 import SearchSidebar from '../sidebar/sidebar_search';
 
 const StepPlaceholder = ({
@@ -82,7 +82,8 @@ const StepPlaceholder = ({
             color="text"
             flush="both"
             onClick={() => setIsTourStep(isTourStep + 99)}
-            size="xs"></EuiButtonEmpty>
+            size="xs"
+          ></EuiButtonEmpty>
         ) : (
           <EuiFlexGroup alignItems="center" gutterSize="m">
             <EuiFlexItem>
@@ -102,7 +103,8 @@ const StepPlaceholder = ({
                     ? () => setIsTourStep(isTourStep + 1)
                     : handleTourClick
                 }
-                size="s">
+                size="s"
+              >
                 {buttonText}
               </EuiButton>
             </EuiFlexItem>
@@ -151,10 +153,12 @@ const StepPlaceholder = ({
         hasSidebar={hasSidebar}
         currentProgress={currentProgress}
         stepNumber={stepNumber}
-        completedSteps={completedSteps}>
+        completedSteps={completedSteps}
+      >
         {hasSidebar ? (
           <EuiPageTemplate
-            pageSideBar={<SearchSidebar stepNumber={stepNumber} />}>
+            pageSideBar={<SearchSidebar stepNumber={stepNumber} />}
+          >
             <EuiTitle size="l">
               <h1>{title}</h1>
             </EuiTitle>
