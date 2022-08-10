@@ -93,6 +93,7 @@ const PanelSection = ({
               <EuiSpacer size="s" />
               <EuiText
                 size="s"
+                style={{ color: '#1A1C21' }}
                 dangerouslySetInnerHTML={{ __html: step.description }}
               />
               {step.link && (

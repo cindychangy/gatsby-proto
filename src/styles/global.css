@@ -55,11 +55,11 @@
 }
 
 [aria-labelledby='onboarding-guide'] .euiAccordion-isOpen {
-    color: #343741;
+    color: #1A1C21; /* Title color */
 }
 
 .euiAccordion__iconButton.euiAccordion__iconButton-isOpen {
-  color: #343741; 
+  color: #1A1C21; /* Title color */
 }
 
 @media only screen and (max-width: 574px) {
