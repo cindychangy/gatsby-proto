@@ -46,20 +46,14 @@
   line-height: 24px;
 }
 
-[aria-labelledby='onboarding-guide'] .euiAccordion {
-  color: #646a77;
-}
-
+[aria-labelledby='onboarding-guide'] .euiAccordion,
 [aria-labelledby='onboarding-guide'] .euiAccordion__iconButton {
-  color: #69707d; 
+  color: #69707D; /* EUI color - subduedText */
 }
 
-[aria-labelledby='onboarding-guide'] .euiAccordion-isOpen {
-    color: #1A1C21; /* Title color */
-}
-
+[aria-labelledby='onboarding-guide'] .euiAccordion-isOpen,
 .euiAccordion__iconButton.euiAccordion__iconButton-isOpen {
-  color: #1A1C21; /* Title color */
+    color: #1A1C21; /* EUI color- Title */
 }
 
 @media only screen and (max-width: 574px) {
