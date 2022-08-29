@@ -37,7 +37,7 @@ const KibanaHome = () => {
             <EuiCard
               description="Create search experiences with a refined set of APIs and tools."
               image={withPrefix('/images/home--enterprise.png')}
-              title="Enterprise Search1"
+              title="Enterprise Search"
             />
           </EuiFlexItem>
           <EuiFlexItem>
