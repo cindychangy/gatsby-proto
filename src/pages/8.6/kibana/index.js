@@ -87,7 +87,7 @@ const KibanaHome = () => {
               </EuiFlexItem>
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty iconType="documents">
-                  Try sample data
+                  Try sample datas
                 </EuiButtonEmpty>
               </EuiFlexItem>
               <EuiFlexItem grow={false}>
