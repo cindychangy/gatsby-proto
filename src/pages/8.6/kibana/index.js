@@ -13,6 +13,7 @@ import {
   EuiText,
 } from '@elastic/eui';
 import Navbar from '../../../components/navbar/navbar';
+import { withPrefix } from 'gatsby';
 
 const KibanaHome = () => {
   return (
@@ -35,28 +36,28 @@ const KibanaHome = () => {
           <EuiFlexItem>
             <EuiCard
               description="Create search experiences with a refined set of APIs and tools."
-              image="/images/home--enterprise.png"
+              image={withPrefix('/images/home--enterprise.png')}
               title="Enterprise Search"
             />
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
               description="Consolidate your logs, metrics, application traces, and system availability with purpose-built UIs."
-              image="/images/home--observability.png"
+              image={withPrefix('/images/home--observability.png')}
               title="Observability"
             />
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
               description="Prevent, collect, detect, and respond to threats for unified protection across your infrastructure."
-              image="/images/home--security.png"
+              image={withPrefix('/images/home--security.png')}
               title="Security"
             />
           </EuiFlexItem>
           <EuiFlexItem>
             <EuiCard
               description="Explore, visualize, and analyze your data using a powerful suite of analytical tools and applications."
-              image="/images/home--analytics.png"
+              image={withPrefix('/images/home--analytics.png')}
               title="Analytics"
             />
           </EuiFlexItem>
@@ -100,7 +101,7 @@ const KibanaHome = () => {
           <EuiFlexItem grow={false}>
             <EuiImage
               size="xl"
-              src="/images/illustration--integrations.svg"
+              src={withPrefix('/images/illustration--integrations.svg')}
               alt="packing box with integrations"
             />
           </EuiFlexItem>
