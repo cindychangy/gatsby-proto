@@ -119,11 +119,7 @@ const KibanaLayout = ({
         sections={[
           {
             items: [
-              <EuiHeaderLogo
-                key="elastic-logo"
-                iconType="logoElastic"
-                href={`${pathPrefix}/kibana`}
-              >
+              <EuiHeaderLogo key="elastic-logo" iconType="logoElastic" href="#">
                 Elastic
               </EuiHeaderLogo>,
             ],

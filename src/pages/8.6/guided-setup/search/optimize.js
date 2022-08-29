@@ -8,7 +8,7 @@ const BREADCRUMBS = [
   },
   {
     text: 'Guided Setup',
-    href: '../',
+    href: '../../',
   },
   {
     text: 'Step 3: Search experience',
