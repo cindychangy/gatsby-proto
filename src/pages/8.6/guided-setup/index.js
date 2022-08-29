@@ -107,7 +107,9 @@ const GuidedSetup = () => {
           </EuiFlexGrid>
           <EuiHorizontalRule margin="xl" />
           <EuiText size="s" textAlign="center">
-            <EuiLink href="#">I'd like to do something else (Skip)</EuiLink>
+            <EuiLink href="../kibana">
+              I'd like to do something else (Skip)
+            </EuiLink>
           </EuiText>
         </div>
       </EuiPanel>

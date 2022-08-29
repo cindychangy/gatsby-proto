@@ -4,7 +4,6 @@ import {
   EuiHeaderLogo,
   EuiHeaderSectionItemButton,
   EuiAvatar,
-  EuiBreadcrumb,
 } from '@elastic/eui';
 
 const Navbar = ({ breadcrumbs }) => {
