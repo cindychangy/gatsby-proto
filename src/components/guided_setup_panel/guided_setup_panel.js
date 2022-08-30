@@ -229,7 +229,7 @@ const GuidedSetupPanel = ({
                 <EuiButtonEmpty
                   iconType="exit"
                   iconSide="right"
-                  href={withPrefix('/8.6/kibana')}
+                  href="/platform-onboarding/8.6/kibana"
                 >
                   Opt-out of Guided Setup
                 </EuiButtonEmpty>
