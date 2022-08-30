@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import React, { useEffect, useState } from 'react';
-import { navigate } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -9,6 +9,7 @@ import {
   EuiTitle,
   EuiText,
   EuiSpacer,
+  EuiLink,
   EuiFlyout,
   EuiFlyoutBody,
   EuiFlyoutHeader,
@@ -124,10 +125,14 @@ const GuidedSetupPanel = ({
           <>
             <EuiFlyoutHeader>
               <EuiSpacer size="m" />
-              <a href="#" onClick={onClick}>
+              <EuiLink
+                href={withPrefix('/8.6/guided-setup')}
+                onClick={onClick}
+                color="text"
+              >
                 <EuiIcon type="arrowLeft" size="m" />
                 Back to guides
-              </a>
+              </EuiLink>
               <EuiSpacer size="m" />
               <EuiTitle size="m">
                 <h2 css={guideComplete && mountedStyle}>
@@ -229,14 +234,17 @@ const GuidedSetupPanel = ({
                 <EuiButtonEmpty
                   iconType="exit"
                   iconSide="right"
-                  href="/platform-onboarding/8.6/kibana"
+                  href={withPrefix(`/8.6/kibana`)}
                 >
                   Opt-out of Guided Setup
                 </EuiButtonEmpty>
                 <EuiSpacer size="s" />
                 <EuiText color="subdued" textAlign="center">
                   Got questions? We’re here to help -{' '}
-                  <a href="#" style={{ fontWeight: '400' }}>
+                  <a
+                    href="https://www.elastic.co/kibana/feedback"
+                    style={{ fontWeight: '400' }}
+                  >
                     contact us
                   </a>
                   .
