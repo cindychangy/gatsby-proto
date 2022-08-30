@@ -27,7 +27,7 @@ const COMPLETED_STEPS = {
 const AddData = () => {
   return (
     <StepPlaceholder
-      title="Add your data"
+      title="Add data"
       breadcrumbs={BREADCRUMBS}
       section="Search"
       stepNumber={STEPNUMBER}

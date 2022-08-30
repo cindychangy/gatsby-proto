@@ -225,13 +225,24 @@ const GuidedSetupPanel = ({
               )}
             </EuiFlyoutBody>
             <EuiFlyoutFooter>
-              <EuiText color="subdued" textAlign="center">
-                Got questions? We’re here to help -{' '}
-                <a href="#" style={{ fontWeight: '400' }}>
-                  contact us
-                </a>
-                .
-              </EuiText>
+              <EuiFlexGroup direction="column" alignItems="center">
+                <EuiButtonEmpty
+                  iconType="exit"
+                  iconSide="right"
+                  href="/8.6/kibana"
+                >
+                  Opt-out of Guided Setup
+                </EuiButtonEmpty>
+                <EuiSpacer size="s" />
+                <EuiText color="subdued" textAlign="center">
+                  Got questions? We’re here to help -{' '}
+                  <a href="#" style={{ fontWeight: '400' }}>
+                    contact us
+                  </a>
+                  .
+                </EuiText>
+              </EuiFlexGroup>
+              <EuiSpacer size="m" />
             </EuiFlyoutFooter>
           </>
         </EuiFlyout>
