@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[8345],{96741:function(e,t,r){r.r(t);r(67294);var p=r(56521),u=r(23431),s=[{text:"Security",href:"#"},{text:"Guided Setup",href:"../"},{text:"Step 2: Step Two"}],n={"step-1":"done","step-2":"","step-3":"","step-4":""};t.default=function(){return(0,u.tZ)(p.Z,{title:"Security Step",breadcrumbs:s,section:"Security",stepNumber:2,currentProgress:75,completedSteps:n})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-security-step-2-js-ef77185b120426db8aac.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[8883],{30429:function(n,r,t){t.r(r);t(67294);var u=t(23431);r.default=function(){return(0,u.tZ)("h1",null,"404")}}}]);
+//# sourceMappingURL=component---src-pages-404-js-0d3e29e1ee23bae6cee4.js.map
