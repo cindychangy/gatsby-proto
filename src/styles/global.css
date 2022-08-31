@@ -89,3 +89,8 @@
   flex-direction: column;
   height: 100%;
 }
+
+/* remove close button on optOutModal */
+[aria-label='optOutModal'] .euiModal__closeIcon {
+  display: none;
+}

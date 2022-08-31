@@ -40,6 +40,7 @@ const GuidedSetupPanel = ({
   currentProgress,
   completedSteps,
   onClick,
+  handleOptOut,
 }) => {
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
@@ -234,7 +235,7 @@ const GuidedSetupPanel = ({
                 <EuiButtonEmpty
                   iconType="exit"
                   iconSide="right"
-                  href={withPrefix(`/8.6/kibana`)}
+                  onClick={handleOptOut}
                 >
                   Opt-out of Guided Setup
                 </EuiButtonEmpty>

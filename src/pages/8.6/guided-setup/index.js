@@ -46,7 +46,7 @@ const GuidedSetup = () => {
     'step-6': '',
   };
 
-  const handleGuideClick = (section) => {
+  const handleGuideClick = (section, optOut) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
     if (section) {
