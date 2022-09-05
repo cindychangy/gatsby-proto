@@ -27,7 +27,7 @@ const COMPLETED_STEPS = {
 const Alert = () => {
   return (
     <StepPlaceholder
-      title="Alert"
+      title="Create an Alert"
       breadcrumbs={BREADCRUMBS}
       section="Observability"
       stepNumber={STEPNUMBER}

@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/react';
 import React from 'react';
 import { EuiAvatar, EuiSideNav, EuiSpacer, EuiTitle } from '@elastic/eui';
-// import { SIDEBAR_SEARCH } from './solution_sidebar.data';
 
 const SolutionSidebar = ({ stepNumber, section }) => {
   const handleClick = () => {
@@ -348,7 +347,9 @@ const SolutionSidebar = ({ stepNumber, section }) => {
             name="Enterprise Search"
             size="m"
           />
-          <strong>{section}</strong>
+          <strong>
+            {section === 'Search' ? 'Enterprise Search' : section}
+          </strong>
         </h2>
       </EuiTitle>
       <EuiSpacer />

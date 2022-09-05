@@ -11,7 +11,7 @@ const BREADCRUMBS = [
     href: '../',
   },
   {
-    text: 'Step 2: Tour Observability',
+    text: 'Step 2: Tour Elastic Observability',
   },
 ];
 
@@ -27,7 +27,7 @@ const COMPLETED_STEPS = {
 const Alert = () => {
   return (
     <StepPlaceholder
-      title="Tour Observability"
+      title="Tour Elastic Observability"
       breadcrumbs={BREADCRUMBS}
       section="Observability"
       stepNumber={STEPNUMBER}
