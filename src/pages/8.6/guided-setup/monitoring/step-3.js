@@ -3,7 +3,7 @@ import StepPlaceholder from '../../../../components/step_placeholder/step_placeh
 
 const BREADCRUMBS = [
   {
-    text: 'Security',
+    text: 'Monitoring',
     href: '#',
   },
   {
@@ -11,15 +11,15 @@ const BREADCRUMBS = [
     href: '../',
   },
   {
-    text: 'Step 2: Step Two',
+    text: 'Step 3: Step Three',
   },
 ];
 
-const STEPNUMBER = 2;
+const STEPNUMBER = 3;
 
 const COMPLETED_STEPS = {
   'step-1': 'done',
-  'step-2': '',
+  'step-2': 'done',
   'step-3': '',
   'step-4': '',
 };
@@ -27,12 +27,13 @@ const COMPLETED_STEPS = {
 const StepTwo = () => {
   return (
     <StepPlaceholder
-      title="Security Step"
+      title="Monitoring Step 3"
       breadcrumbs={BREADCRUMBS}
-      section="Security"
+      section="Monitoring"
       stepNumber={STEPNUMBER}
       currentProgress={75}
       completedSteps={COMPLETED_STEPS}
+      hasSidebar
     />
   );
 };

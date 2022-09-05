@@ -33,6 +33,7 @@ const Alert = () => {
       stepNumber={STEPNUMBER}
       currentProgress={25}
       completedSteps={COMPLETED_STEPS}
+      hasSidebar
     />
   );
 };

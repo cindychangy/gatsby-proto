@@ -3,7 +3,7 @@ import StepPlaceholder from '../../../../components/step_placeholder/step_placeh
 
 const BREADCRUMBS = [
   {
-    text: 'Observability',
+    text: 'Monitoring',
     href: '#',
   },
   {
@@ -11,31 +11,31 @@ const BREADCRUMBS = [
     href: '../',
   },
   {
-    text: 'Step 3: Create an Alert',
+    text: 'Step 4: Step Four',
   },
 ];
 
-const STEPNUMBER = 3;
+const STEPNUMBER = 4;
 
 const COMPLETED_STEPS = {
   'step-1': 'done',
   'step-2': 'done',
-  'step-3': '',
+  'step-3': 'done',
   'step-4': '',
 };
 
-const Alert = () => {
+const StepTwo = () => {
   return (
     <StepPlaceholder
-      title="Alert"
+      title="Monitoring Step 4"
       breadcrumbs={BREADCRUMBS}
-      section="Observability"
+      section="Monitoring"
       stepNumber={STEPNUMBER}
-      currentProgress={50}
+      currentProgress={100}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />
   );
 };
 
-export default Alert;
+export default StepTwo;

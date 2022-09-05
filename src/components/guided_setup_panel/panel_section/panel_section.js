@@ -116,11 +116,7 @@ const PanelSection = ({
                     <EuiButton
                       fill
                       onClick={() =>
-                        section === 'Search'
-                          ? navigate(
-                              `/8.6/guided-setup/search/${step.stepPath}`
-                            )
-                          : navigate('#')
+                        navigate(`/8.6/guided-setup/${step.stepPath}`)
                       }
                     >
                       Start

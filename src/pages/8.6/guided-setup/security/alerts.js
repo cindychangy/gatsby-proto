@@ -11,30 +11,31 @@ const BREADCRUMBS = [
     href: '../',
   },
   {
-    text: 'Step 1: Step One',
+    text: 'Step 3: View Alerts',
   },
 ];
 
-const STEPNUMBER = 1;
+const STEPNUMBER = 3;
 
 const COMPLETED_STEPS = {
-  'step-1': '',
-  'step-2': '',
+  'step-1': 'done',
+  'step-2': 'done',
   'step-3': '',
   'step-4': '',
 };
 
-const StepOne = () => {
+const Alerts = () => {
   return (
     <StepPlaceholder
-      title="Security Step"
+      title="View Alerts"
       breadcrumbs={BREADCRUMBS}
       section="Security"
       stepNumber={STEPNUMBER}
-      currentProgress={0}
+      currentProgress={75}
       completedSteps={COMPLETED_STEPS}
+      hasSidebar
     />
   );
 };
 
-export default StepOne;
+export default Alerts;

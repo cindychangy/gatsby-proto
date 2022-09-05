@@ -33,6 +33,7 @@ const DoMore = () => {
       stepNumber={STEPNUMBER}
       currentProgress={75}
       completedSteps={COMPLETED_STEPS}
+      hasSidebar
     />
   );
 };

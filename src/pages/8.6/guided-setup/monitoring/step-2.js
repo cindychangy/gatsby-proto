@@ -27,12 +27,13 @@ const COMPLETED_STEPS = {
 const StepTwo = () => {
   return (
     <StepPlaceholder
-      title="Monitoring Step"
+      title="Monitoring Step 2"
       breadcrumbs={BREADCRUMBS}
       section="Monitoring"
       stepNumber={STEPNUMBER}
-      currentProgress={75}
+      currentProgress={45}
       completedSteps={COMPLETED_STEPS}
+      hasSidebar
     />
   );
 };

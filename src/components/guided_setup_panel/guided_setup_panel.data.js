@@ -17,7 +17,7 @@ export const GUIDE_SEARCH = {
         title: 'Getting started with Elastic Enterprise Search',
         url: '#',
       },
-      stepPath: 'add-data',
+      stepPath: 'search/add-data',
       order: 1,
     },
     {
@@ -25,7 +25,7 @@ export const GUIDE_SEARCH = {
       description:
         '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
       link: null,
-      stepPath: 'build',
+      stepPath: 'search/build',
       order: 2,
     },
     {
@@ -33,7 +33,7 @@ export const GUIDE_SEARCH = {
       description:
         '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
       link: null,
-      stepPath: 'optimize',
+      stepPath: 'search/optimize',
       order: 3,
     },
     {
@@ -41,7 +41,7 @@ export const GUIDE_SEARCH = {
       description:
         '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
       link: null,
-      stepPath: 'review',
+      stepPath: 'search/review',
       order: 4,
     },
   ],
@@ -66,7 +66,7 @@ export const GUIDE_OBSERVABILITY = {
         title: 'Integrations for Observability',
         url: '#',
       },
-      stepPath: 'guided-setup/observability/add-data',
+      stepPath: 'observability/add-data',
       order: 1,
     },
     {
@@ -74,7 +74,7 @@ export const GUIDE_OBSERVABILITY = {
       description:
         '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
       link: null,
-      stepPath: 'tour',
+      stepPath: 'observability/tour',
       order: 2,
     },
     {
@@ -82,7 +82,7 @@ export const GUIDE_OBSERVABILITY = {
       description:
         '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
       link: null,
-      stepPath: 'alert',
+      stepPath: 'observability/alert',
       order: 3,
     },
     {
@@ -90,34 +90,8 @@ export const GUIDE_OBSERVABILITY = {
       description:
         '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
       link: null,
-      stepPath: 'do-more',
+      stepPath: 'observability/do-more',
       order: 4,
-    },
-  ],
-};
-
-export const GUIDE_SECURITY = {
-  title: 'Protect my Environment',
-  media: null,
-  intro:
-    'The following steps will help you get started with security. We recommend going in order. ',
-  link: null,
-  steps: [
-    {
-      title: 'Secure your environment',
-      description:
-        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
-      link: null,
-      stepPath: 'guided-setup/security/',
-      order: 1,
-    },
-    {
-      title: 'Explore your data',
-      description:
-        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
-      link: null,
-      stepPath: 'step-2',
-      order: 2,
     },
   ],
 };
@@ -134,7 +108,7 @@ export const GUIDE_MONITORING = {
       description:
         '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
       link: null,
-      stepPath: 'guided-setup/monitoring/step-1',
+      stepPath: 'monitoring/step-1',
       order: 1,
     },
     {
@@ -142,8 +116,75 @@ export const GUIDE_MONITORING = {
       description:
         '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
       link: null,
-      stepPath: 'step-2',
+      stepPath: 'monitoring/step-2',
       order: 2,
+    },
+    {
+      title: 'Monitoring Step 3',
+      description:
+        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+      link: null,
+      stepPath: 'monitoring/step-3',
+      order: 3,
+    },
+    {
+      title: 'Monitoring Step 4',
+      description:
+        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+      link: null,
+      stepPath: 'monitoring/step-4',
+      order: 4,
+    },
+  ],
+};
+
+export const GUIDE_SECURITY = {
+  title: 'Getting started with SIEM',
+  media: null,
+  intro:
+    "We'll help you get set up quilckly, using Elastic's out-of-the-box integrations.",
+  link: {
+    title: 'Security 101 Documentation',
+    url: '#',
+  },
+  steps: [
+    {
+      title: 'Add and view your data with Elastic Defend',
+      description:
+        '<ul><li>Select your integrations & start sending data.</li><li>Make sure your data look good.</li></ul>',
+      link: {
+        title: 'Our top integrations for Secrutiy',
+        url: '#',
+      },
+      stepPath: 'security/defend-data',
+      order: 1,
+    },
+    {
+      title: 'Turn on rules',
+      description:
+        '<ul><li>Load prebuilt rules.</li><li>Select rules relevant to you.</li></ul>',
+      link: {
+        title: 'Security rules in-depth webinar',
+        url: '#',
+      },
+      stepPath: 'security/rules',
+      order: 2,
+    },
+    {
+      title: 'View Alerts',
+      description:
+        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+      link: null,
+      stepPath: 'security/alerts',
+      order: 3,
+    },
+    {
+      title: 'Cases and investigations',
+      description:
+        '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+      link: null,
+      stepPath: 'security/cases-investigations',
+      order: 4,
     },
   ],
 };
