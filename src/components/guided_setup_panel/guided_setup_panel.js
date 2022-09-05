@@ -220,11 +220,8 @@ const GuidedSetupPanel = ({
                     </EuiButton>
                   </EuiFlexItem>
                   <EuiFlexItem grow={false}>
-                    <EuiButton
-                      onClick={() => navigate('/8.6/guided-setup')}
-                      fill
-                    >
-                      Start a New Guide
+                    <EuiButton onClick={() => navigate('/8.6/kibana')} fill>
+                      Start using Elastic
                     </EuiButton>
                   </EuiFlexItem>
                 </EuiFlexGroup>
