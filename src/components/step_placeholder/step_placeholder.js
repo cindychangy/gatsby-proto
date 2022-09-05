@@ -16,7 +16,7 @@ import {
   EuiTourStep,
 } from '@elastic/eui';
 import KibanaLayout from '../../layouts/kibana/kibana';
-import SearchSidebar from '../sidebar/sidebar_search';
+import SolutionSidebar from '../solution_sidebar/solution_sidebar';
 
 const StepPlaceholder = ({
   title,
@@ -157,7 +157,9 @@ const StepPlaceholder = ({
       >
         {hasSidebar ? (
           <EuiPageTemplate
-            pageSideBar={<SearchSidebar stepNumber={stepNumber} />}
+            pageSideBar={
+              <SolutionSidebar section={section} stepNumber={stepNumber} />
+            }
           >
             <EuiTitle size="l">
               <h1>{title}</h1>

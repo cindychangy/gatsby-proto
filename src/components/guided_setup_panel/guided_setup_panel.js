@@ -158,9 +158,9 @@ const GuidedSetupPanel = ({
               <EuiText size="m">
                 {guideComplete ? (
                   <p css={guideComplete && mountedStyle}>
-                    You’ve completed the Observability Infrastructure Guide.
-                    Feel free to come back to the Guides for more onboarding
-                    help or a refresher anytime you’d like.
+                    You’ve completed the Guide. Feel free to come back to the
+                    Guides for more onboarding help or a refresher anytime you’d
+                    like.
                   </p>
                 ) : (
                   <p>{data.intro}</p>
@@ -214,11 +214,11 @@ const GuidedSetupPanel = ({
               ))}
               {guideComplete && (
                 <EuiFlexGroup gutterSize="m" justifyContent="flexEnd">
-                  <EuiFlexItem grow={false}>
+                  {/* <EuiFlexItem grow={false}>
                     <EuiButton color="text" onClick={onClick}>
                       Done
                     </EuiButton>
-                  </EuiFlexItem>
+                  </EuiFlexItem> */}
                   <EuiFlexItem grow={false}>
                     <EuiButton onClick={() => navigate('/8.6/kibana')} fill>
                       Start using Elastic
