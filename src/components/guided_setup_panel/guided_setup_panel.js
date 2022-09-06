@@ -214,11 +214,6 @@ const GuidedSetupPanel = ({
               ))}
               {guideComplete && (
                 <EuiFlexGroup gutterSize="m" justifyContent="flexEnd">
-                  {/* <EuiFlexItem grow={false}>
-                    <EuiButton color="text" onClick={onClick}>
-                      Done
-                    </EuiButton>
-                  </EuiFlexItem> */}
                   <EuiFlexItem grow={false}>
                     <EuiButton onClick={() => navigate('/8.6/kibana')} fill>
                       Start using Elastic
@@ -229,21 +224,25 @@ const GuidedSetupPanel = ({
             </EuiFlyoutBody>
             <EuiFlyoutFooter>
               <EuiFlexGroup direction="column" alignItems="center">
-                <EuiButtonEmpty
-                  iconType="exit"
-                  iconSide="right"
-                  onClick={handleOptOut}
-                >
-                  Opt-out of Guided Setup
+                <EuiButtonEmpty onClick={handleOptOut}>
+                  Exit Guided Setup
                 </EuiButtonEmpty>
                 <EuiSpacer size="s" />
                 <EuiText color="subdued" textAlign="center">
-                  Got questions? We’re here to help -{' '}
+                  How’s onboarding? We’d love your {}
                   <a
                     href="https://www.elastic.co/kibana/feedback"
                     style={{ fontWeight: '400' }}
                   >
-                    contact us
+                    feedback.
+                  </a>{' '}
+                  <br />
+                  Other questions? We’re {}
+                  <a
+                    href="https://www.elastic.co/kibana/feedback"
+                    style={{ fontWeight: '400' }}
+                  >
+                    here to help
                   </a>
                   .
                 </EuiText>
