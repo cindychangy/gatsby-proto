@@ -23,7 +23,6 @@ const PanelSection = ({
   stepCompleted,
   isSetupPage,
   stepNumber,
-  section,
   completedSteps,
   forceState,
 }) => {
@@ -41,7 +40,7 @@ const PanelSection = ({
     }, 10);
   }, []);
 
-  const numberStyles = [
+  const accordionStyles = [
     styles.number,
     isSetupPage && step.order === 1 && styles.numberOutline,
     currentStep && styles.numberOutline,
@@ -63,9 +62,13 @@ const PanelSection = ({
             arrowDisplay="right"
             forceState={forceState}
             buttonContent={
-              <EuiFlexGroup gutterSize="none" responsive={false}>
+              <EuiFlexGroup
+                gutterSize="none"
+                responsive={false}
+                css={accordionStyles}
+              >
                 <EuiFlexItem grow={false}>
-                  <div css={numberStyles}>
+                  <div>
                     {(stepCompleted && currentStep) || finishedStep ? (
                       <EuiIcon type="check" size="m" color="white" />
                     ) : (
@@ -79,12 +82,7 @@ const PanelSection = ({
                   </div>
                 </EuiFlexItem>
                 <EuiFlexItem>
-                  <EuiText
-                    css={finishedStep && styles.finishedStepTitle}
-                    style={{ fontWeight: 600 }}
-                  >
-                    {step.title}
-                  </EuiText>
+                  <EuiText style={{ fontWeight: 600 }}>{step.title}</EuiText>
                 </EuiFlexItem>
               </EuiFlexGroup>
             }

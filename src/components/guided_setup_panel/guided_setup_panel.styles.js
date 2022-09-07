@@ -25,29 +25,43 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
   `,
 
   number: css`
-    border: 2px solid ${euiTheme.colors.lightShade};
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
-    margin-right: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `,
-
-  numberDone: css`
-    background: ${euiTheme.colors.success};
-    border: 2px solid ${euiTheme.colors.success};
-    flex-wrap: nowrap;
-    transition: 0.3s ease-in-out;
+    .euiText.euiText--small {
+      border: 2px solid ${euiTheme.colors.lightShade};
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   `,
 
   numberOutline: css`
-    border: 2px solid ${euiTheme.colors.success};
+    .euiText.euiText--small {
+      border: 2px solid ${euiTheme.colors.success};
+    }
   `,
 
-  finishedStepTitle: css`
-    color: ${euiTheme.colors.title};
+  numberDone: css`
+    svg.euiIcon.euiIcon--medium {
+      background: ${euiTheme.colors.success};
+      border: 2px solid ${euiTheme.colors.success};
+      flex-wrap: nowrap;
+      transition: 0.3s ease-in-out;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+
+    .euiText.euiText--medium {
+      color: ${euiTheme.colors.title};
+    }
+
+    .euiAccordion__iconButton--right {
+      display: none;
+    }
   `,
 
   confetti: css`
