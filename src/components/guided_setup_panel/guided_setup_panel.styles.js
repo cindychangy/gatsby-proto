@@ -46,6 +46,10 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     border: 2px solid ${euiTheme.colors.success};
   `,
 
+  finishedStepTitle: css`
+    color: ${euiTheme.colors.title};
+  `,
+
   confetti: css`
   background-repeat: repeat-x;
   background-position: top -10px center;

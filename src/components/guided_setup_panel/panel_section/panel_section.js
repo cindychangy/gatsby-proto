@@ -79,7 +79,12 @@ const PanelSection = ({
                   </div>
                 </EuiFlexItem>
                 <EuiFlexItem>
-                  <EuiText style={{ fontWeight: 600 }}>{step.title}</EuiText>
+                  <EuiText
+                    css={finishedStep && styles.finishedStepTitle}
+                    style={{ fontWeight: 600 }}
+                  >
+                    {step.title}
+                  </EuiText>
                 </EuiFlexItem>
               </EuiFlexGroup>
             }
