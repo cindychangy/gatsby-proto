@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 /*
 Styles here are split up into 2 parts.
-1. Along with these there are also global style overrides located in the src/styles file
+1. Along with these there are also global style overrides located in the src/styles/global.css file
 
 2. GuidedSetupPanelStyles at the bottom of the page are custom styles for this component.
 */
@@ -25,7 +25,7 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
   `,
 
   number: css`
-    .euiText.euiText--small {
+    button.euiAccordion__button .euiText.euiText--small {
       border: 2px solid ${euiTheme.colors.lightShade};
       border-radius: 50%;
       height: 24px;
@@ -37,14 +37,18 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
-  numberOutline: css`
-    .euiText.euiText--small {
+  stepDefault: css`
+    button.euiAccordion__button .euiText.euiText--small {
       border: 2px solid ${euiTheme.colors.success};
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
     }
   `,
 
-  numberDone: css`
-    svg.euiIcon.euiIcon--medium {
+  stepDone: css`
+    svg.euiIcon.euiIcon--medium.euiIcon--customColor {
       background: ${euiTheme.colors.success};
       border: 2px solid ${euiTheme.colors.success};
       flex-wrap: nowrap;
@@ -59,7 +63,7 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
       color: ${euiTheme.colors.title};
     }
 
-    .euiAccordion__iconButton--right {
+    button.euiButtonIcon.euiButtonIcon--text.euiButtonIcon--empty.euiButtonIcon--xSmall.euiAccordion__iconButton.euiAccordion__iconButton--right {
       display: none;
     }
   `,

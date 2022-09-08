@@ -42,11 +42,11 @@ const PanelSection = ({
 
   const accordionStyles = [
     styles.number,
-    isSetupPage && step.order === 1 && styles.numberOutline,
-    currentStep && styles.numberOutline,
-    forceState && styles.numberOutline,
-    stepCompleted && currentStep && styles.numberDone,
-    finishedStep && styles.numberDone,
+    isSetupPage && step.order === 1 && styles.stepDefault,
+    currentStep && styles.stepDefault,
+    forceState && styles.stepDefault,
+    stepCompleted && currentStep && styles.stepDone,
+    finishedStep && styles.stepDone,
   ];
 
   return (
@@ -61,25 +61,20 @@ const PanelSection = ({
             id={`step-${step.order}`}
             arrowDisplay="right"
             forceState={forceState}
+            css={accordionStyles}
             buttonContent={
-              <EuiFlexGroup
-                gutterSize="none"
-                responsive={false}
-                css={accordionStyles}
-              >
+              <EuiFlexGroup gutterSize="none" responsive={false}>
                 <EuiFlexItem grow={false}>
-                  <div>
-                    {(stepCompleted && currentStep) || finishedStep ? (
-                      <EuiIcon type="check" size="m" color="white" />
-                    ) : (
-                      <EuiText
-                        size="s"
-                        style={{ fontWeight: 500, lineHeight: 1.4 }}
-                      >
-                        {step.order}
-                      </EuiText>
-                    )}
-                  </div>
+                  {(stepCompleted && currentStep) || finishedStep ? (
+                    <EuiIcon type="check" size="m" color="white" />
+                  ) : (
+                    <EuiText
+                      size="s"
+                      style={{ fontWeight: 500, lineHeight: 1.4 }}
+                    >
+                      {step.order}
+                    </EuiText>
+                  )}
                 </EuiFlexItem>
                 <EuiFlexItem>
                   <EuiText style={{ fontWeight: 600 }}>{step.title}</EuiText>
