@@ -60,7 +60,7 @@ const PanelSection = ({
           <EuiAccordion
             id={`step-${step.order}`}
             arrowDisplay="right"
-            forceState={forceState}
+            forceState={forceState || (finishedStep && 'closed')}
             css={accordionStyles}
             buttonContent={
               <EuiFlexGroup gutterSize="none" responsive={false}>
