@@ -121,7 +121,6 @@ const GuidedSetupPanel = ({
           ownFocus
           onClose={onClick}
           aria-labelledby="onboarding-guide"
-          // style={{ height: guideComplete ? '745px' : 'auto' }}
         >
           <>
             <EuiFlyoutHeader>
