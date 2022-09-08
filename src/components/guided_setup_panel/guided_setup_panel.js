@@ -113,7 +113,7 @@ const GuidedSetupPanel = ({
           disabled={buttonDisabled}
           fill
         >
-          Guided Setup{isSetupPage ? '' : `: Step ${stepNumber}`}
+          Guided setup{isSetupPage ? '' : `: Step ${stepNumber}`}
         </EuiButton>
       </div>
       {!!guideOpen && (
@@ -224,7 +224,7 @@ const GuidedSetupPanel = ({
             <EuiFlyoutFooter>
               <EuiFlexGroup direction="column" alignItems="center">
                 <EuiButtonEmpty onClick={handleOptOut}>
-                  Exit Guided Setup
+                  Exit guided setup
                 </EuiButtonEmpty>
                 <EuiSpacer size="s" />
                 <EuiText color="subdued" textAlign="center">

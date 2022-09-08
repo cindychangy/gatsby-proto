@@ -7,11 +7,11 @@ const BREADCRUMBS = [
     href: '#',
   },
   {
-    text: 'Guided Setup',
+    text: 'Guided setup',
     href: '../',
   },
   {
-    text: 'Step 2: Tour Elastic Observability',
+    text: 'Step 2: tour Elastic observability',
   },
 ];
 

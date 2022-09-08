@@ -7,11 +7,11 @@ const BREADCRUMBS = [
     href: '#',
   },
   {
-    text: 'Guided Setup',
+    text: 'Guided setup',
     href: '../',
   },
   {
-    text: 'Step 3: Step Three',
+    text: 'Step 3: Step three',
   },
 ];
 
