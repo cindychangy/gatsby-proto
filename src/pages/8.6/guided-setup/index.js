@@ -18,7 +18,7 @@ import {
 import KibanaLayout from '../../../layouts/kibana/kibana';
 import { GuidedSetupStyles } from './guided-setup.styles';
 import { CARD_DATA } from './guided-setup.data';
-import { withPrefix } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 
 const GuidedSetup = () => {
   const { euiTheme } = useEuiTheme();
@@ -88,7 +88,11 @@ const GuidedSetup = () => {
                 <EuiCard
                   display="subdued"
                   image={withPrefix(`/images/${card.image}`)}
-                  onClick={() => handleGuideClick(card.section)}
+                  onClick={
+                    card.title !== 'Observe my data'
+                      ? () => handleGuideClick(card.section)
+                      : () => navigate('pages/integrations')
+                  }
                   paddingSize="l"
                   textAlign="center"
                   title={card.title}
