@@ -14,4 +14,15 @@ export const GuidedSetupStyles = (euiTheme) => ({
     justify-content: center;
     margin: auto;
   `,
+
+  footer: css`
+    span.euiProgress__label {
+      flex-grow: 0;
+      margin-bottom: 5px;
+    }
+
+    span.euiProgress__valueText {
+      color: ${euiTheme.colors.darkShade};
+    }
+  `,
 });

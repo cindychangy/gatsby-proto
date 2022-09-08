@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   EuiSpacer,
   EuiButton,
@@ -10,6 +10,7 @@ import {
   EuiCard,
   EuiFlexItem,
   EuiPanel,
+  EuiProgress,
   EuiFlexGrid,
   EuiHorizontalRule,
   useEuiTheme,
@@ -46,7 +47,7 @@ const GuidedSetup = () => {
     'step-6': '',
   };
 
-  const handleGuideClick = (section, optOut) => {
+  const handleGuideClick = (section) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
     if (section) {
@@ -96,8 +97,26 @@ const GuidedSetup = () => {
                     label: card.section,
                   }}
                   footer={
-                    <div style={{ textAlign: 'center' }}>
-                      <EuiButton fill>View guide</EuiButton>
+                    <div css={styles.footer}>
+                      {card.started && (
+                        <>
+                          <EuiProgress
+                            valueText={`${card.progress}%`}
+                            value={card.progress}
+                            max={100}
+                            size="s"
+                            label="In progress"
+                          />
+                          <EuiSpacer size="l" />
+                        </>
+                      )}
+                      <EuiButton fill>
+                        {card.started === null
+                          ? 'View integrations'
+                          : card.started
+                          ? 'Continue'
+                          : 'View guide'}
+                      </EuiButton>
                     </div>
                   }
                   titleSize="xs"

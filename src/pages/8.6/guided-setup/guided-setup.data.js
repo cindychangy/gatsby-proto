@@ -6,22 +6,26 @@ export const CARD_DATA = [
       'Create a search experience for your websites, applications, workplace content, or anything in between.',
     icon: 'logoElasticsearch',
     section: 'Search',
+    started: false,
   },
   {
-    title: 'Observe my Infrastructure',
+    title: 'Observe my Kubernetes infrastructure',
     image: 'illustration-observability.png',
     description:
-      'Monitor your infrastructure by consolidating your logs, metrics, and traces for end‑to‑end observability.',
+      'Monitor your Kubernetes infrastructure by consolidating your logs and metrics.',
     icon: 'logoObservability',
-    section: 'Observability',
+    section: 'Observe',
+    started: true,
+    progress: 75,
   },
   {
-    title: 'Application Performance Monitoring',
+    title: 'Observe my data',
     image: 'illustration-observability.png',
     description:
-      'Monitor software services and applications in real-time, by collecting performance insights.',
+      'Choose one of our many integrations to bring your data in, and start visualizing it.',
     icon: 'logoSecurity',
-    section: 'Monitoring',
+    section: 'Observe',
+    started: null,
   },
   {
     title: 'Protect my Environment',
@@ -30,5 +34,7 @@ export const CARD_DATA = [
       'Protect your environment by unifying SIEM, endpoint security, and cloud security to protect against threats.',
     icon: 'logoElasticsearch',
     section: 'Security',
+    started: true,
+    progress: 0,
   },
 ];
