@@ -41,7 +41,6 @@ const KibanaLayout = ({
   pageHeader,
   stepNumber,
   breadcrumbs,
-  currentProgress,
   completedSteps,
   hasSidebar,
   children,
@@ -183,7 +182,6 @@ const KibanaLayout = ({
                   confetti={confetti}
                   isSetupPage={isSetupPage}
                   stepNumber={stepNumber}
-                  currentProgress={currentProgress}
                   completedSteps={completedSteps}
                 />,
                 <EuiHeaderSectionItemButton

@@ -31,7 +31,6 @@ const Alert = () => {
       breadcrumbs={BREADCRUMBS}
       section="Observability"
       stepNumber={STEPNUMBER}
-      currentProgress={25}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

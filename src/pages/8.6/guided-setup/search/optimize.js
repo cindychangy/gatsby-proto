@@ -31,7 +31,6 @@ const OptimizeRelevance = () => {
       breadcrumbs={BREADCRUMBS}
       section="Search"
       stepNumber={STEPNUMBER}
-      currentProgress={50}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

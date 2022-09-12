@@ -31,7 +31,6 @@ const DoMore = () => {
       breadcrumbs={BREADCRUMBS}
       section="Observability"
       stepNumber={STEPNUMBER}
-      currentProgress={75}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

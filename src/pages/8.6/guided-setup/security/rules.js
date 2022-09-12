@@ -31,7 +31,6 @@ const Rules = () => {
       breadcrumbs={BREADCRUMBS}
       section="Security"
       stepNumber={STEPNUMBER}
-      currentProgress={45}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

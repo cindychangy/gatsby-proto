@@ -23,7 +23,6 @@ const StepPlaceholder = ({
   breadcrumbs,
   stepNumber,
   section,
-  currentProgress,
   completedSteps,
   hasSidebar,
   hasTour,
@@ -151,7 +150,6 @@ const StepPlaceholder = ({
         onClick={handleGuideClick}
         section={section}
         hasSidebar={hasSidebar}
-        currentProgress={currentProgress}
         stepNumber={stepNumber}
         completedSteps={completedSteps}
       >

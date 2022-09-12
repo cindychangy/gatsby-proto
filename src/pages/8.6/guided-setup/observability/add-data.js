@@ -31,7 +31,6 @@ const AddData = () => {
       breadcrumbs={BREADCRUMBS}
       section="Observability"
       stepNumber={STEPNUMBER}
-      currentProgress={0}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

@@ -31,7 +31,6 @@ const DefendData = () => {
       breadcrumbs={BREADCRUMBS}
       section="Security"
       stepNumber={STEPNUMBER}
-      currentProgress={0}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

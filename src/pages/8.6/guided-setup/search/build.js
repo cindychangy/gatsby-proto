@@ -31,7 +31,6 @@ const SearchExperience = () => {
       breadcrumbs={BREADCRUMBS}
       section="Search"
       stepNumber={STEPNUMBER}
-      currentProgress={25}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

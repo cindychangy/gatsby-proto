@@ -37,7 +37,6 @@ const GuidedSetupPanel = ({
   isSetupPage,
   confetti,
   stepNumber,
-  currentProgress,
   completedSteps,
   onClick,
   handleOptOut,
@@ -45,7 +44,7 @@ const GuidedSetupPanel = ({
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
   const [stepCompleted, setStepCompleted] = useState(false);
-  const [newProgress, setNewProgress] = useState(currentProgress);
+  const [newProgress, setNewProgress] = useState(stepNumber);
   const [guideProgress, setGuideProgress] = useState(completedSteps);
   const [toggleStep, setToggleStep] = useState(stepNumber);
 
@@ -76,7 +75,7 @@ const GuidedSetupPanel = ({
     if (confetti) {
       setTimeout(() => {
         setStepCompleted(true);
-        setNewProgress(currentProgress + 25);
+        setNewProgress(stepNumber + 1);
         setGuideProgress[`step-${stepNumber}`] = 'done';
 
         //so whack, but setting a way to auto toggle to next step
@@ -100,7 +99,7 @@ const GuidedSetupPanel = ({
         }
       }, 2500);
     }
-  }, [confetti, currentProgress]);
+  }, [confetti, newProgress]);
 
   return (
     <>
@@ -182,9 +181,9 @@ const GuidedSetupPanel = ({
               {!isSetupPage && (
                 <>
                   <EuiProgress
-                    valueText={`${newProgress}%`}
-                    value={newProgress}
-                    max={100}
+                    valueText={`${newProgress - 1}/4 steps`}
+                    value={newProgress - 1}
+                    max={4}
                     size="l"
                     label="Progress"
                   />

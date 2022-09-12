@@ -31,7 +31,6 @@ const Alerts = () => {
       breadcrumbs={BREADCRUMBS}
       section="Security"
       stepNumber={STEPNUMBER}
-      currentProgress={75}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />

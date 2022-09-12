@@ -31,7 +31,6 @@ const ReviewAnalytics = () => {
       breadcrumbs={BREADCRUMBS}
       section="Search"
       stepNumber={STEPNUMBER}
-      currentProgress={75}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
       hasTour

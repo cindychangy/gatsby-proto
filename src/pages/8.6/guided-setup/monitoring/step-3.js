@@ -31,7 +31,6 @@ const StepTwo = () => {
       breadcrumbs={BREADCRUMBS}
       section="Monitoring"
       stepNumber={STEPNUMBER}
-      currentProgress={75}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
     />
