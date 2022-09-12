@@ -50,15 +50,20 @@ const KibanaLayout = ({
   const styles = kibanaLayoutStyles(euiTheme);
   const [navIsOpen, setNavIsOpen] = useState(false);
   const [exitGuide, setExitGuide] = useState(false);
+  const [removeGuideButton, setRemoveGuideButton] = useState(false);
 
   let exitGuideModal;
-  const closeModal = () => setExitGuide(false);
 
   const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' });
 
   const handleOptOut = () => {
     onClick();
     setExitGuide(true);
+  };
+
+  const removeGuide = () => {
+    setExitGuide(false);
+    setRemoveGuideButton(true);
   };
 
   const collapsibleNav = (
@@ -141,8 +146,10 @@ const KibanaLayout = ({
           </EuiText>
         </EuiModalBody>
         <EuiModalFooter>
-          <EuiButtonEmpty>Cancel</EuiButtonEmpty>
-          <EuiButton color="warning" onClick={closeModal} fill>
+          <EuiButtonEmpty onClick={() => setExitGuide(false)}>
+            Cancel
+          </EuiButtonEmpty>
+          <EuiButton color="warning" onClick={removeGuide} fill>
             Quit Guide
           </EuiButton>
         </EuiModalFooter>
@@ -172,18 +179,21 @@ const KibanaLayout = ({
             },
             {
               items: [
-                <GuidedSetupPanel
-                  key="onboarding-setup"
-                  onClick={onClick}
-                  handleOptOut={handleOptOut}
-                  guideOpen={guideOpen}
-                  buttonDisabled={buttonDisabled}
-                  section={section}
-                  confetti={confetti}
-                  isSetupPage={isSetupPage}
-                  stepNumber={stepNumber}
-                  completedSteps={completedSteps}
-                />,
+                !removeGuideButton && (
+                  <GuidedSetupPanel
+                    key="onboarding-setup"
+                    onClick={onClick}
+                    handleOptOut={handleOptOut}
+                    guideOpen={guideOpen}
+                    buttonDisabled={buttonDisabled}
+                    section={section}
+                    confetti={confetti}
+                    isSetupPage={isSetupPage}
+                    stepNumber={stepNumber}
+                    completedSteps={completedSteps}
+                  />
+                ),
+                ,
                 <EuiHeaderSectionItemButton
                   key={useGeneratedHtmlId()}
                   aria-label="Account menu"
