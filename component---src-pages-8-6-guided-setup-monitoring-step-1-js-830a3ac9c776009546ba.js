@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[5681],{1568:function(t,e,n){n.r(e);n(67294);var r=n(48437),o=n(23431),p=[{text:"Monitoring",href:"#"},{text:"Guided setup",href:"../"},{text:"Step 1: Step one"}],i={"step-1":"","step-2":"","step-3":"","step-4":""};e.default=function(){return(0,o.tZ)(r.Z,{title:"Monitoring Step 1",breadcrumbs:p,section:"Monitoring",stepNumber:1,completedSteps:i,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-monitoring-step-1-js-830a3ac9c776009546ba.js.map
