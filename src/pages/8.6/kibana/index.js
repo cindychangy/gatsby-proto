@@ -13,7 +13,7 @@ import {
   EuiText,
 } from '@elastic/eui';
 import Navbar from '../../../components/navbar/navbar';
-import { withPrefix } from 'gatsby';
+import { navigate, withPrefix } from 'gatsby';
 
 const KibanaHome = () => {
   return (
@@ -82,9 +82,12 @@ const KibanaHome = () => {
             <EuiSpacer size="l" />
             <EuiFlexGroup justifyContent="flexStart" gutterSize="m">
               <EuiFlexItem grow={false}>
-                <EuiButton iconType="plusInCircle" fill>
-                  Add Integrations
+                <EuiButton fill onClick={() => navigate('/8.6/guided-setup')}>
+                  Launch guided setup
                 </EuiButton>
+              </EuiFlexItem>
+              <EuiFlexItem grow={false}>
+                <EuiButton iconType="plusInCircle">Add Integrations</EuiButton>
               </EuiFlexItem>
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty iconType="documents">
