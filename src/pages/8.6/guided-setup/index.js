@@ -11,6 +11,7 @@ import {
   EuiFlexItem,
   EuiPanel,
   EuiProgress,
+  EuiButtonEmpty,
   EuiFlexGrid,
   EuiHorizontalRule,
   useEuiTheme,
@@ -75,10 +76,7 @@ const GuidedSetup = () => {
           </EuiTitle>
           <EuiSpacer size="s" />
           <EuiText color="subdued" size="m" textAlign="center">
-            <p>
-              Select an option below to get a quick tour of the most valuable
-              features based on your preferences.
-            </p>
+            <p>Select a guide to help you make the most of your data.</p>
           </EuiText>
           <EuiSpacer size="s" />
           <EuiSpacer size="xxl" />
@@ -119,7 +117,15 @@ const GuidedSetup = () => {
                       {card.progress !== 4 && card.progress !== undefined && (
                         <EuiButton fill>Continue</EuiButton>
                       )}
-                      {!card.progress && <EuiButton fill>View Guide</EuiButton>}
+                      {card.progress === 4 && card.progress !== undefined && (
+                        <EuiButtonEmpty></EuiButtonEmpty> //dummy element just align visually
+                      )}
+                      {card.started === false && (
+                        <EuiButton fill>View Guide</EuiButton>
+                      )}
+                      {card.static && (
+                        <EuiButton fill>View integrations</EuiButton>
+                      )}
                     </div>
                   }
                   titleSize="xs"

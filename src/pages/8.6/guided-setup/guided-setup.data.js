@@ -25,7 +25,7 @@ export const CARD_DATA = [
       'Choose one of our many integrations to bring your data in, and start visualizing it.',
     icon: 'logoSecurity',
     section: 'Observe',
-    started: null,
+    static: true,
   },
   {
     title: 'Protect my Environment',
