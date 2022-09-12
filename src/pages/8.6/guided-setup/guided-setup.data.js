@@ -16,7 +16,7 @@ export const CARD_DATA = [
     icon: 'logoObservability',
     section: 'Observe',
     started: true,
-    progress: 75,
+    progress: 2,
   },
   {
     title: 'Observe my data',
@@ -35,6 +35,6 @@ export const CARD_DATA = [
     icon: 'logoElasticsearch',
     section: 'Security',
     started: true,
-    progress: 0,
+    progress: 4,
   },
 ];

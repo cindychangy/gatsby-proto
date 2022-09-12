@@ -105,22 +105,21 @@ const GuidedSetup = () => {
                       {card.started && (
                         <>
                           <EuiProgress
-                            valueText={`${card.progress}%`}
+                            valueText={`${card.progress}/4 steps`}
                             value={card.progress}
-                            max={100}
+                            max={4}
                             size="s"
-                            label="In progress"
+                            label={
+                              card.progress === 4 ? 'Completed' : 'In progress'
+                            }
                           />
                           <EuiSpacer size="l" />
                         </>
                       )}
-                      <EuiButton fill>
-                        {card.started === null
-                          ? 'View integrations'
-                          : card.started
-                          ? 'Continue'
-                          : 'View guide'}
-                      </EuiButton>
+                      {card.progress !== 4 && card.progress !== undefined && (
+                        <EuiButton fill>Continue</EuiButton>
+                      )}
+                      {!card.progress && <EuiButton fill>View Guide</EuiButton>}
                     </div>
                   }
                   titleSize="xs"
