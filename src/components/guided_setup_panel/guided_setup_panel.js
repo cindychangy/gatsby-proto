@@ -22,13 +22,7 @@ import {
 } from '@elastic/eui';
 import PanelSection from './panel_section/panel_section';
 import { GuidedSetupPanelStyles } from './guided_setup_panel.styles';
-
-import {
-  GUIDE_SEARCH,
-  GUIDE_OBSERVABILITY,
-  GUIDE_SECURITY,
-  GUIDE_MONITORING,
-} from './guided_setup_panel.data';
+import { GUIDE_DATA } from '../../pages/8.6/guided-setup/guided-setup.data';
 
 const GuidedSetupPanel = ({
   guideOpen,
@@ -37,48 +31,42 @@ const GuidedSetupPanel = ({
   isSetupPage,
   confetti,
   stepNumber,
-  completedSteps,
   onClick,
   handleOptOut,
 }) => {
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
-  const [stepCompleted, setStepCompleted] = useState(false);
   const [newProgress, setNewProgress] = useState(stepNumber);
-  const [guideProgress, setGuideProgress] = useState(completedSteps);
   const [toggleStep, setToggleStep] = useState(stepNumber);
-
-  const [guideComplete, setGuideComplete] = useState(false);
+  const [showEndState, setShowEndState] = useState(false);
 
   const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
 
   //TBD - what data to set by default
-  let data = GUIDE_OBSERVABILITY;
+  let data = GUIDE_DATA[1];
 
   if (section === 'Search') {
-    data = GUIDE_SEARCH;
+    data = GUIDE_DATA[0];
   }
 
-  if (section === 'Observability') {
-    data = GUIDE_OBSERVABILITY;
+  if (section === 'Observe') {
+    data = GUIDE_DATA[1];
   }
 
   if (section === 'Security') {
-    data = GUIDE_SECURITY;
+    data = GUIDE_DATA[3];
   }
 
-  if (section === 'Monitoring') {
-    data = GUIDE_MONITORING;
-  }
+  let endGuide = data.guideCompleted || showEndState;
 
   useEffect(() => {
     if (confetti) {
       setTimeout(() => {
-        setStepCompleted(true);
+        // setStepCompleted(true);
+        // data.steps[stepNumber - 1].completed = true;
         setNewProgress(stepNumber + 1);
-        setGuideProgress[`step-${stepNumber}`] = 'done';
+        // setGuideProgress[`step-${stepNumber}`] = 'done';
 
-        //so whack, but setting a way to auto toggle to next step
         if (stepNumber === 1) {
           setToggleStep(2);
         }
@@ -94,12 +82,14 @@ const GuidedSetupPanel = ({
         if (stepNumber === 4) {
           setToggleStep(5);
           setTimeout(() => {
-            setGuideComplete(true);
+            setShowEndState(true);
           }, 0);
         }
       }, 2500);
     }
-  }, [confetti, newProgress]);
+  }, [confetti, newProgress, data]);
+
+  console.log(data.steps);
 
   return (
     <>
@@ -134,8 +124,8 @@ const GuidedSetupPanel = ({
               </EuiLink>
               <EuiSpacer size="m" />
               <EuiTitle size="m">
-                <h2 css={guideComplete && mountedStyle}>
-                  {guideComplete ? 'Well done!' : data.title}
+                <h2 css={endGuide && mountedStyle}>
+                  {endGuide ? 'Well done!' : data.title}
                 </h2>
               </EuiTitle>
               <EuiSpacer size="s" />
@@ -145,7 +135,7 @@ const GuidedSetupPanel = ({
             <EuiFlyoutBody>
               {data.media && (
                 <div css={styles.media}>
-                  {guideComplete ? null : (
+                  {endGuide ? null : (
                     <>
                       <div dangerouslySetInnerHTML={{ __html: data.media }} />
                       <EuiSpacer size="m" />
@@ -154,8 +144,8 @@ const GuidedSetupPanel = ({
                 </div>
               )}
               <EuiText size="m">
-                {guideComplete ? (
-                  <p css={guideComplete && mountedStyle}>
+                {endGuide ? (
+                  <p css={endGuide && mountedStyle}>
                     You’ve completed the Guide. Feel free to come back to the
                     Guides for more onboarding help or a refresher anytime you’d
                     like.
@@ -164,7 +154,7 @@ const GuidedSetupPanel = ({
                   <p>{data.intro}</p>
                 )}
               </EuiText>
-              {data.link && !guideComplete && (
+              {data.link && !endGuide && (
                 <>
                   <EuiSpacer size="s" />
                   <EuiButtonEmpty
@@ -195,11 +185,10 @@ const GuidedSetupPanel = ({
                   key={step.order}
                   step={step}
                   confetti={confetti}
-                  stepCompleted={stepCompleted}
                   isSetupPage={isSetupPage}
                   stepNumber={stepNumber}
                   section={section}
-                  completedSteps={completedSteps}
+                  stepComplete={step.stepComplete}
                   forceState={
                     toggleStep === step.order
                       ? 'open'
@@ -207,10 +196,9 @@ const GuidedSetupPanel = ({
                         (isSetupPage && stepNumber === 1) ||
                         (toggleStep - 1 === step.order && 'closed')
                   }
-                  guideProgress={guideProgress}
                 />
               ))}
-              {guideComplete && (
+              {data.guideComplete && (
                 <EuiFlexGroup gutterSize="m" justifyContent="flexEnd">
                   <EuiFlexItem grow={false}>
                     <EuiButton onClick={() => navigate('/8.6/kibana')} fill>

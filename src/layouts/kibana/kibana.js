@@ -41,7 +41,6 @@ const KibanaLayout = ({
   pageHeader,
   stepNumber,
   breadcrumbs,
-  completedSteps,
   hasSidebar,
   children,
   ...rest
@@ -190,7 +189,6 @@ const KibanaLayout = ({
                     confetti={confetti}
                     isSetupPage={isSetupPage}
                     stepNumber={stepNumber}
-                    completedSteps={completedSteps}
                   />
                 ),
                 ,

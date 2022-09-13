@@ -18,7 +18,7 @@ import {
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana/kibana';
 import { GuidedSetupStyles } from './guided-setup.styles';
-import { CARD_DATA } from './guided-setup.data';
+import { GUIDE_DATA } from './guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
 
 const GuidedSetup = () => {
@@ -39,15 +39,6 @@ const GuidedSetup = () => {
     },
   ];
 
-  const COMPLETED_STEPS = {
-    'step-1': '',
-    'step-2': '',
-    'step-3': '',
-    'step-4': '',
-    'step-5': '',
-    'step-6': '',
-  };
-
   const handleGuideClick = (section) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
@@ -65,7 +56,6 @@ const GuidedSetup = () => {
       section={section}
       buttonDisabled={buttonDisabled}
       onClick={() => handleGuideClick(section)}
-      completedSteps={COMPLETED_STEPS}
       isSetupPage={isSetupPage}
     >
       <EuiSpacer size="xxl" />
@@ -81,49 +71,49 @@ const GuidedSetup = () => {
           <EuiSpacer size="s" />
           <EuiSpacer size="xxl" />
           <EuiFlexGrid columns={4} gutterSize="l">
-            {CARD_DATA.map((card, index) => (
+            {GUIDE_DATA.map((guide, index) => (
               <EuiFlexItem key={index}>
                 <EuiCard
                   display="subdued"
-                  image={withPrefix(`/images/${card.image}`)}
+                  image={withPrefix(`/images/${guide.cardImage}`)}
                   onClick={
-                    card.title !== 'Observe my data'
-                      ? () => handleGuideClick(card.section)
+                    guide.cardTitle !== 'Observe my data'
+                      ? () => handleGuideClick(guide.section)
                       : () => navigate('pages/integrations')
                   }
                   paddingSize="l"
                   textAlign="center"
-                  title={card.title}
-                  description={card.description}
+                  title={guide.cardTitle}
+                  description={guide.cardSummary}
                   betaBadgeProps={{
-                    label: card.section,
+                    label: guide.section,
                   }}
                   footer={
                     <div css={styles.footer}>
-                      {card.started && (
+                      {guide.started && (
                         <>
                           <EuiProgress
-                            valueText={`${card.progress}/4 steps`}
-                            value={card.progress}
+                            valueText={`${guide.progress}/4 steps`}
+                            value={guide.progress}
                             max={4}
                             size="s"
                             label={
-                              card.progress === 4 ? 'Completed' : 'In progress'
+                              guide.progress === 4 ? 'Completed' : 'In progress'
                             }
                           />
                           <EuiSpacer size="l" />
                         </>
                       )}
-                      {card.progress !== 4 && card.progress !== undefined && (
+                      {guide.progress !== 4 && guide.progress !== undefined && (
                         <EuiButton fill>Continue</EuiButton>
                       )}
-                      {card.progress === 4 && card.progress !== undefined && (
-                        <EuiButtonEmpty></EuiButtonEmpty> //dummy element just align visually
+                      {guide.progress === 4 && guide.progress !== undefined && (
+                        <EuiButtonEmpty></EuiButtonEmpty> //dummy element justis just to align visually
                       )}
-                      {card.started === false && (
+                      {guide.started === false && (
                         <EuiButton fill>View Guide</EuiButton>
                       )}
-                      {card.static && (
+                      {guide.static && (
                         <EuiButton fill>View integrations</EuiButton>
                       )}
                     </div>

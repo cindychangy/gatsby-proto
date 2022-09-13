@@ -23,7 +23,6 @@ const StepPlaceholder = ({
   breadcrumbs,
   stepNumber,
   section,
-  completedSteps,
   hasSidebar,
   hasTour,
 }) => {
@@ -151,7 +150,6 @@ const StepPlaceholder = ({
         section={section}
         hasSidebar={hasSidebar}
         stepNumber={stepNumber}
-        completedSteps={completedSteps}
       >
         {hasSidebar ? (
           <EuiPageTemplate

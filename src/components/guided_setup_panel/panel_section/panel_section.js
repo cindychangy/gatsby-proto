@@ -20,18 +20,16 @@ import { GuidedSetupPanelStyles } from '../guided_setup_panel.styles';
 const PanelSection = ({
   step,
   confetti,
-  stepCompleted,
   isSetupPage,
   stepNumber,
-  completedSteps,
+  stepComplete,
   forceState,
 }) => {
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
 
   const currentStep = stepNumber === step.order;
-  const finishedStep = completedSteps[`step-${step.order}`] === 'done';
-
+  // const finishedStep = completedSteps[`step-${step.order}`] === 'done';
   useEffect(() => {
     setTimeout(() => {
       document
@@ -45,8 +43,8 @@ const PanelSection = ({
     isSetupPage && step.order === 1 && styles.stepDefault,
     currentStep && styles.stepDefault,
     forceState && styles.stepDefault,
-    stepCompleted && currentStep && styles.stepDone,
-    finishedStep && styles.stepDone,
+    stepComplete && currentStep && styles.stepDone,
+    stepComplete && styles.stepDone,
   ];
 
   return (
@@ -60,12 +58,12 @@ const PanelSection = ({
           <EuiAccordion
             id={`step-${step.order}`}
             arrowDisplay="right"
-            forceState={forceState || (finishedStep && 'closed')}
+            forceState={forceState || (stepComplete && 'closed')}
             css={accordionStyles}
             buttonContent={
               <EuiFlexGroup gutterSize="none" responsive={false}>
                 <EuiFlexItem grow={false}>
-                  {(stepCompleted && currentStep) || finishedStep ? (
+                  {(stepComplete && currentStep) || stepComplete ? (
                     <EuiIcon type="check" size="m" color="white" />
                   ) : (
                     <EuiText
@@ -86,7 +84,7 @@ const PanelSection = ({
           >
             <EuiPanel
               paddingSize="none"
-              css={confetti && currentStep && !stepCompleted && styles.confetti}
+              css={confetti && currentStep && !stepComplete && styles.confetti}
             >
               <EuiSpacer size="s" />
               <EuiText
@@ -107,7 +105,7 @@ const PanelSection = ({
 
               {(isSetupPage && step.order !== 1) ||
               (!isSetupPage && step.order === stepNumber) ||
-              finishedStep ? null : (
+              stepComplete ? null : (
                 <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
                   <EuiFlexItem grow={false}>
                     <EuiSpacer size="m" />
