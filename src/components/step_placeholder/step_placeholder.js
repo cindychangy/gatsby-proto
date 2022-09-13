@@ -163,8 +163,21 @@ const StepPlaceholder = ({
               <h1>{title}</h1>
             </EuiTitle>
             <EuiSpacer size="xl" />
-            <EuiLoadingContent lines={10} />
+            <EuiFlexGroup style={{ maxWidth: '1000px' }}>
+              <EuiFlexItem>
+                <EuiLoadingContent lines={8} />
+              </EuiFlexItem>
+              <EuiFlexItem>
+                <EuiLoadingContent lines={6} />
+              </EuiFlexItem>
+            </EuiFlexGroup>
             <EuiSpacer size="xxl" />
+            <EuiFlexGroup style={{ maxWidth: '1000px' }}>
+              <EuiFlexItem>
+                <EuiLoadingContent lines={12} />
+              </EuiFlexItem>
+            </EuiFlexGroup>
+            <EuiSpacer size="l" />
             {!hasTour && (
               <EuiButton onClick={handleCompleteStep} fill>
                 Complete this step
