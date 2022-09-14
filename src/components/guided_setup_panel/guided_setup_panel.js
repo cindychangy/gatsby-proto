@@ -33,17 +33,17 @@ const GuidedSetupPanel = ({
   stepNumber,
   onClick,
   handleOptOut,
+  completedSteps,
 }) => {
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
+
+  const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
+  let data = GUIDE_DATA[1];
+
   const [newProgress, setNewProgress] = useState(stepNumber);
   const [toggleStep, setToggleStep] = useState(stepNumber);
   const [showEndState, setShowEndState] = useState(false);
-
-  const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
-
-  //TBD - what data to set by default
-  let data = GUIDE_DATA[1];
 
   if (section === 'Search') {
     data = GUIDE_DATA[0];
@@ -58,14 +58,13 @@ const GuidedSetupPanel = ({
   }
 
   let endGuide = data.guideCompleted || showEndState;
+  const [guideProgress, setGuideProgress] = useState(completedSteps);
 
   useEffect(() => {
     if (confetti) {
       setTimeout(() => {
-        // setStepCompleted(true);
-        // data.steps[stepNumber - 1].completed = true;
+        completedSteps[`step-${stepNumber}`] = 'done';
         setNewProgress(stepNumber + 1);
-        // setGuideProgress[`step-${stepNumber}`] = 'done';
 
         if (stepNumber === 1) {
           setToggleStep(2);
@@ -87,9 +86,7 @@ const GuidedSetupPanel = ({
         }
       }, 2500);
     }
-  }, [confetti, newProgress, data]);
-
-  console.log(data.steps);
+  }, [confetti, newProgress, data, completedSteps]);
 
   return (
     <>
@@ -189,6 +186,7 @@ const GuidedSetupPanel = ({
                   stepNumber={stepNumber}
                   section={section}
                   stepComplete={step.stepComplete}
+                  completedSteps={completedSteps}
                   forceState={
                     toggleStep === step.order
                       ? 'open'

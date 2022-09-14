@@ -18,8 +18,8 @@ const BREADCRUMBS = [
 const STEPNUMBER = 1;
 
 const COMPLETED_STEPS = {
-  'step-1': '',
-  'step-2': '',
+  'step-1': 'done',
+  'step-2': 'done',
   'step-3': '',
   'step-4': '',
 };

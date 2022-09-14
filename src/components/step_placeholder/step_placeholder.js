@@ -25,6 +25,7 @@ const StepPlaceholder = ({
   section,
   hasSidebar,
   hasTour,
+  completedSteps,
 }) => {
   const [guideOpen, setGuide] = useState(false);
   const [confetti, setConfetti] = useState(false);
@@ -150,6 +151,7 @@ const StepPlaceholder = ({
         section={section}
         hasSidebar={hasSidebar}
         stepNumber={stepNumber}
+        completedSteps={completedSteps}
       >
         {hasSidebar ? (
           <EuiPageTemplate

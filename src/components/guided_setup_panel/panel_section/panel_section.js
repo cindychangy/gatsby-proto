@@ -23,13 +23,15 @@ const PanelSection = ({
   isSetupPage,
   stepNumber,
   stepComplete,
+  completedSteps,
   forceState,
 }) => {
   const { euiTheme } = useEuiTheme();
   const styles = GuidedSetupPanelStyles(euiTheme);
 
   const currentStep = stepNumber === step.order;
-  // const finishedStep = completedSteps[`step-${step.order}`] === 'done';
+  const nowFinished = completedSteps[`step-${step.order}`] === 'done';
+
   useEffect(() => {
     setTimeout(() => {
       document
@@ -44,7 +46,7 @@ const PanelSection = ({
     currentStep && styles.stepDefault,
     forceState && styles.stepDefault,
     stepComplete && currentStep && styles.stepDone,
-    stepComplete && styles.stepDone,
+    nowFinished && styles.stepDone,
   ];
 
   return (
@@ -63,7 +65,9 @@ const PanelSection = ({
             buttonContent={
               <EuiFlexGroup gutterSize="none" responsive={false}>
                 <EuiFlexItem grow={false}>
-                  {(stepComplete && currentStep) || stepComplete ? (
+                  {(stepComplete && currentStep) ||
+                  stepComplete ||
+                  nowFinished ? (
                     <EuiIcon type="check" size="m" color="white" />
                   ) : (
                     <EuiText

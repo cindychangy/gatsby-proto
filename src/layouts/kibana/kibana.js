@@ -43,6 +43,7 @@ const KibanaLayout = ({
   breadcrumbs,
   hasSidebar,
   children,
+  completedSteps,
   ...rest
 }) => {
   const { euiTheme } = useEuiTheme();
@@ -189,6 +190,7 @@ const KibanaLayout = ({
                     confetti={confetti}
                     isSetupPage={isSetupPage}
                     stepNumber={stepNumber}
+                    completedSteps={completedSteps}
                   />
                 ),
                 ,
