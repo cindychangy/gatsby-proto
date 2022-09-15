@@ -2,6 +2,7 @@
 import { jsx } from '@emotion/react';
 import { useEffect } from 'react';
 import { navigate } from 'gatsby';
+import { css } from '@emotion/react';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -77,14 +78,23 @@ const PanelSection = ({
                   ) : (
                     <EuiText
                       size="s"
-                      style={{ fontWeight: 500, lineHeight: 1.4 }}
+                      css={css`
+                        font-weight: ${euiTheme.font.weight.medium};
+                        lineheight: 1.4;
+                      `}
                     >
                       {step.order}
                     </EuiText>
                   )}
                 </EuiFlexItem>
                 <EuiFlexItem>
-                  <EuiText style={{ fontWeight: 600 }}>{step.title}</EuiText>
+                  <EuiText
+                    css={css`
+                      font-weight: ${euiTheme.font.weight.semiBold};
+                    `}
+                  >
+                    {step.title}
+                  </EuiText>
                 </EuiFlexItem>
               </EuiFlexGroup>
             }
@@ -98,7 +108,6 @@ const PanelSection = ({
               <EuiSpacer size="s" />
               <EuiText
                 size="s"
-                style={{ color: '#1A1C21' }}
                 dangerouslySetInnerHTML={{ __html: step.description }}
               />
               {step.link && (

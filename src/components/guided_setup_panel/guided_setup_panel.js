@@ -2,6 +2,7 @@
 import { jsx } from '@emotion/react';
 import React, { useEffect, useState } from 'react';
 import { navigate, withPrefix } from 'gatsby';
+import { css } from '@emotion/react';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -155,7 +156,9 @@ const GuidedSetupPanel = ({
                     <EuiLink
                       target="_blank"
                       href={data.link.url}
-                      style={{ fontWeight: 400 }}
+                      css={css`
+                        font-weight: ${euiTheme.font.weight.regular};
+                      `}
                     >
                       {data.link.title}
                     </EuiLink>
@@ -220,7 +223,9 @@ const GuidedSetupPanel = ({
                   How’s onboarding? We’d love your {}
                   <a
                     href="https://www.elastic.co/kibana/feedback"
-                    style={{ fontWeight: '400' }}
+                    css={css`
+                      font-weight: ${euiTheme.font.weight.regular};
+                    `}
                   >
                     feedback.
                   </a>{' '}
@@ -228,7 +233,9 @@ const GuidedSetupPanel = ({
                   Other questions? We’re {}
                   <a
                     href="https://www.elastic.co/kibana/feedback"
-                    style={{ fontWeight: '400' }}
+                    css={css`
+                      font-weight: ${euiTheme.font.weight.regular};
+                    `}
                   >
                     here to help
                   </a>
