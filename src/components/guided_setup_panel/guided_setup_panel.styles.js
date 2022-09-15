@@ -24,7 +24,7 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
-  number: css`
+  step: css`
     button.euiAccordion__button .euiText.euiText--small {
       border: 2px solid ${euiTheme.colors.lightShade};
       border-radius: 50%;
@@ -37,7 +37,7 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
-  stepDefault: css`
+  stepOutline: css`
     button.euiAccordion__button .euiText.euiText--small {
       border: 2px solid ${euiTheme.colors.success};
       border-radius: 50%;

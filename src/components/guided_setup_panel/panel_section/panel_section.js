@@ -32,6 +32,10 @@ const PanelSection = ({
 
   const currentStep = stepNumber === step.order;
   const nowFinished = completedSteps[`step-${step.order}`] === 'done';
+  const SearchInitialSteps =
+    isSetupPage && section === 'Search' && step.order === 1;
+  const ObserveInitialSteps =
+    isSetupPage && section === 'Observe' && step.order === 3;
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,13 +46,15 @@ const PanelSection = ({
   }, []);
 
   const accordionStyles = [
-    styles.number,
-    isSetupPage && step.order === 1 && styles.stepDefault,
-    currentStep && styles.stepDefault,
-    forceState && styles.stepDefault,
+    styles.step,
+    isSetupPage && step.order === 1 && styles.stepOutline,
+    currentStep && styles.stepOutline,
+    forceState && styles.stepOutline,
     stepComplete && currentStep && styles.stepDone,
     nowFinished && styles.stepDone,
   ];
+
+  console.log(currentStep);
 
   return (
     <div id={currentStep && 'currentStep'}>
@@ -107,9 +113,9 @@ const PanelSection = ({
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>
               )}
-
-              {(isSetupPage && section === 'Search' && step.order === 1) ||
-              !stepComplete ? (
+              {SearchInitialSteps ||
+              ObserveInitialSteps ||
+              (!isSetupPage && !currentStep) ? (
                 <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
                   <EuiFlexItem grow={false}>
                     <EuiSpacer size="m" />
