@@ -171,7 +171,11 @@ const GuidedSetupPanel = ({
                     value={Object.keys(completedSteps).length}
                     max={4}
                     size="l"
-                    label="Progress"
+                    label={
+                      Object.keys(completedSteps).length === 4
+                        ? 'Completed'
+                        : 'Progress'
+                    }
                   />
                   <EuiSpacer size="s" />
                 </>
