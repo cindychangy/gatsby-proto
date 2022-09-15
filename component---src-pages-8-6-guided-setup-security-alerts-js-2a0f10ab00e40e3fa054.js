@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[9577],{92971:function(e,t,r){r.r(t);r(67294);var n=r(48437),s=r(23431),u=[{text:"Security",href:"#"},{text:"Setup guide",href:"../"},{text:"Step 3: view alerts"}],i={"step-1":"done","step-2":"done"};t.default=function(){return(0,s.tZ)(n.Z,{title:"View Alerts",breadcrumbs:u,section:"Security",stepNumber:3,completedSteps:i,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-security-alerts-js-2a0f10ab00e40e3fa054.js.map
