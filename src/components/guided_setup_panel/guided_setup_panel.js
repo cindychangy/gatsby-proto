@@ -42,6 +42,7 @@ const GuidedSetupPanel = ({
   const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
   const [toggleStep, setToggleStep] = useState(stepNumber);
   const [showEndState, setShowEndState] = useState(false);
+  const [showZeroState, setShowZeroState] = useState(0);
 
   let data = GUIDE_DATA[1];
 
@@ -66,6 +67,7 @@ const GuidedSetupPanel = ({
 
         if (stepNumber === 1) {
           setToggleStep(2);
+          setShowZeroState(1);
         }
 
         if (stepNumber === 2) {
@@ -171,7 +173,11 @@ const GuidedSetupPanel = ({
                   <EuiSpacer size="l" />
                   <EuiProgress
                     valueText={`${Object.keys(completedSteps).length}/4 steps`}
-                    value={Object.keys(completedSteps).length}
+                    value={
+                      stepNumber === 1
+                        ? showZeroState
+                        : Object.keys(completedSteps).length
+                    }
                     max={4}
                     size="l"
                     label={
