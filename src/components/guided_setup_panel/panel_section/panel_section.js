@@ -54,8 +54,6 @@ const PanelSection = ({
     nowFinished && styles.stepDone,
   ];
 
-  console.log(currentStep);
-
   return (
     <div id={currentStep && 'currentStep'}>
       <EuiFlexGroup

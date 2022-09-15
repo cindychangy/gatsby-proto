@@ -20,8 +20,6 @@ const STEPNUMBER = 3;
 const COMPLETED_STEPS = {
   'step-1': 'done',
   'step-2': 'done',
-  'step-3': '',
-  'step-4': '',
 };
 
 const Alert = () => {

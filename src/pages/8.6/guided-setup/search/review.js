@@ -21,7 +21,6 @@ const COMPLETED_STEPS = {
   'step-1': 'done',
   'step-2': 'done',
   'step-3': 'done',
-  'step-4': '',
 };
 
 const ReviewAnalytics = () => {

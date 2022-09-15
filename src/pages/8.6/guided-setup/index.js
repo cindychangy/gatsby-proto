@@ -41,20 +41,13 @@ const GuidedSetup = () => {
   let COMPLETED_STEPS;
 
   if (section === 'Search') {
-    COMPLETED_STEPS = {
-      'step-1': '',
-      'step-2': '',
-      'step-3': '',
-      'step-4': '',
-    };
+    COMPLETED_STEPS = {};
   }
 
   if (section === 'Observe') {
     COMPLETED_STEPS = {
       'step-1': 'done',
       'step-2': 'done',
-      'step-3': '',
-      'step-4': '',
     };
   }
 

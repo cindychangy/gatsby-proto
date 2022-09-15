@@ -39,11 +39,10 @@ const GuidedSetupPanel = ({
   const styles = GuidedSetupPanelStyles(euiTheme);
 
   const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
-  let data = GUIDE_DATA[1];
-
-  const [newProgress, setNewProgress] = useState(stepNumber);
   const [toggleStep, setToggleStep] = useState(stepNumber);
   const [showEndState, setShowEndState] = useState(false);
+
+  let data = GUIDE_DATA[1];
 
   if (section === 'Search') {
     data = GUIDE_DATA[0];
@@ -63,7 +62,6 @@ const GuidedSetupPanel = ({
     if (confetti) {
       setTimeout(() => {
         completedSteps[`step-${stepNumber}`] = 'done';
-        setNewProgress(stepNumber + 1);
 
         if (stepNumber === 1) {
           setToggleStep(2);
@@ -85,7 +83,7 @@ const GuidedSetupPanel = ({
         }
       }, 2500);
     }
-  }, [confetti, newProgress, data, completedSteps]);
+  }, [confetti, data, completedSteps]);
 
   return (
     <>
@@ -165,12 +163,12 @@ const GuidedSetupPanel = ({
                 </>
               )}
               <EuiSpacer size="xs" />
-              {!isSetupPage && (
+              {Object.keys(completedSteps).length !== 0 && (
                 <>
                   <EuiSpacer size="l" />
                   <EuiProgress
-                    valueText={`${newProgress - 1}/4 steps`}
-                    value={newProgress - 1}
+                    valueText={`${Object.keys(completedSteps).length}/4 steps`}
+                    value={Object.keys(completedSteps).length}
                     max={4}
                     size="l"
                     label="Progress"
@@ -202,7 +200,7 @@ const GuidedSetupPanel = ({
                 <EuiFlexGroup gutterSize="m" justifyContent="flexEnd">
                   <EuiFlexItem grow={false}>
                     <EuiButton onClick={() => navigate('/8.6/kibana')} fill>
-                      Start using Elastic
+                      Continue using Elastic
                     </EuiButton>
                   </EuiFlexItem>
                 </EuiFlexGroup>

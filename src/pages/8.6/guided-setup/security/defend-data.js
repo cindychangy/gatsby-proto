@@ -19,9 +19,6 @@ const STEPNUMBER = 1;
 
 const COMPLETED_STEPS = {
   'step-1': '',
-  'step-2': '',
-  'step-3': '',
-  'step-4': '',
 };
 
 const DefendData = () => {
