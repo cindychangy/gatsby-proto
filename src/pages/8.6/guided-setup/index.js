@@ -6,7 +6,6 @@ import {
   EuiButton,
   EuiTitle,
   EuiText,
-  EuiLink,
   EuiCard,
   EuiFlexItem,
   EuiPanel,
@@ -95,7 +94,7 @@ const GuidedSetup = () => {
             <h1>What would you like to do&nbsp;first?</h1>
           </EuiTitle>
           <EuiSpacer size="s" />
-          <EuiText color="subdued" size="m" textAlign="center">
+          <EuiText color="text" size="m" textAlign="center">
             <p>Select a guide to help you make the most of your data.</p>
           </EuiText>
           <EuiSpacer size="s" />
@@ -155,9 +154,17 @@ const GuidedSetup = () => {
           </EuiFlexGrid>
           <EuiHorizontalRule margin="xl" />
           <EuiText size="s" textAlign="center">
-            <EuiLink href="../kibana">
-              I'd like to do something else (Skip)
-            </EuiLink>
+            {/* <EuiLink href="../kibana">
+              I'd like to do something else (skip)
+            </EuiLink> */}
+            <EuiButtonEmpty
+              iconSide="right"
+              iconType="arrowDown"
+              iconSize="m"
+              onClick={() => navigate('./kibana')}
+            >
+              I'd like to do something else (skip)
+            </EuiButtonEmpty>
           </EuiText>
         </div>
       </EuiPanel>
