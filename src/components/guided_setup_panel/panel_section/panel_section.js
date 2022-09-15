@@ -24,6 +24,7 @@ const PanelSection = ({
   stepNumber,
   stepComplete,
   completedSteps,
+  section,
   forceState,
 }) => {
   const { euiTheme } = useEuiTheme();
@@ -107,9 +108,8 @@ const PanelSection = ({
                 </EuiButtonEmpty>
               )}
 
-              {(isSetupPage && step.order !== 1) ||
-              (!isSetupPage && step.order === stepNumber) ||
-              stepComplete ? null : (
+              {(isSetupPage && section === 'Search' && step.order === 1) ||
+              !stepComplete ? (
                 <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
                   <EuiFlexItem grow={false}>
                     <EuiSpacer size="m" />
@@ -123,7 +123,7 @@ const PanelSection = ({
                     </EuiButton>
                   </EuiFlexItem>
                 </EuiFlexGroup>
-              )}
+              ) : null}
             </EuiPanel>
           </EuiAccordion>
           <EuiHorizontalRule margin="l" />

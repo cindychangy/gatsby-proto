@@ -58,7 +58,6 @@ const GuidedSetupPanel = ({
   }
 
   let endGuide = data.guideCompleted || showEndState;
-  const [guideProgress, setGuideProgress] = useState(completedSteps);
 
   useEffect(() => {
     if (confetti) {
@@ -191,8 +190,8 @@ const GuidedSetupPanel = ({
                     toggleStep === step.order
                       ? 'open'
                       : '' ||
-                        (isSetupPage && stepNumber === 1) ||
-                        (toggleStep - 1 === step.order && 'closed')
+                        (toggleStep - 1 === step.order && 'closed') ||
+                        (section === 'Observe' && step.order === 3 && 'open')
                   }
                 />
               ))}

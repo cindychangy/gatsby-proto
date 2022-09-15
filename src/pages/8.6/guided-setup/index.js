@@ -39,6 +39,35 @@ const GuidedSetup = () => {
     },
   ];
 
+  let COMPLETED_STEPS;
+
+  if (section === 'Search') {
+    COMPLETED_STEPS = {
+      'step-1': '',
+      'step-2': '',
+      'step-3': '',
+      'step-4': '',
+    };
+  }
+
+  if (section === 'Observe') {
+    COMPLETED_STEPS = {
+      'step-1': 'done',
+      'step-2': 'done',
+      'step-3': '',
+      'step-4': '',
+    };
+  }
+
+  if (section === 'Security') {
+    COMPLETED_STEPS = {
+      'step-1': 'done',
+      'step-2': 'done',
+      'step-3': 'done',
+      'step-4': 'done',
+    };
+  }
+
   const handleGuideClick = (section) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
@@ -56,6 +85,7 @@ const GuidedSetup = () => {
       section={section}
       buttonDisabled={buttonDisabled}
       onClick={() => handleGuideClick(section)}
+      completedSteps={COMPLETED_STEPS}
       isSetupPage={isSetupPage}
     >
       <EuiSpacer size="xxl" />
