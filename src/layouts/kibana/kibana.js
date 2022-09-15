@@ -138,11 +138,13 @@ const KibanaLayout = ({
         <EuiModalBody>
           <EuiSpacer size="m" />
           <EuiTitle size="m">
-            <h2>Are you sure you want to quit this setup guide?</h2>
+            <h2>Quit this setup guide and discard progress?</h2>
           </EuiTitle>
           <EuiSpacer size="m" />
           <EuiText>
-            <p>You can restart guided setup from the Kibana Hompage.</p>
+            <p>
+              You can restart anytime, just click Setup guide on the homepage..
+            </p>
           </EuiText>
         </EuiModalBody>
         <EuiModalFooter>
