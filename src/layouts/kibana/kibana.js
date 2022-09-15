@@ -143,7 +143,7 @@ const KibanaLayout = ({
           <EuiSpacer size="m" />
           <EuiText>
             <p>
-              You can restart anytime, just click Setup guide on the homepage..
+              You can restart anytime, just click Setup guide on the homepage.
             </p>
           </EuiText>
         </EuiModalBody>
