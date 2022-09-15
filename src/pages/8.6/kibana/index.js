@@ -83,7 +83,7 @@ const KibanaHome = () => {
             <EuiFlexGroup justifyContent="flexStart" gutterSize="m">
               <EuiFlexItem grow={false}>
                 <EuiButton fill onClick={() => navigate('/8.6/guided-setup')}>
-                  Launch guided setup
+                  Launch setup guide
                 </EuiButton>
               </EuiFlexItem>
               <EuiFlexItem grow={false}>

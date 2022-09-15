@@ -34,7 +34,7 @@ const GuidedSetup = () => {
       href: '#',
     },
     {
-      text: 'Guided setup',
+      text: 'Setup guide',
     },
   ];
 
