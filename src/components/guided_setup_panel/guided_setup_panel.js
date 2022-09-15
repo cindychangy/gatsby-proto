@@ -152,20 +152,22 @@ const GuidedSetupPanel = ({
               </EuiText>
               {data.link && !endGuide && (
                 <>
-                  <EuiSpacer size="s" />
-                  <EuiButtonEmpty
-                    iconType="popout"
-                    iconSide="right"
-                    href={data.link.url}
-                    style={{ marginLeft: '-8px' }}
-                  >
-                    {data.link.title}
-                  </EuiButtonEmpty>
+                  <EuiSpacer size="m" />
+                  <EuiText size="m">
+                    <EuiLink
+                      target="_blank"
+                      href={data.link.url}
+                      style={{ fontWeight: 400 }}
+                    >
+                      {data.link.title}
+                    </EuiLink>
+                  </EuiText>
                 </>
               )}
-              <EuiHorizontalRule />
+              <EuiSpacer size="xs" />
               {!isSetupPage && (
                 <>
+                  <EuiSpacer size="l" />
                   <EuiProgress
                     valueText={`${newProgress - 1}/4 steps`}
                     value={newProgress - 1}
@@ -173,9 +175,10 @@ const GuidedSetupPanel = ({
                     size="l"
                     label="Progress"
                   />
-                  <EuiSpacer size="xxl" />
+                  <EuiSpacer size="s" />
                 </>
               )}
+              <EuiHorizontalRule />
               {data.steps.map((step) => (
                 <PanelSection
                   key={step.order}

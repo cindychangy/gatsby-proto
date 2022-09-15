@@ -154,14 +154,11 @@ const GuidedSetup = () => {
           </EuiFlexGrid>
           <EuiHorizontalRule margin="xl" />
           <EuiText size="s" textAlign="center">
-            {/* <EuiLink href="../kibana">
-              I'd like to do something else (skip)
-            </EuiLink> */}
             <EuiButtonEmpty
               iconSide="right"
               iconType="arrowDown"
               iconSize="m"
-              onClick={() => navigate('./kibana')}
+              onClick={() => navigate('../kibana')}
             >
               I'd like to do something else (skip)
             </EuiButtonEmpty>

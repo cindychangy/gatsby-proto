@@ -17,7 +17,7 @@ export const GUIDE_DATA = [
     },
     steps: [
       {
-        title: 'Add Data',
+        title: 'Add data',
         description:
           '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
         link: {
