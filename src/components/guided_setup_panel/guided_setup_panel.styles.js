@@ -9,7 +9,7 @@ Styles here are split up into 2 parts.
 
 export const GuidedSetupPanelStyles = (euiTheme) => ({
   buttonContainer: css`
-    margin: 0 20px;
+    margin: 0 10px;
   `,
 
   panelFooter: css`

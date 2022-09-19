@@ -6,22 +6,92 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
   EuiCard,
+  EuiIcon,
   EuiButton,
   EuiButtonEmpty,
   EuiImage,
+  EuiAvatar,
+  EuiHeader,
+  EuiHeaderLogo,
+  EuiHeaderSectionItemButton,
   EuiHorizontalRule,
   EuiText,
 } from '@elastic/eui';
-import Navbar from '../../../components/navbar/navbar';
 import { navigate, withPrefix } from 'gatsby';
 
 const KibanaHome = () => {
   return (
     <>
-      <Navbar
-        crumbs={[
+      <EuiHeader
+        theme="dark"
+        sections={[
           {
-            text: 'Home',
+            items: [
+              <EuiHeaderLogo iconType="logoElastic">Elastic</EuiHeaderLogo>,
+            ],
+            borders: 'none',
+          },
+          {
+            items: [
+              <EuiButton
+                color="success"
+                size="s"
+                onClick={() => navigate('../../8.6/guided-setup')}
+                key="onboarding-setup-button"
+                fill
+                style={{ margin: '0 10px' }}
+              >
+                Setup guide
+              </EuiButton>,
+              <EuiHeaderSectionItemButton flush="both">
+                <EuiAvatar
+                  color="#25282f"
+                  iconType="help"
+                  name="account"
+                  onClick={() => setIsAccountOpen(!isAccountOpen)}
+                />
+              </EuiHeaderSectionItemButton>,
+              <EuiHeaderSectionItemButton flush="both">
+                <EuiAvatar color="#25282f" iconType="cheer" name="account" />
+              </EuiHeaderSectionItemButton>,
+              <EuiHeaderSectionItemButton key="user" aria-label="Account menu">
+                <EuiAvatar size="s" name="Else Lane" color="#06bfb4" />
+              </EuiHeaderSectionItemButton>,
+            ],
+            borders: 'none',
+          },
+        ]}
+      />
+      <EuiHeader
+        sections={[
+          {
+            items: [
+              <EuiHeaderSectionItemButton
+                aria-label="menu navigation"
+                flush="both"
+              >
+                <EuiIcon type="menu" />
+              </EuiHeaderSectionItemButton>,
+              <EuiHeaderSectionItemButton
+                aria-label="menu navigation"
+                flush="both"
+              >
+                <EuiAvatar name="Elastic Space" size="s" type="space" />
+              </EuiHeaderSectionItemButton>,
+            ],
+            breadcrumbs: [
+              {
+                text: 'Cloud',
+                href: '#',
+              },
+              {
+                text: 'Deployments',
+                href: '#',
+              },
+              {
+                text: 'Create',
+              },
+            ],
           },
         ]}
       />
