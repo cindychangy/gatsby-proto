@@ -82,7 +82,11 @@ const KibanaHome = () => {
             <EuiSpacer size="l" />
             <EuiFlexGroup justifyContent="flexStart" gutterSize="m">
               <EuiFlexItem grow={false}>
-                <EuiButton fill onClick={() => navigate('/8.6/guided-setup')}>
+                <EuiButton
+                  fill
+                  onClick={() => navigate('/8.6/guided-setup')}
+                  iconType="plusInCircle"
+                >
                   Launch setup guide
                 </EuiButton>
               </EuiFlexItem>
