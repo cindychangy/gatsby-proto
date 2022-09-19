@@ -62,114 +62,120 @@ const KibanaLayout = ({
   const Account = () => {
     const [isAccountOpen, setIsAccountOpen] = useState(false);
     return (
-      <EuiPopover
-        anchorPosition="downRight"
-        button={
-          <EuiAvatar
-            color="#25282f"
-            iconType="help"
-            name="account"
-            onClick={() => setIsAccountOpen(!isAccountOpen)}
-          />
-        }
-        closePopover={closePopover}
-        isOpen={isAccountOpen}
-        panelPaddingSize="none"
-      >
-        <EuiContextMenu
-          initialPanelId={0}
-          panels={[
-            {
-              id: 0,
-              title: 'geauxtrude@suedemont.com',
-              items: [
-                {
-                  name: 'Profile',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="user"
-                      size="m"
-                    />
-                  ),
-                },
-                {
-                  name: 'Billing',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="payment"
-                      size="m"
-                    />
-                  ),
-                },
-                {
-                  name: 'Organization',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="users"
-                      size="m"
-                    />
-                  ),
-                },
-                {
-                  name: 'Preferences',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="controlsHorizontal"
-                      size="m"
-                    />
-                  ),
-                },
-                {
-                  name: 'Help & Support',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="questionInCircle"
-                      size="m"
-                    />
-                  ),
-                  panel: 1,
-                },
-                {
-                  name: 'Log out',
-                  icon: (
-                    <EuiIcon
-                      color={euiTheme.colors.mediumShade}
-                      type="exit"
-                      size="m"
-                    />
-                  ),
-                  onClick: () => {
-                    navigate('/');
-                  },
-                },
-              ],
-            },
-            {
-              id: 1,
-              title: 'Help & Support',
-              items: [
-                {
-                  name: 'Documentation',
-                },
-                {
-                  name: 'Ask Elastic',
-                },
-                {
-                  name: 'Give feedback',
-                },
-                {
-                  name: 'Open an issue in GitHub',
-                },
-              ],
-            },
-          ]}
-        />
-      </EuiPopover>
+      // <EuiPopover
+      //   anchorPosition="downRight"
+      //   button={
+      //     <EuiAvatar
+      //       color="#25282f"
+      //       iconType="help"
+      //       name="account"
+      //       onClick={() => setIsAccountOpen(!isAccountOpen)}
+      //     />
+      //   }
+      //   closePopover={closePopover}
+      //   isOpen={isAccountOpen}
+      //   panelPaddingSize="none"
+      // >
+      //   <EuiContextMenu
+      //     initialPanelId={0}
+      //     panels={[
+      //       {
+      //         id: 0,
+      //         title: 'geauxtrude@suedemont.com',
+      //         items: [
+      //           {
+      //             name: 'Profile',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="user"
+      //                 size="m"
+      //               />
+      //             ),
+      //           },
+      //           {
+      //             name: 'Billing',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="payment"
+      //                 size="m"
+      //               />
+      //             ),
+      //           },
+      //           {
+      //             name: 'Organization',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="users"
+      //                 size="m"
+      //               />
+      //             ),
+      //           },
+      //           {
+      //             name: 'Preferences',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="controlsHorizontal"
+      //                 size="m"
+      //               />
+      //             ),
+      //           },
+      //           {
+      //             name: 'Help & Support',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="questionInCircle"
+      //                 size="m"
+      //               />
+      //             ),
+      //             panel: 1,
+      //           },
+      //           {
+      //             name: 'Log out',
+      //             icon: (
+      //               <EuiIcon
+      //                 color={euiTheme.colors.mediumShade}
+      //                 type="exit"
+      //                 size="m"
+      //               />
+      //             ),
+      //             onClick: () => {
+      //               navigate('/');
+      //             },
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         id: 1,
+      //         title: 'Help & Support',
+      //         items: [
+      //           {
+      //             name: 'Documentation',
+      //           },
+      //           {
+      //             name: 'Ask Elastic',
+      //           },
+      //           {
+      //             name: 'Give feedback',
+      //           },
+      //           {
+      //             name: 'Open an issue in GitHub',
+      //           },
+      //         ],
+      //       },
+      //     ]}
+      //   />
+      // </EuiPopover>
+      <EuiAvatar
+        color="#25282f"
+        iconType="help"
+        name="account"
+        onClick={() => setIsAccountOpen(!isAccountOpen)}
+      />
     );
   };
 
