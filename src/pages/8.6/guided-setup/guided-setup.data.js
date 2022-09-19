@@ -7,8 +7,8 @@ export const GUIDE_DATA = [
       'Create a search experience for your websites, applications, workplace content, or anything in between.',
     cardImage: 'illustration-search.png',
     started: false,
-    media:
-      '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock-search.png">',
+    media: null,
+    // '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock-search.png">',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -66,8 +66,9 @@ export const GUIDE_DATA = [
     cardImage: 'illustration-observability.png',
     started: true,
     progress: 2,
-    media:
-      '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock.png">',
+    media: null,
+    // media:
+    //   '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock.png">',
     intro:
       "We'll help you quickly gain visibility into your environment using Elastic's out-of-the-box integrations.",
     link: {
