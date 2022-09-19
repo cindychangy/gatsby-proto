@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   EuiAvatar,
   EuiButtonEmpty,
@@ -17,7 +17,7 @@ const Navbar = ({ crumbs, isCloud, isIntegrations }) => {
   const { euiTheme } = useEuiTheme();
 
   const Account = () => {
-    const [isAccountOpen, setIsAccountOpen] = React.useState(false);
+    const [isAccountOpen, setIsAccountOpen] = useState(false);
     return (
       <EuiPopover
         anchorPosition="downRight"

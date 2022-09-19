@@ -59,7 +59,7 @@ const KibanaLayout = ({
   const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' });
 
   const Account = () => {
-    const [isAccountOpen, setIsAccountOpen] = React.useState(false);
+    const [isAccountOpen, setIsAccountOpen] = useState(false);
     return (
       <EuiPopover
         anchorPosition="downRight"
