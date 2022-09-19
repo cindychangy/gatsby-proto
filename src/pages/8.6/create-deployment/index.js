@@ -14,23 +14,10 @@ import {
   EuiIcon,
   EuiLink,
 } from '@elastic/eui';
+
 import Navbar from '../../../components/navbar/navbar';
 import { deploymentStyles } from './create-deployment.styles';
 import { navigate, withPrefix } from 'gatsby';
-
-const BREADCRUMBS = [
-  {
-    text: 'Cloud',
-    href: '#',
-  },
-  {
-    text: 'Deployments',
-    href: '#',
-  },
-  {
-    text: 'Create',
-  },
-];
 
 const CreateDeployment = () => {
   const styles = deploymentStyles();
@@ -45,7 +32,22 @@ const CreateDeployment = () => {
 
   return (
     <>
-      <Navbar breadcrumbs={BREADCRUMBS} />
+      <Navbar
+        isCloud
+        crumbs={[
+          {
+            text: 'Cloud',
+            href: '#',
+          },
+          {
+            text: 'Deployments',
+            href: '#',
+          },
+          {
+            text: 'Create',
+          },
+        ]}
+      />
       <EuiSpacer size="xxl" />
       <EuiPanel paddingSize="none" css={styles.panel}>
         <div css={styles.panelContainer}>
