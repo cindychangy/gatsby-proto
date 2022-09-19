@@ -57,6 +57,7 @@ const KibanaLayout = ({
   let exitGuideModal;
 
   const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' });
+  const closePopover = () => setIsAccountOpen(false);
 
   const Account = () => {
     const [isAccountOpen, setIsAccountOpen] = useState(false);
@@ -71,7 +72,7 @@ const KibanaLayout = ({
             onClick={() => setIsAccountOpen(!isAccountOpen)}
           />
         }
-        closePopover={() => setIsAccountOpen(false)}
+        closePopover={closePopover}
         isOpen={isAccountOpen}
         panelPaddingSize="none"
       >
