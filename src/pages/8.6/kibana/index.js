@@ -247,6 +247,8 @@ const KibanaHome = () => {
         </EuiPageTemplate>
       </>
     );
+  } else {
+    return true;
   }
 };
 
