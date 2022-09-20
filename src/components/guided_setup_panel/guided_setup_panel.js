@@ -107,6 +107,7 @@ const GuidedSetupPanel = ({
           ownFocus
           onClose={onClick}
           aria-labelledby="onboarding-guide"
+          paddingSize="l"
         >
           <>
             <EuiFlyoutHeader>
