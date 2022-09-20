@@ -67,7 +67,9 @@ const GuidedSetupPanel = ({
 
         if (stepNumber === 1) {
           setToggleStep(2);
-          setShowZeroState(1);
+          setTimeout(() => {
+            setShowZeroState(1);
+          }, 150);
         }
 
         if (stepNumber === 2) {
@@ -84,7 +86,7 @@ const GuidedSetupPanel = ({
             setShowEndState(true);
           }, 0);
         }
-      }, 1000);
+      }, 1500);
     }
   }, [confetti, data, completedSteps]);
 
@@ -169,6 +171,27 @@ const GuidedSetupPanel = ({
                 </>
               )}
               <EuiSpacer size="xs" />
+              {Object.keys(completedSteps).length === 0 && confetti && (
+                <>
+                  <EuiSpacer size="l" />
+                  <EuiProgress
+                    valueText={`${Object.keys(completedSteps).length}/4 steps`}
+                    value={
+                      stepNumber === 1
+                        ? showZeroState
+                        : Object.keys(completedSteps).length
+                    }
+                    max={4}
+                    size="l"
+                    label={
+                      Object.keys(completedSteps).length === 4
+                        ? 'Completed'
+                        : 'Progress'
+                    }
+                  />
+                  <EuiSpacer size="s" />
+                </>
+              )}
               {Object.keys(completedSteps).length !== 0 && (
                 <>
                   <EuiSpacer size="l" />
