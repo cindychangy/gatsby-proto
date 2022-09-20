@@ -52,7 +52,10 @@ const KibanaHome = () => {
               </EuiText>
             </EuiFlexItem>
           </EuiFlexGroup>
-          <EuiHorizontalRule margin="s" />
+          <EuiHorizontalRule
+            margin="s"
+            style={{ width: '255px', marginLeft: '-16px' }}
+          />
           <EuiButtonEmpty onClick={() => navigate('../../8.6/guided-setup')}>
             Setup guide onboarding
           </EuiButtonEmpty>

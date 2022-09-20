@@ -25,6 +25,8 @@ import {
   EuiButtonEmpty,
   EuiSpacer,
   EuiButton,
+  EuiPanel,
+  EuiFlexGroup,
 } from '@elastic/eui';
 import GuidedSetupPanel from '../../components/guided_setup_panel/guided_setup_panel';
 import { kibanaLayoutStyles } from './kibana.styles';
@@ -57,125 +59,57 @@ const KibanaLayout = ({
   let exitGuideModal;
 
   const collapsibleNavId = useGeneratedHtmlId({ prefix: 'collapsibleNav' });
-  const closePopover = () => setIsAccountOpen(false);
 
   const Account = () => {
     const [isAccountOpen, setIsAccountOpen] = useState(false);
     return (
-      // <EuiPopover
-      //   anchorPosition="downRight"
-      //   button={
-      //     <EuiAvatar
-      //       color="#25282f"
-      //       iconType="help"
-      //       name="account"
-      //       onClick={() => setIsAccountOpen(!isAccountOpen)}
-      //     />
-      //   }
-      //   closePopover={closePopover}
-      //   isOpen={isAccountOpen}
-      //   panelPaddingSize="none"
-      // >
-      //   <EuiContextMenu
-      //     initialPanelId={0}
-      //     panels={[
-      //       {
-      //         id: 0,
-      //         title: 'geauxtrude@suedemont.com',
-      //         items: [
-      //           {
-      //             name: 'Profile',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="user"
-      //                 size="m"
-      //               />
-      //             ),
-      //           },
-      //           {
-      //             name: 'Billing',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="payment"
-      //                 size="m"
-      //               />
-      //             ),
-      //           },
-      //           {
-      //             name: 'Organization',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="users"
-      //                 size="m"
-      //               />
-      //             ),
-      //           },
-      //           {
-      //             name: 'Preferences',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="controlsHorizontal"
-      //                 size="m"
-      //               />
-      //             ),
-      //           },
-      //           {
-      //             name: 'Help & Support',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="questionInCircle"
-      //                 size="m"
-      //               />
-      //             ),
-      //             panel: 1,
-      //           },
-      //           {
-      //             name: 'Log out',
-      //             icon: (
-      //               <EuiIcon
-      //                 color={euiTheme.colors.mediumShade}
-      //                 type="exit"
-      //                 size="m"
-      //               />
-      //             ),
-      //             onClick: () => {
-      //               navigate('/');
-      //             },
-      //           },
-      //         ],
-      //       },
-      //       {
-      //         id: 1,
-      //         title: 'Help & Support',
-      //         items: [
-      //           {
-      //             name: 'Documentation',
-      //           },
-      //           {
-      //             name: 'Ask Elastic',
-      //           },
-      //           {
-      //             name: 'Give feedback',
-      //           },
-      //           {
-      //             name: 'Open an issue in GitHub',
-      //           },
-      //         ],
-      //       },
-      //     ]}
-      //   />
-      // </EuiPopover>
-      <EuiAvatar
-        color="#25282f"
-        iconType="help"
-        name="account"
-        onClick={() => setIsAccountOpen(!isAccountOpen)}
-      />
+      <EuiPopover
+        anchorPosition="downRight"
+        button={
+          <EuiAvatar
+            color="#25282f"
+            iconType="help"
+            name="account"
+            onClick={() => setIsAccountOpen(!isAccountOpen)}
+          />
+        }
+        closePopover={() => setIsAccountOpen(false)}
+        isOpen={isAccountOpen}
+        panelPaddingSize="none"
+      >
+        <EuiPanel style={{ width: '255px' }}>
+          <EuiFlexGroup>
+            <EuiFlexItem>
+              <EuiText size="s">
+                <h4>Help</h4>
+              </EuiText>
+            </EuiFlexItem>
+            <EuiFlexItem>
+              <EuiText textAlign="right" size="s">
+                <h4>v 8.2.1</h4>
+              </EuiText>
+            </EuiFlexItem>
+          </EuiFlexGroup>
+          <EuiHorizontalRule margin="s" />
+          <EuiButtonEmpty>Kibana documentation</EuiButtonEmpty>
+          <EuiButtonEmpty>Ask Elastic</EuiButtonEmpty>
+          <EuiButtonEmpty>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              class="euiIcon euiIcon--medium euiIcon--inherit euiButtonContent__icon"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path d="M16 0C7.164 0 0 7.343 0 16.4c0 7.248 4.584 13.394 10.942 15.562.8.15 1.092-.356 1.092-.789 0-.39-.014-1.684-.022-3.053-4.45.991-5.39-1.934-5.39-1.934-.728-1.894-1.776-2.398-1.776-2.398-1.454-1.017.11-.997.11-.997 1.606.114 2.452 1.69 2.452 1.69 1.428 2.506 3.746 1.781 4.656 1.36.146-1.056.56-1.78 1.016-2.19-3.552-.414-7.288-1.821-7.288-8.105 0-1.792.624-3.254 1.646-4.402-.164-.416-.714-2.085.158-4.342 0 0 1.341-.44 4.4 1.681A14.882 14.882 0 0116 7.932c1.36.006 2.728.188 4.006.553 3.053-2.124 4.396-1.681 4.396-1.681.875 2.259.325 3.926.16 4.34 1.026 1.148 1.645 2.61 1.645 4.402 0 6.3-3.742 7.687-7.307 8.094.577.508 1.086 1.505 1.086 3.035 0 2.192-.021 3.96-.021 4.5 0 .437.29.947 1.101.787C27.42 29.79 32 23.644 32 16.4 32 7.343 24.836 0 16 0z"></path>
+            </svg>
+            &nbsp;Open an issue with Github
+          </EuiButtonEmpty>
+        </EuiPanel>
+      </EuiPopover>
     );
   };
 
@@ -282,105 +216,113 @@ const KibanaLayout = ({
     );
   }
 
-  return (
-    <>
-      {exitGuideModal}
-      <div css={styles.mainWrapper}>
-        <EuiHeader
-          position="fixed"
-          theme="dark"
-          sections={[
-            {
-              items: [
-                <EuiHeaderLogo
-                  key="elastic-logo"
-                  iconType="logoElastic"
-                  href="#"
-                >
-                  Elastic
-                </EuiHeaderLogo>,
-              ],
-              borders: 'none',
-            },
-            {
-              items: [
-                !removeGuideButton && (
-                  <GuidedSetupPanel
-                    key="onboarding-setup"
-                    onClick={onClick}
-                    handleOptOut={handleOptOut}
-                    guideOpen={guideOpen}
-                    buttonDisabled={buttonDisabled}
-                    section={section}
-                    confetti={confetti}
-                    isSetupPage={isSetupPage}
-                    stepNumber={stepNumber}
-                    completedSteps={completedSteps}
-                  />
-                ),
-                ,
-                <EuiHeaderSectionItemButton flush="both">
-                  <Account />
-                </EuiHeaderSectionItemButton>,
-                <EuiHeaderSectionItemButton flush="both">
-                  <EuiAvatar color="#25282f" iconType="cheer" name="account" />
-                </EuiHeaderSectionItemButton>,
-                <EuiHeaderSectionItemButton
-                  key="user"
-                  aria-label="Account menu"
-                >
-                  <EuiAvatar size="s" name="Else Lane" color="#06bfb4" />
-                </EuiHeaderSectionItemButton>,
-              ],
-              borders: 'none',
-            },
-          ]}
-        />
+  if (typeof HTMLElement !== `undefined`) {
+    return (
+      <>
+        {exitGuideModal}
+        <div css={styles.mainWrapper}>
+          <EuiHeader
+            position="fixed"
+            theme="dark"
+            sections={[
+              {
+                items: [
+                  <EuiHeaderLogo
+                    key="elastic-logo"
+                    iconType="logoElastic"
+                    href="#"
+                  >
+                    Elastic
+                  </EuiHeaderLogo>,
+                ],
+                borders: 'none',
+              },
+              {
+                items: [
+                  !removeGuideButton && (
+                    <GuidedSetupPanel
+                      key="onboarding-setup"
+                      onClick={onClick}
+                      handleOptOut={handleOptOut}
+                      guideOpen={guideOpen}
+                      buttonDisabled={buttonDisabled}
+                      section={section}
+                      confetti={confetti}
+                      isSetupPage={isSetupPage}
+                      stepNumber={stepNumber}
+                      completedSteps={completedSteps}
+                    />
+                  ),
+                  ,
+                  <EuiHeaderSectionItemButton flush="both">
+                    <Account />
+                  </EuiHeaderSectionItemButton>,
+                  <EuiHeaderSectionItemButton flush="both">
+                    <EuiAvatar
+                      color="#25282f"
+                      iconType="cheer"
+                      name="account"
+                    />
+                  </EuiHeaderSectionItemButton>,
+                  <EuiHeaderSectionItemButton
+                    key="user"
+                    aria-label="Account menu"
+                  >
+                    <EuiAvatar size="s" name="Else Lane" color="#06bfb4" />
+                  </EuiHeaderSectionItemButton>,
+                ],
+                borders: 'none',
+              },
+            ]}
+          />
 
-        <EuiHeader
-          position="fixed"
-          sections={[
-            {
-              items: leftSectionItems,
-              borders: 'right',
-            },
-            {
-              items: [
-                <EuiHeaderSectionItemButton
-                  key={useGeneratedHtmlId()}
-                  aria-label="Account menu"
-                >
-                  <EuiAvatar type="space" name="Default Space" size="s" />
-                </EuiHeaderSectionItemButton>,
-              ],
-              breadcrumbs: breadcrumbs,
-              borders: 'right',
-            },
-          ]}
-        />
+          <EuiHeader
+            position="fixed"
+            sections={[
+              {
+                items: leftSectionItems,
+                borders: 'right',
+              },
+              {
+                items: [
+                  <EuiHeaderSectionItemButton
+                    key={useGeneratedHtmlId()}
+                    aria-label="Account menu"
+                  >
+                    <EuiAvatar type="space" name="Default Space" size="s" />
+                  </EuiHeaderSectionItemButton>,
+                ],
+                breadcrumbs: breadcrumbs,
+                borders: 'right',
+              },
+            ]}
+          />
 
-        {pageHeader && (
-          <div css={styles.header}>
-            <div className="euiPageBody--restrictWidth-default">
-              <EuiTitle size="l">
-                <h1>{pageHeader}</h1>
-              </EuiTitle>
+          {pageHeader && (
+            <div css={styles.header}>
+              <div className="euiPageBody--restrictWidth-default">
+                <EuiTitle size="l">
+                  <h1>{pageHeader}</h1>
+                </EuiTitle>
+              </div>
             </div>
-          </div>
-        )}
-
-        <div css={styles.contentWrapper} className="fullBody">
-          {hasSidebar ? (
-            children
-          ) : (
-            <EuiPageTemplate restrictWidth {...rest}>
-              {children}
-            </EuiPageTemplate>
           )}
+
+          <div css={styles.contentWrapper} className="fullBody">
+            {hasSidebar ? (
+              children
+            ) : (
+              <EuiPageTemplate restrictWidth {...rest}>
+                {children}
+              </EuiPageTemplate>
+            )}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else {
+    return true;
+  }
 };
 
 export default KibanaLayout;
