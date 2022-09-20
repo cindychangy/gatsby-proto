@@ -39,11 +39,13 @@ const PanelSection = ({
     isSetupPage && section === 'Observe' && step.order === 3;
 
   useEffect(() => {
-    setTimeout(() => {
-      document
-        .getElementById('currentStep')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }, 10);
+    if (stepNumber !== 1) {
+      setTimeout(() => {
+        document
+          .getElementById('currentStep')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 10);
+    }
   }, []);
 
   const accordionStyles = [

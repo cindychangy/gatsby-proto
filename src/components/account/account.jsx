@@ -56,7 +56,7 @@ const Account = ({ showGuideLink }) => {
         >
           {showGuideLink && (
             <EuiButtonEmpty onClick={() => navigate('../../8.6/guided-setup')}>
-              Setup guide onboarding
+              Guided setup onboarding
             </EuiButtonEmpty>
           )}
           <EuiButtonEmpty href="#">Kibana documentation</EuiButtonEmpty>
