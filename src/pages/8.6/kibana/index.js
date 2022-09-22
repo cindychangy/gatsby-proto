@@ -43,7 +43,7 @@ const KibanaHome = () => {
                   fill
                   style={{ margin: '0 10px' }}
                 >
-                  Setup guide
+                  Launch Guided Setup
                 </EuiButton>,
                 <EuiHeaderSectionItemButton flush="both">
                   <Account showGuideLink />
@@ -152,12 +152,8 @@ const KibanaHome = () => {
               <EuiSpacer size="l" />
               <EuiFlexGroup justifyContent="flexStart" gutterSize="m">
                 <EuiFlexItem grow={false}>
-                  <EuiButton
-                    fill
-                    onClick={() => navigate('/8.6/guided-setup')}
-                    iconType="plusInCircle"
-                  >
-                    Launch setup guide
+                  <EuiButton fill onClick={() => navigate('/8.6/guided-setup')}>
+                    Launch Guided setup
                   </EuiButton>
                 </EuiFlexItem>
                 <EuiFlexItem grow={false}>
