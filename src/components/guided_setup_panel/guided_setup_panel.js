@@ -246,7 +246,7 @@ const GuidedSetupPanel = ({
             <EuiFlyoutFooter>
               <EuiFlexGroup direction="column" alignItems="center">
                 <EuiButtonEmpty onClick={handleOptOut}>
-                  Exit setup guide
+                  Quit setup guide
                 </EuiButtonEmpty>
                 <EuiSpacer size="s" />
                 <EuiText color="subdued" textAlign="center">
