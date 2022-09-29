@@ -149,7 +149,7 @@ const GuidedSetup = () => {
           <EuiText size="s" textAlign="center">
             <EuiButtonEmpty
               iconSide="right"
-              onClick={() => navigate('../kibana')}
+              onClick={() => navigate('../../kibana')}
             >
               I'd like to do something else (skip)
             </EuiButtonEmpty>
