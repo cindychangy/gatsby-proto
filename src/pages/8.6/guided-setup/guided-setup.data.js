@@ -97,6 +97,7 @@ export const GUIDE_DATA = [
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
         stepPath: 'observability/alert',
+        pageProgressOpen: true,
         order: 3,
       },
       {

@@ -52,6 +52,16 @@ const PanelSection = ({
     nowFinished && styles.stepDone,
   ];
 
+  const showStartButton =
+    (newUserStartPage !== undefined && step.order === 1) ||
+    (newUserStartPage === false && step.pageProgressOpen) ||
+    (!newUserStartPage !== undefined && step.order === stepNumber + 1);
+
+  const showPanelInitialOpen =
+    (newUserStartPage && step.order === 1) ||
+    (newUserStartPage === false && section === 'Search' && step.order === 1) ||
+    (newUserStartPage === false && section === 'Observe' && step.order === 3);
+
   return (
     <div id={currentStep && 'currentStep'}>
       <EuiFlexGroup
@@ -96,15 +106,7 @@ const PanelSection = ({
               </EuiFlexGroup>
             }
             paddingSize="none"
-            initialIsOpen={
-              (newUserStartPage && step.order === 1) ||
-              (newUserStartPage === false &&
-                section === 'Search' &&
-                step.order === 1) ||
-              (newUserStartPage === false &&
-                section === 'Observe' &&
-                step.order === 3)
-            }
+            initialIsOpen={showPanelInitialOpen}
           >
             <EuiPanel
               paddingSize="none"
@@ -125,9 +127,7 @@ const PanelSection = ({
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>
               )}
-              {(newUserStartPage && step.order === 1) ||
-              (!newUserStartPage && step.order === stepNumber + 1) ||
-              (newUserStartPage === false && !currentStep) ? (
+              {showStartButton ? (
                 <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
                   <EuiFlexItem grow={false}>
                     <EuiSpacer size="m" />
