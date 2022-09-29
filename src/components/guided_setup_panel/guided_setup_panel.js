@@ -101,7 +101,10 @@ const GuidedSetupPanel = ({
           disabled={buttonDisabled}
           fill
         >
-          Setup guide{newUserStartPage ? '' : `: step ${stepNumber}`}
+          Setup guide
+          {newUserStartPage || newUserStartPage === false
+            ? ''
+            : `: step ${stepNumber}`}
         </EuiButton>
       </div>
       {!!guideOpen && (
