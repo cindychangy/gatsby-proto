@@ -49,7 +49,6 @@ const PanelSection = ({
     newUserStartPage && step.order === 1 && styles.stepOutline,
     currentStep && styles.stepOutline,
     forceState && styles.stepOutline,
-    stepComplete && currentStep && styles.stepDone,
     nowFinished && styles.stepDone,
   ];
 
@@ -126,8 +125,9 @@ const PanelSection = ({
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>
               )}
-              {(!newUserStartPage && !currentStep) ||
-              (newUserStartPage && step.order === 1) ? (
+              {(newUserStartPage && step.order === 1) ||
+              (!newUserStartPage && step.order === stepNumber + 1) ||
+              (newUserStartPage === false && !currentStep) ? (
                 <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
                   <EuiFlexItem grow={false}>
                     <EuiSpacer size="m" />
