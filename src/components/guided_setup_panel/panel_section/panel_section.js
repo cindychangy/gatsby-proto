@@ -21,7 +21,7 @@ import { GuidedSetupPanelStyles } from '../guided_setup_panel.styles';
 const PanelSection = ({
   step,
   confetti,
-  isSetupPage,
+  newUserStartPage,
   stepNumber,
   stepComplete,
   completedSteps,
@@ -33,10 +33,6 @@ const PanelSection = ({
 
   const currentStep = stepNumber === step.order;
   const nowFinished = completedSteps[`step-${step.order}`] === 'done';
-  // const SearchInitialSteps =
-  //   isSetupPage && section === 'Search' && step.order === 1;
-  // const ObserveInitialSteps =
-  //   isSetupPage && section === 'Observe' && step.order === 3;
 
   useEffect(() => {
     if (stepNumber !== 1) {
@@ -50,7 +46,7 @@ const PanelSection = ({
 
   const accordionStyles = [
     styles.step,
-    isSetupPage && step.order === 1 && styles.stepOutline,
+    newUserStartPage && step.order === 1 && styles.stepOutline,
     currentStep && styles.stepOutline,
     forceState && styles.stepOutline,
     stepComplete && currentStep && styles.stepDone,
@@ -101,7 +97,15 @@ const PanelSection = ({
               </EuiFlexGroup>
             }
             paddingSize="none"
-            initialIsOpen={isSetupPage && step.order === 1}
+            initialIsOpen={
+              (newUserStartPage && step.order === 1) ||
+              (newUserStartPage === false &&
+                section === 'Search' &&
+                step.order === 1) ||
+              (newUserStartPage === false &&
+                section === 'Observe' &&
+                step.order === 3)
+            }
           >
             <EuiPanel
               paddingSize="none"
@@ -122,26 +126,22 @@ const PanelSection = ({
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>
               )}
-              {
-                // SearchInitialSteps ||
-                // ObserveInitialSteps ||
-                (!isSetupPage && !currentStep) ||
-                (isSetupPage && step.order === 1) ? (
-                  <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
-                    <EuiFlexItem grow={false}>
-                      <EuiSpacer size="m" />
-                      <EuiButton
-                        fill
-                        onClick={() =>
-                          navigate(`/8.6/guided-setup/${step.stepPath}`)
-                        }
-                      >
-                        Start
-                      </EuiButton>
-                    </EuiFlexItem>
-                  </EuiFlexGroup>
-                ) : null
-              }
+              {(!newUserStartPage && !currentStep) ||
+              (newUserStartPage && step.order === 1) ? (
+                <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
+                  <EuiFlexItem grow={false}>
+                    <EuiSpacer size="m" />
+                    <EuiButton
+                      fill
+                      onClick={() =>
+                        navigate(`/8.6/guided-setup/${step.stepPath}`)
+                      }
+                    >
+                      Start
+                    </EuiButton>
+                  </EuiFlexItem>
+                </EuiFlexGroup>
+              ) : null}
             </EuiPanel>
           </EuiAccordion>
           <EuiHorizontalRule margin="l" />

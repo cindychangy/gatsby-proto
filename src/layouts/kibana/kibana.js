@@ -36,7 +36,7 @@ const KibanaLayout = ({
   section,
   confetti,
   buttonDisabled,
-  isSetupPage,
+  newUserStartPage,
   pageHeader,
   stepNumber,
   breadcrumbs,
@@ -190,7 +190,7 @@ const KibanaLayout = ({
                       buttonDisabled={buttonDisabled}
                       section={section}
                       confetti={confetti}
-                      isSetupPage={isSetupPage}
+                      newUserStartPage={newUserStartPage}
                       stepNumber={stepNumber}
                       completedSteps={completedSteps}
                     />

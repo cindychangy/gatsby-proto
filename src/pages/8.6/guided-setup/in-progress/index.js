@@ -26,7 +26,6 @@ const GuidedSetup = () => {
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [isSetupPage, setIsSetupPage] = useState(true);
 
   const BREADCRUMBS = [
     {
@@ -65,7 +64,6 @@ const GuidedSetup = () => {
     setButtonDisabled(!buttonDisabled);
     if (section) {
       setSection(section);
-      setIsSetupPage(true);
     }
   };
 
@@ -78,7 +76,7 @@ const GuidedSetup = () => {
       buttonDisabled={buttonDisabled}
       onClick={() => handleGuideClick(section)}
       completedSteps={COMPLETED_STEPS}
-      isSetupPage={isSetupPage}
+      newUserStartPage={false}
     >
       <EuiSpacer size="xxl" />
       <EuiPanel paddingSize="l">

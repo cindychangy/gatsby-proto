@@ -29,7 +29,7 @@ const GuidedSetupPanel = ({
   guideOpen,
   section,
   buttonDisabled,
-  isSetupPage,
+  newUserStartPage,
   confetti,
   stepNumber,
   onClick,
@@ -101,7 +101,7 @@ const GuidedSetupPanel = ({
           disabled={buttonDisabled}
           fill
         >
-          Setup guide{isSetupPage ? '' : `: step ${stepNumber}`}
+          Setup guide{newUserStartPage ? '' : `: step ${stepNumber}`}
         </EuiButton>
       </div>
       {!!guideOpen && (
@@ -219,7 +219,7 @@ const GuidedSetupPanel = ({
                   key={step.order}
                   step={step}
                   confetti={confetti}
-                  isSetupPage={isSetupPage}
+                  newUserStartPage={newUserStartPage}
                   stepNumber={stepNumber}
                   section={section}
                   stepComplete={step.stepComplete}
@@ -227,9 +227,16 @@ const GuidedSetupPanel = ({
                   forceState={
                     toggleStep === step.order
                       ? 'open'
-                      : '' || (toggleStep - 1 === step.order && 'closed')
-                    // ||
-                    // (section === 'Observe' && step.order === 3 && 'open')
+                      : '' ||
+                        (toggleStep - 1 === step.order && 'closed') ||
+                        (newUserStartPage === false &&
+                          section === 'Search' &&
+                          step.order === 1 &&
+                          'open') ||
+                        (newUserStartPage === false &&
+                          section === 'Observe' &&
+                          step.order === 3 &&
+                          'open')
                   }
                 />
               ))}

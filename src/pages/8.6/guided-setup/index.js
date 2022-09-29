@@ -9,7 +9,6 @@ import {
   EuiCard,
   EuiFlexItem,
   EuiPanel,
-  EuiProgress,
   EuiButtonEmpty,
   EuiFlexGrid,
   EuiHorizontalRule,
@@ -26,7 +25,7 @@ const GuidedSetup = () => {
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [isSetupPage, setIsSetupPage] = useState(true);
+  const [newUserStartPage, setNewUserStartPage] = useState(true);
 
   const BREADCRUMBS = [
     {
@@ -45,7 +44,7 @@ const GuidedSetup = () => {
     setButtonDisabled(!buttonDisabled);
     if (section) {
       setSection(section);
-      setIsSetupPage(true);
+      setNewUserStartPage(true);
     }
   };
 
@@ -58,7 +57,7 @@ const GuidedSetup = () => {
       buttonDisabled={buttonDisabled}
       onClick={() => handleGuideClick(section)}
       completedSteps={COMPLETED_STEPS}
-      isSetupPage={isSetupPage}
+      newUserStartPage={newUserStartPage}
     >
       <EuiSpacer size="xxl" />
       <EuiPanel paddingSize="l">
