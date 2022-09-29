@@ -15,9 +15,9 @@ import {
   EuiHorizontalRule,
   useEuiTheme,
 } from '@elastic/eui';
-import KibanaLayout from '../../../layouts/kibana/kibana';
-import { GuidedSetupStyles } from './guided-setup.styles';
-import { GUIDE_DATA } from './guided-setup.data';
+import KibanaLayout from '../../../../layouts/kibana/kibana';
+import { GuidedSetupStyles } from '../../guided-setup/guided-setup.styles';
+import { GUIDE_DATA } from '../guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
 
 const GuidedSetup = () => {
@@ -38,7 +38,27 @@ const GuidedSetup = () => {
     },
   ];
 
-  let COMPLETED_STEPS = {};
+  let COMPLETED_STEPS;
+
+  if (section === 'Search') {
+    COMPLETED_STEPS = {};
+  }
+
+  if (section === 'Observe') {
+    COMPLETED_STEPS = {
+      'step-1': 'done',
+      'step-2': 'done',
+    };
+  }
+
+  if (section === 'Security') {
+    COMPLETED_STEPS = {
+      'step-1': 'done',
+      'step-2': 'done',
+      'step-3': 'done',
+      'step-4': 'done',
+    };
+  }
 
   const handleGuideClick = (section) => {
     setGuide(!guideOpen);
@@ -106,7 +126,13 @@ const GuidedSetup = () => {
                           <EuiSpacer size="l" />
                         </>
                       )}
-                      {!guide.started && !guide.static && (
+                      {guide.progress !== 4 && guide.progress !== undefined && (
+                        <EuiButton fill>Continue</EuiButton>
+                      )}
+                      {guide.progress === 4 && guide.progress !== undefined && (
+                        <EuiButtonEmpty></EuiButtonEmpty> //dummy element justis just to align visually
+                      )}
+                      {guide.started === false && (
                         <EuiButton fill>View Guide</EuiButton>
                       )}
                       {guide.static && (

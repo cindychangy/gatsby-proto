@@ -227,9 +227,9 @@ const GuidedSetupPanel = ({
                   forceState={
                     toggleStep === step.order
                       ? 'open'
-                      : '' ||
-                        (toggleStep - 1 === step.order && 'closed') ||
-                        (section === 'Observe' && step.order === 3 && 'open')
+                      : '' || (toggleStep - 1 === step.order && 'closed')
+                    // ||
+                    // (section === 'Observe' && step.order === 3 && 'open')
                   }
                 />
               ))}
