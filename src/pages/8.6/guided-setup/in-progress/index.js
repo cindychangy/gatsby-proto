@@ -16,7 +16,7 @@ import {
   useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../../layouts/kibana/kibana';
-import { GuidedSetupStyles } from '../../guided-setup/guided-setup.styles';
+import { GuidedSetupStyles } from '../guided-setup.styles';
 import { GUIDE_DATA } from '../guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
 
@@ -38,7 +38,7 @@ const GuidedSetup = () => {
     },
   ];
 
-  let COMPLETED_STEPS;
+  let COMPLETED_STEPS = {};
 
   if (section === 'Search') {
     COMPLETED_STEPS = {};
@@ -101,7 +101,7 @@ const GuidedSetup = () => {
                   onClick={
                     guide.cardTitle !== 'Observe my data'
                       ? () => handleGuideClick(guide.section)
-                      : () => navigate('pages/integrations')
+                      : () => navigate('../pages/integrations')
                   }
                   paddingSize="l"
                   textAlign="center"
@@ -112,31 +112,33 @@ const GuidedSetup = () => {
                   }}
                   footer={
                     <div css={styles.footer}>
-                      {guide.started && (
+                      {guide.startPageProgress && (
                         <>
                           <EuiProgress
-                            valueText={`${guide.progress}/4 steps`}
-                            value={guide.progress}
+                            valueText={`${guide.startPageSteps}/4 steps`}
+                            value={guide.startPageSteps}
                             max={4}
                             size="s"
                             label={
-                              guide.progress === 4 ? 'Completed' : 'In progress'
+                              guide.startPageSteps === 4
+                                ? 'Completed'
+                                : 'In progress'
                             }
                           />
                           <EuiSpacer size="l" />
                         </>
                       )}
-                      {guide.progress !== 4 && guide.progress !== undefined && (
-                        <EuiButton fill>Continue</EuiButton>
-                      )}
-                      {guide.progress === 4 && guide.progress !== undefined && (
-                        <EuiButtonEmpty></EuiButtonEmpty> //dummy element justis just to align visually
-                      )}
-                      {guide.started === false && (
+                      {guide.section === 'Search' && (
                         <EuiButton fill>View Guide</EuiButton>
+                      )}
+                      {guide.section === 'Observe' && !guide.static && (
+                        <EuiButton fill>Continue</EuiButton>
                       )}
                       {guide.static && (
                         <EuiButton fill>View integrations</EuiButton>
+                      )}
+                      {guide.section === 'Security' && !guide.static && (
+                        <EuiButtonEmpty fill></EuiButtonEmpty> //dummy element justis just to align visually
                       )}
                     </div>
                   }

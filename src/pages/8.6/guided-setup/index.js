@@ -92,20 +92,6 @@ const GuidedSetup = () => {
                   }}
                   footer={
                     <div css={styles.footer}>
-                      {guide.started && (
-                        <>
-                          <EuiProgress
-                            valueText={`${guide.progress}/4 steps`}
-                            value={guide.progress}
-                            max={4}
-                            size="s"
-                            label={
-                              guide.progress === 4 ? 'Completed' : 'In progress'
-                            }
-                          />
-                          <EuiSpacer size="l" />
-                        </>
-                      )}
                       {!guide.started && !guide.static && (
                         <EuiButton fill>View Guide</EuiButton>
                       )}

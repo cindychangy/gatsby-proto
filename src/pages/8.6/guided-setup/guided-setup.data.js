@@ -69,8 +69,8 @@ export const GUIDE_DATA = [
       title: 'Observability 101 Documentation',
       url: '#',
     },
-    started: false,
     startPageProgress: true,
+    startPageSteps: 2,
     steps: [
       {
         title: 'Add data',
@@ -171,7 +171,8 @@ export const GUIDE_DATA = [
       title: 'Security 101 Documentation',
       url: '#',
     },
-    started: false,
+    startPageProgress: true,
+    startPageSteps: 4,
     steps: [
       {
         title: 'Add and view your data with Elastic Defend',
