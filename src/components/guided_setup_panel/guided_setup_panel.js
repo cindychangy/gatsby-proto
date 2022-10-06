@@ -241,7 +241,7 @@ const GuidedSetupPanel = ({
                   }
                 />
               ))}
-              {data.guideComplete && (
+              {showEndState && (
                 <EuiFlexGroup gutterSize="m" justifyContent="flexEnd">
                   <EuiFlexItem grow={false}>
                     <EuiButton onClick={() => navigate('/8.6/kibana')} fill>
