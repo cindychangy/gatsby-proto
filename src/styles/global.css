@@ -17,9 +17,12 @@
   }
 }
 
-[aria-labelledby='onboarding-guide'] .euiProgress__valueText, 
-[aria-labelledby='onboarding-guide'] .euiProgress__label {
+[aria-labelledby='onboarding-guide'] .euiProgress__valueText {
   color: #69707d;
+}
+
+[aria-labelledby='onboarding-guide'] .euiProgress__valueText,
+[aria-labelledby='onboarding-guide'] .euiProgress__label {
   font-size: 12px;
 }
 
