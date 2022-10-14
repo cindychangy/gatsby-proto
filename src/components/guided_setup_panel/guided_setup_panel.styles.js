@@ -68,6 +68,14 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
+  iconQuestion: css`
+    .euiIcon {
+      width: 21px;
+      height: 21px;
+      margin-left: -2px;
+    }
+  `,
+
   confetti: css`
   background-repeat: repeat-x;
   background-position: top -10px center;

@@ -252,33 +252,41 @@ const GuidedSetupPanel = ({
               )}
             </EuiFlyoutBody>
             <EuiFlyoutFooter>
-              <EuiFlexGroup direction="column" alignItems="center">
-                <EuiButtonEmpty onClick={handleOptOut}>
-                  Quit setup guide
+              <EuiFlexGroup alignItems="center" justifyContent="center">
+                <EuiButtonEmpty
+                  iconType="questionInCircle"
+                  iconSide="right"
+                  href="https://cloud.elastic.co/support"
+                  style={{ color: euiTheme.colors.darkShade, fontWeight: 400 }}
+                  css={styles.iconQuestion}
+                >
+                  Need help?
+                </EuiButtonEmpty>
+                <EuiText size="xs" style={{ color: euiTheme.colors.disabled }}>
+                  |
+                </EuiText>
+                <EuiButtonEmpty
+                  iconType="faceHappy"
+                  iconSide="right"
+                  color="text"
+                  href="https://www.elastic.co/kibana/feedback"
+                  style={{ color: euiTheme.colors.darkShade, fontWeight: 400 }}
+                >
+                  Give feedback
+                </EuiButtonEmpty>
+                <EuiText size="xs" style={{ color: euiTheme.colors.disabled }}>
+                  |
+                </EuiText>
+                <EuiButtonEmpty
+                  iconType="exit"
+                  iconSide="right"
+                  color="text"
+                  onClick={handleOptOut}
+                  style={{ color: euiTheme.colors.darkShade, fontWeight: 400 }}
+                >
+                  Quit guide
                 </EuiButtonEmpty>
                 <EuiSpacer size="s" />
-                <EuiText color="subdued" textAlign="center">
-                  How’s onboarding? We’d love your {}
-                  <a
-                    href="https://www.elastic.co/kibana/feedback"
-                    css={css`
-                      font-weight: ${euiTheme.font.weight.regular};
-                    `}
-                  >
-                    feedback.
-                  </a>{' '}
-                  <br />
-                  Other questions? We’re {}
-                  <a
-                    href="https://www.elastic.co/kibana/feedback"
-                    css={css`
-                      font-weight: ${euiTheme.font.weight.regular};
-                    `}
-                  >
-                    here to help
-                  </a>
-                  .
-                </EuiText>
               </EuiFlexGroup>
               <EuiSpacer size="m" />
             </EuiFlyoutFooter>
