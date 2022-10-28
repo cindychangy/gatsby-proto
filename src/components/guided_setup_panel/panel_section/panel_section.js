@@ -116,6 +116,7 @@ const PanelSection = ({
               <EuiText
                 size="s"
                 dangerouslySetInnerHTML={{ __html: step.description }}
+                css={styles.stepText}
               />
               {step.link && (
                 <EuiButtonEmpty
@@ -123,6 +124,7 @@ const PanelSection = ({
                   iconSide="right"
                   iconSize="s"
                   href={step.link.url}
+                  style={{ marginLeft: '24px' }}
                 >
                   <EuiText size="xs">{step.link.title}</EuiText>
                 </EuiButtonEmpty>

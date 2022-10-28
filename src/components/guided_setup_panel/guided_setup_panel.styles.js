@@ -68,6 +68,16 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
+  stepText: css`
+    p {
+      margin-left: 32px;
+    }
+
+    ul {
+      padding-left: 28px;
+    }
+  `,
+
   iconQuestion: css`
     .euiIcon {
       width: 21px;
