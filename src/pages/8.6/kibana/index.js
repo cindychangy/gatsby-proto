@@ -38,7 +38,7 @@ const KibanaHome = () => {
                 <EuiButton
                   color="success"
                   size="s"
-                  onClick={() => navigate(-1)}
+                  onClick={() => navigate(withPrefix('/8.6/guided-setup'))}
                   key="onboarding-setup-button"
                   fill
                   style={{ margin: '0 10px' }}
@@ -152,7 +152,10 @@ const KibanaHome = () => {
               <EuiSpacer size="l" />
               <EuiFlexGroup justifyContent="flexStart" gutterSize="m">
                 <EuiFlexItem grow={false}>
-                  <EuiButton fill onClick={() => navigate(-1)}>
+                  <EuiButton
+                    fill
+                    onClick={() => navigate(withPrefix('/8.6/guided-setup'))}
+                  >
                     Launch Guided Setup
                   </EuiButton>
                 </EuiFlexItem>
