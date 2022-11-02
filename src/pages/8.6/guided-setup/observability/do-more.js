@@ -32,6 +32,7 @@ const DoMore = () => {
       stepNumber={STEPNUMBER}
       completedSteps={COMPLETED_STEPS}
       hasSidebar
+      hasTour
     />
   );
 };

@@ -123,7 +123,6 @@ const SolutionSidebar = ({ stepNumber, section }) => {
             name: 'Stream',
             id: `observability__1`,
             onClick: handleClick,
-            className: 'observability-tour-1',
           },
           {
             name: 'Anomalies',
@@ -134,6 +133,7 @@ const SolutionSidebar = ({ stepNumber, section }) => {
             name: 'Categories',
             id: `observability__3`,
             onClick: handleClick,
+            className: 'observe-tour-1',
           },
         ],
       },
@@ -160,18 +160,17 @@ const SolutionSidebar = ({ stepNumber, section }) => {
           {
             name: 'Services',
             id: `observability__7`,
+            className: 'observe-tour-2',
             onClick: handleClick,
           },
           {
             name: 'Traces',
             id: `observability__8`,
-            className: 'observability-tour-3',
             onClick: handleClick,
           },
           {
             name: 'Dependencies',
             id: `observability__9`,
-            className: 'observability-tour-3',
             onClick: handleClick,
           },
           {

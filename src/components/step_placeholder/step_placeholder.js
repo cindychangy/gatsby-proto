@@ -46,7 +46,7 @@ const StepPlaceholder = ({
     setConfetti(true);
   };
 
-  //Search Tour
+  //Tours
   const TourStep = ({
     anchorClass,
     buttonText,
@@ -86,15 +86,6 @@ const StepPlaceholder = ({
         ) : (
           <EuiFlexGroup alignItems="center" gutterSize="m">
             <EuiFlexItem>
-              {/* <EuiButtonEmpty
-                color="text"
-                flush="both"
-                onClick={() => setIsTourStep(isTourStep + 99)}
-                size="xs">
-                End Tour
-              </EuiButtonEmpty> */}
-            </EuiFlexItem>
-            <EuiFlexItem>
               <EuiButton
                 color="success"
                 onClick={
@@ -120,7 +111,7 @@ const StepPlaceholder = ({
 
   return (
     <>
-      {hasTour && isTourStep === 0 && (
+      {hasTour && section === 'Search' && isTourStep === 0 && (
         <TourStep
           anchorClass="search-tour-1"
           buttonText="Next"
@@ -130,7 +121,7 @@ const StepPlaceholder = ({
           key={0}
         />
       )}
-      {isTourStep === 1 && (
+      {section === 'Search' && isTourStep === 1 && (
         <TourStep
           anchorClass="search-tour-5"
           buttonText="End Tour"
@@ -138,6 +129,28 @@ const StepPlaceholder = ({
           image={withPrefix('/images/tour-obs-01.gif')}
           position="rightUp"
           title="Review your search engine analytics"
+          key={1}
+        />
+      )}
+
+      {hasTour && section === 'Observability' && isTourStep === 0 && (
+        <TourStep
+          anchorClass="observe-tour-1"
+          buttonText="Next"
+          content="Reprehenderit aute laborum ea amet proident voluptate minim do cillum anim."
+          position="rightUp"
+          title="Welcome to Elastic Observability"
+          key={0}
+        />
+      )}
+      {section === 'Observability' && isTourStep === 1 && (
+        <TourStep
+          anchorClass="observe-tour-2"
+          buttonText="End Tour"
+          content="Reprehenderit aute laborum ea amet proident voluptate minim do cillum anim."
+          image={withPrefix('/images/tour-obs-01.gif')}
+          position="rightUp"
+          title="Get more visibility into your data"
           key={1}
         />
       )}
