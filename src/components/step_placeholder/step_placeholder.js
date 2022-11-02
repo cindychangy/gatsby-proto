@@ -117,7 +117,7 @@ const StepPlaceholder = ({
           buttonText="Next"
           content="Reprehenderit aute laborum ea amet proident voluptate minim do cillum anim."
           position="rightUp"
-          title="Welcome to Elastic Enterprise Search"
+          title="Create search experiences with APIs and tools."
           key={0}
         />
       )}
@@ -139,7 +139,7 @@ const StepPlaceholder = ({
           buttonText="Next"
           content="Reprehenderit aute laborum ea amet proident voluptate minim do cillum anim."
           position="rightUp"
-          title="Welcome to Elastic Observability"
+          title="Consolidate your logs and metrics"
           key={0}
         />
       )}
