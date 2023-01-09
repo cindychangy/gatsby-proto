@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { withPrefix } from 'gatsby';
 
 /*
 Styles here are split up into 2 parts.
@@ -6,6 +7,9 @@ Styles here are split up into 2 parts.
 
 2. GuidedSetupPanelStyles at the bottom of the page are custom styles for this component.
 */
+
+const panelHeaderBg = withPrefix('/images/panel-bg-top.svg');
+const panelFooterBg = withPrefix('/images/panel-bg-bottom.svg');
 
 export const GuidedSetupPanelStyles = (euiTheme) => ({
   buttonContainer: css`
@@ -17,11 +21,11 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
   `,
 
   panelHeaderBg: css`
-    background: url('/images/panel-bg-top.svg') no-repeat;
+    background: url(${panelHeaderBg}) no-repeat;
   `,
 
   panelFooterBg: css`
-    background: url('/images/panel-bg-bottom.svg') no-repeat !important;
+    background: url(${panelFooterBg}) no-repeat !important;
     background-size: cover !important;
   `,
 
