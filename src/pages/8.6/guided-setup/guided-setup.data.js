@@ -5,7 +5,7 @@ export const GUIDE_DATA = [
     cardTitle: 'Search my data',
     cardSummary:
       'Create a search experience for your websites, applications, workplace content, or anything in between.',
-    cardImage: 'illustration-search.png',
+    cardImage: 'search.png',
     media: null,
     // '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock-search.png">',
     intro:
@@ -59,7 +59,7 @@ export const GUIDE_DATA = [
     cardTitle: 'Observe my Kubernetes infrastructure',
     cardSummary:
       'Monitor your Kubernetes infrastructure by consolidating your logs and metrics.',
-    cardImage: 'illustration-observability.png',
+    cardImage: 'observability.png',
     media: null,
     // media:
     //   '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock.png">',
@@ -116,7 +116,7 @@ export const GUIDE_DATA = [
     cardTitle: 'Observe my data',
     cardSummary:
       'Choose one of our many integrations to bring your data in, and start visualizing it.',
-    cardImage: 'illustration-observability.png',
+    cardImage: 'observability.png',
     static: true,
     media: null,
     intro:
@@ -164,7 +164,7 @@ export const GUIDE_DATA = [
     cardTitle: 'Protect my Environment',
     cardSummary:
       'Protect your environment by unifying SIEM, endpoint security, and cloud security to protect against threats.',
-    cardImage: 'illustration-security.png',
+    cardImage: 'security.png',
     media: null,
     intro:
       "We'll help you get set up quilckly, using Elastic's out-of-the-box integrations.",
