@@ -16,6 +16,19 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     align-self: flex-end;
   `,
 
+  panelHeaderBg: css`
+    background: url('/images/panel-bg-top.svg') no-repeat;
+  `,
+
+  panelFooterBg: css`
+    background: url('/images/panel-bg-bottom.svg') no-repeat !important;
+    background-size: cover !important;
+  `,
+
+  contentSection: css`
+    padding: 24px;
+  `,
+
   media: css`
     width: 100%;
 

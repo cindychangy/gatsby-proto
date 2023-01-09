@@ -110,10 +110,9 @@ const GuidedSetupPanel = ({
           ownFocus
           onClose={onClick}
           aria-labelledby="onboarding-guide"
-          paddingSize="l"
         >
           <>
-            <EuiFlyoutHeader>
+            <EuiFlyoutHeader css={styles.panelHeaderBg}>
               <EuiSpacer size="m" />
               <EuiLink
                 href={withPrefix('/8.6/guided-setup')}
@@ -251,7 +250,7 @@ const GuidedSetupPanel = ({
                 </EuiFlexGroup>
               )}
             </EuiFlyoutBody>
-            <EuiFlyoutFooter>
+            <EuiFlyoutFooter css={styles.panelFooterBg}>
               <EuiFlexGroup alignItems="center" justifyContent="center">
                 <EuiButtonEmpty
                   iconType="questionInCircle"
