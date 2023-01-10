@@ -12,6 +12,8 @@ import {
   EuiFlexGroup,
   EuiHorizontalRule,
   EuiBadge,
+  EuiTextColor,
+  EuiIcon,
   useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana/kibana';
@@ -113,6 +115,14 @@ const GuidedSetup = () => {
                     <EuiSpacer size="s" />
                     <EuiText size="s" textAlign="center">
                       <h3 style={{ fontWeight: 600 }}>{guide.title}</h3>
+                      {guide.progress && (
+                        <EuiTextColor color="subdued">
+                          <small>{guide.progress}</small>
+                        </EuiTextColor>
+                      )}
+                      {guide.complete && (
+                        <EuiIcon type="checkInCircleFilled" color="success" />
+                      )}
                     </EuiText>
                   </EuiFlexItem>
                 </EuiFlexGroup>
