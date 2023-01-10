@@ -10,6 +10,7 @@ Styles here are split up into 2 parts.
 
 const panelHeaderBg = withPrefix('/images/panel-bg-top.svg');
 const panelFooterBg = withPrefix('/images/panel-bg-bottom.svg');
+const stepAnimation = withPrefix('/images/step-complete-animation.gif');
 
 export const GuidedSetupPanelStyles = (euiTheme) => ({
   buttonContainer: css`
@@ -103,6 +104,21 @@ export const GuidedSetupPanelStyles = (euiTheme) => ({
     }
   `,
 
+  stepCompleteAnimation: css`
+    background: url(${stepAnimation}) no-repeat !important;
+    background-size: cover !important;
+    position: absolute;
+    width: 65%;
+    top: -25%;
+    left: 15%;
+    // opacity: 1;
+  `,
+
+  stepContentWrapper: css`
+    position: relative;
+  `,
+
+  //confetti not currently being used
   confetti: css`
   background-repeat: repeat-x;
   background-position: top -10px center;

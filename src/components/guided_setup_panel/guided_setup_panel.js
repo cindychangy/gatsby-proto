@@ -86,7 +86,7 @@ const GuidedSetupPanel = ({
             setShowEndState(true);
           }, 0);
         }
-      }, 1500);
+      }, 999992550);
     }
   }, [confetti, data, completedSteps]);
 
@@ -146,7 +146,11 @@ const GuidedSetupPanel = ({
               <EuiText size="m">
                 {endGuide ? (
                   <div>
-                    <video width="100%" autoplay="true">
+                    <video
+                      width="100%"
+                      autoplay="true"
+                      poster={withPrefix('/images/illustration-well-done.svg')}
+                    >
                       <source
                         src={withPrefix('/images/video-guide-complete.webm')}
                         type="video/webm"
@@ -156,12 +160,6 @@ const GuidedSetupPanel = ({
                           '/images/video-guide-step-complete.mp4'
                         )}
                         type="video/mp4"
-                      />
-                      <img
-                        src={withPrefix('/images/illustration-well-done.svg')}
-                        alt="Guide complete"
-                        width="100%"
-                        height="au"
                       />
                     </video>
                     <p css={endGuide && mountedStyle}>
