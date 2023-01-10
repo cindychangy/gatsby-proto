@@ -145,11 +145,31 @@ const GuidedSetupPanel = ({
               )}
               <EuiText size="m">
                 {endGuide ? (
-                  <p css={endGuide && mountedStyle}>
-                    You’ve completed the Guide. Feel free to come back to the
-                    Guides for more onboarding help or a refresher anytime you’d
-                    like.
-                  </p>
+                  <div>
+                    <video width="100%" autoplay="true">
+                      <source
+                        src={withPrefix('/images/video-guide-complete.webm')}
+                        type="video/webm"
+                      />
+                      <source
+                        src={withPrefix(
+                          '/images/video-guide-step-complete.mp4'
+                        )}
+                        type="video/mp4"
+                      />
+                      <img
+                        src={withPrefix('/images/illustration-well-done.svg')}
+                        alt="Guide complete"
+                        width="100%"
+                        height="au"
+                      />
+                    </video>
+                    <p css={endGuide && mountedStyle}>
+                      You’ve completed the Guide. Feel free to come back to the
+                      Guides for more onboarding help or a refresher anytime
+                      you’d like.
+                    </p>
+                  </div>
                 ) : (
                   <p>{data.intro}</p>
                 )}
