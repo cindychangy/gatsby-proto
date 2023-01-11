@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useEffect } from 'react';
-import { navigate } from 'gatsby';
+import React, { useEffect } from 'react';
+import { navigate, withPrefix } from 'gatsby';
 import { css } from '@emotion/react';
 import {
   EuiButton,
@@ -111,40 +111,55 @@ const PanelSection = ({
             <EuiPanel
               paddingSize="none"
               style={{ position: 'relative', boxShadow: 'none' }}
-              css={confetti && currentStep && !stepComplete && styles.confetti}
+              css={
+                confetti && currentStep && !stepComplete && styles.checkAnimate
+              }
+              // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
-              <EuiSpacer size="s" />
-              <EuiText
-                size="s"
-                dangerouslySetInnerHTML={{ __html: step.description }}
-                css={styles.stepText}
-              />
-              {step.link && (
-                <EuiButtonEmpty
-                  iconType="popout"
-                  iconSide="right"
-                  iconSize="s"
-                  href={step.link.url}
-                  style={{ marginLeft: '24px' }}
-                >
-                  <EuiText size="xs">{step.link.title}</EuiText>
-                </EuiButtonEmpty>
+              {confetti && currentStep && !stepComplete ? (
+                <img
+                  src={withPrefix('/images/step-complete-animation.gif')}
+                  alt="Step complete"
+                  width="70%"
+                />
+              ) : (
+                <>
+                  <>
+                    <EuiSpacer size="s" />
+                    <EuiText
+                      size="s"
+                      dangerouslySetInnerHTML={{ __html: step.description }}
+                      css={styles.stepText}
+                    />
+                    {step.link && (
+                      <EuiButtonEmpty
+                        iconType="popout"
+                        iconSide="right"
+                        iconSize="s"
+                        href={step.link.url}
+                        style={{ marginLeft: '24px' }}
+                      >
+                        <EuiText size="xs">{step.link.title}</EuiText>
+                      </EuiButtonEmpty>
+                    )}
+                    {showStartButton ? (
+                      <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
+                        <EuiFlexItem grow={false}>
+                          <EuiSpacer size="m" />
+                          <EuiButton
+                            fill
+                            onClick={() =>
+                              navigate(`/8.6/guided-setup/${step.stepPath}`)
+                            }
+                          >
+                            Start
+                          </EuiButton>
+                        </EuiFlexItem>
+                      </EuiFlexGroup>
+                    ) : null}
+                  </>
+                </>
               )}
-              {showStartButton ? (
-                <EuiFlexGroup justifyContent="flexEnd" gutterSize="none">
-                  <EuiFlexItem grow={false}>
-                    <EuiSpacer size="m" />
-                    <EuiButton
-                      fill
-                      onClick={() =>
-                        navigate(`/8.6/guided-setup/${step.stepPath}`)
-                      }
-                    >
-                      Start
-                    </EuiButton>
-                  </EuiFlexItem>
-                </EuiFlexGroup>
-              ) : null}
             </EuiPanel>
           </EuiAccordion>
           <EuiHorizontalRule margin="l" />

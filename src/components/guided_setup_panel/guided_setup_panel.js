@@ -86,7 +86,7 @@ const GuidedSetupPanel = ({
             setShowEndState(true);
           }, 0);
         }
-      }, 1500);
+      }, 5300);
     }
   }, [confetti, data, completedSteps]);
 
