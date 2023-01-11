@@ -149,13 +149,12 @@ const GuidedSetupPanel = ({
                     <img
                       src={withPrefix('/images/guide-complete-animation.gif')}
                       alt="Guide complete"
-                      width="100%"
-                      height="auto"
+                      style={{ width: '85%', margin: 'auto' }}
                     />
+                    <EuiSpacer size="m" />
                     <p css={endGuide && mountedStyle}>
                       You’ve completed the Guide. Feel free to come back to the
-                      Guides for more onboarding help or a refresher anytime
-                      you’d like.
+                      Guides for more onboarding help or a refresher.
                     </p>
                   </div>
                 ) : (
@@ -175,13 +174,13 @@ const GuidedSetupPanel = ({
                     >
                       {data.link.title}
                     </EuiLink>
+                    <EuiSpacer size="m" />
                   </EuiText>
                 </>
               )}
               <EuiSpacer size="xs" />
               {Object.keys(completedSteps).length === 0 && confetti && (
                 <>
-                  <EuiSpacer size="l" />
                   <EuiProgress
                     valueText={`${Object.keys(completedSteps).length}/4 steps`}
                     value={
@@ -202,7 +201,7 @@ const GuidedSetupPanel = ({
               )}
               {Object.keys(completedSteps).length !== 0 && (
                 <>
-                  <EuiSpacer size="l" />
+                  {/* <EuiSpacer size="l" /> */}
                   <EuiProgress
                     valueText={`${Object.keys(completedSteps).length}/4 steps`}
                     value={
