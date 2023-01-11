@@ -15,7 +15,7 @@ import {
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana/kibana-confetti';
 import { GuidedSetupStyles } from './guided-setup.styles';
-import { GUIDE_DATA } from './guided-setup.data-confetti';
+import { GUIDE_DATA } from './guided-setup-confetti.data';
 import { navigate, withPrefix } from 'gatsby';
 import { css } from '@emotion/react';
 

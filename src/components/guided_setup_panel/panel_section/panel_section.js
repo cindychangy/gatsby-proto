@@ -111,12 +111,7 @@ const PanelSection = ({
             <EuiPanel
               paddingSize="none"
               style={{ position: 'relative', boxShadow: 'none' }}
-              css={
-                confetti &&
-                currentStep &&
-                !stepComplete &&
-                styles.stepCompleteAnimation
-              }
+              css={confetti && currentStep && !stepComplete && styles.confetti}
             >
               <EuiSpacer size="s" />
               <EuiText
