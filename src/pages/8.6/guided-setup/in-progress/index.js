@@ -5,21 +5,48 @@ import {
   EuiSpacer,
   EuiTitle,
   EuiText,
-  EuiCard,
   EuiFlexItem,
   EuiButtonEmpty,
   EuiFlexGrid,
   EuiFlexGroup,
-  EuiTextAlign,
-  EuiTextColor,
+  EuiCard,
   EuiBadge,
+  EuiTextColor,
   EuiIcon,
   useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../../layouts/kibana/kibana';
-import { GuidedSetupStyles } from '../../guided-setup/guided-setup.styles';
+import { GuidedSetupStyles } from '../guided-setup.styles';
 import { GUIDE_DATA } from '../guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
+import { css } from '@emotion/react';
+
+const guideCard = css`
+  .euiCard__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const customBadge = css`
+  padding: 5px;
+  borderradius: 24px;
+  padding: 2px 12px;
+  fontsize: 0.8571rem;
+  lineheight: 24px;
+  border: 1px solid rgb(211 218 230);
+  fontweight: 700;
+  texttransform: uppercase;
+  letterspacing: 0.05em;
+  position: absolute;
+  insetblockstart: 0px;
+  insetinlinestart: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  mininlinesize: min(30%, 112px);
+  maxinlinesize: calc(100% - 32px);
+`;
 
 const GuidedSetupInProgress = () => {
   const { euiTheme } = useEuiTheme();
@@ -78,16 +105,14 @@ const GuidedSetupInProgress = () => {
             {GUIDE_DATA.map((guide, index) => (
               <EuiFlexItem key={index}>
                 <EuiCard
-                  titleSize="xs"
                   style={{ position: 'relative', minHeight: '114px' }}
+                  css={guideCard}
                   onClick={() => {}}
-                  description={
-                    <EuiFlexGroup
-                      direction="column"
-                      style={{ height: '100%' }}
-                      gutterSize="none"
-                    >
-                      <EuiFlexItem style={{ justifyContent: 'center' }}>
+                  title={<h3 style={{ fontWeight: 600 }}>{guide.title}</h3>}
+                  titleSize="xs"
+                  children={
+                    <EuiFlexGroup>
+                      <EuiFlexItem>
                         <EuiBadge
                           color="hollow"
                           iconType={
@@ -118,23 +143,14 @@ const GuidedSetupInProgress = () => {
                         >
                           {guide.solution}
                         </EuiBadge>
-                        <EuiTextAlign textAlign="center">
-                          <EuiText size="xs">
-                            <h3 style={{ fontWeight: 600 }}>{guide.title}</h3>
-                          </EuiText>
-                          <EuiSpacer size="s" />
-                          {guide.progress && (
-                            <EuiTextColor color="subdued">
-                              <small>{guide.progress}</small>
-                            </EuiTextColor>
-                          )}
-                          {guide.complete && (
-                            <EuiIcon
-                              type="checkInCircleFilled"
-                              color="#00BFB3"
-                            />
-                          )}
-                        </EuiTextAlign>
+                        {guide.progress && (
+                          <EuiTextColor color="subdued">
+                            <small>{guide.progress}</small>
+                          </EuiTextColor>
+                        )}
+                        {guide.complete && (
+                          <EuiIcon type="checkInCircleFilled" color="#00BFB3" />
+                        )}
                       </EuiFlexItem>
                     </EuiFlexGroup>
                   }

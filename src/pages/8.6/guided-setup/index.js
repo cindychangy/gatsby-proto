@@ -22,6 +22,7 @@ import { css } from '@emotion/react';
 const guideCard = css`
   .euiCard__content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
