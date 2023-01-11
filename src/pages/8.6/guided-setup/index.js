@@ -105,7 +105,7 @@ const GuidedSetup = () => {
                 <EuiCard
                   style={{ position: 'relative', minHeight: '114px' }}
                   css={guideCard}
-                  onClick={() => {}}
+                  onClick={() => handleGuideClick(guide.section)}
                   title={<h3 style={{ fontWeight: 600 }}>{guide.title}</h3>}
                   titleSize="xs"
                   children={
@@ -114,11 +114,11 @@ const GuidedSetup = () => {
                         <EuiBadge
                           color="hollow"
                           iconType={
-                            (guide.solution === 'Search' &&
+                            (guide.section === 'Search' &&
                               'logoElasticsearch') ||
-                            (guide.solution === 'Observability' &&
+                            (guide.section === 'Observability' &&
                               'logoObservability') ||
-                            (guide.solution === 'Security' && 'logoSecurity')
+                            (guide.section === 'Security' && 'logoSecurity')
                           }
                           iconSide="left"
                           style={{
@@ -139,7 +139,7 @@ const GuidedSetup = () => {
                             maxInlineSize: 'calc(100% - 32px)',
                           }}
                         >
-                          {guide.solution}
+                          {guide.section}
                         </EuiBadge>
                       </EuiFlexItem>
                     </EuiFlexGroup>
