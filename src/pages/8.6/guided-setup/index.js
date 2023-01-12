@@ -15,7 +15,7 @@ import {
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana/kibana';
 import { GuidedSetupStyles } from './guided-setup.styles';
-import { GUIDE_DATA } from './guided-setup.data';
+import { GUIDE_DATA } from '../../../constants/guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
 import { css } from '@emotion/react';
 

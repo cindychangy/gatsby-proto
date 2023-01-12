@@ -15,12 +15,27 @@ import {
   EuiLink,
 } from '@elastic/eui';
 
-import Navbar from '../../../components/navbar';
-import { deploymentStyles } from './create-deployment.styles';
+import Navbar from '../../components/navbar';
 import { navigate, withPrefix } from 'gatsby';
+import { css } from '@emotion/react';
+
+const panel = css`
+  max-width: 650px;
+  width: 100%;
+  margin: auto;
+`;
+
+const panelContainer = css`
+  padding: 40px 48px;
+`;
+
+const buttonPanel = css`
+  border-radius: 0 !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 12px !important;
+  padding: 24px 48px !important;
+`;
 
 const CreateDeployment = () => {
-  const styles = deploymentStyles();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
@@ -49,8 +64,8 @@ const CreateDeployment = () => {
         ]}
       />
       <EuiSpacer size="xxl" />
-      <EuiPanel paddingSize="none" css={styles.panel}>
-        <div css={styles.panelContainer}>
+      <EuiPanel paddingSize="none" css={panel}>
+        <div css={panelContainer}>
           <EuiTitle>
             <h2>Create your first deployment</h2>
           </EuiTitle>
@@ -90,7 +105,7 @@ const CreateDeployment = () => {
             </EuiFlexItem>
           </EuiFlexGroup>
         </div>
-        <EuiPanel css={styles.buttonPanel}>
+        <EuiPanel css={buttonPanel}>
           <EuiButton fill isLoading={isLoading} onClick={() => handleClick()}>
             Create deployment
           </EuiButton>

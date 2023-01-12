@@ -19,11 +19,32 @@ import {
   useEuiTheme,
 } from '@elastic/eui';
 import Header from '../../components/header';
-import { loginStyles } from './index.styles';
+import { css } from '@emotion/react';
+
+const container = css`
+  padding: 30px 40px 0 0;
+`;
+
+const formContainer = css`
+  padding: 0 40px;
+  margin: auto;
+  position: relative;
+`;
+
+const password = css`
+  text-align: center;
+`;
+
+const formPanel = css`
+  width: 430px;
+`;
+
+const panelSpace = css`
+  padding: 0 8px;
+`;
 
 const Login = () => {
   const { euiTheme } = useEuiTheme();
-  const styles = loginStyles(euiTheme);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
@@ -36,15 +57,15 @@ const Login = () => {
   return (
     <>
       <Header accountType="login" />
-      <div css={styles.formContainer}>
+      <div css={formContainer}>
         <EuiFlexGroup
           direction="row"
           justifyContent="center"
           alignItems="flexStart"
         >
           <EuiFlexItem grow={false}>
-            <EuiPanel paddingSize="l" css={styles.formPanel}>
-              <div css={styles.panelSpace}>
+            <EuiPanel paddingSize="l" css={formPanel}>
+              <div css={panelSpace}>
                 <EuiSpacer size="s" />
                 <EuiTitle size="s">
                   <EuiTextAlign textAlign="center">
@@ -69,7 +90,7 @@ const Login = () => {
                   Log in
                 </EuiButton>
                 <EuiSpacer size="m" />
-                <div css={styles.password}>
+                <div css={password}>
                   <EuiButtonEmpty href="#">Forgot password?</EuiButtonEmpty>
                 </div>
                 <EuiFlexGroup

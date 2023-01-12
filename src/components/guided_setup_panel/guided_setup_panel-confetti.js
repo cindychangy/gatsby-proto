@@ -23,7 +23,7 @@ import {
 } from '@elastic/eui';
 import PanelSection from './panel_section/panel_section-confetti';
 import { GuidedSetupPanelStyles } from './guided_setup_panel-confetti.styles';
-import { GUIDE_DATA } from '../../pages/8.6/guided-setup/guided-setup-confetti.data';
+import { GUIDE_DATA } from '../../constants/guided-setup-confetti.data';
 
 const GuidedSetupPanel = ({
   guideOpen,

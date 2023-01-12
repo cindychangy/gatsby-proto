@@ -14,12 +14,41 @@ import {
   EuiHorizontalRule,
   useEuiTheme,
 } from '@elastic/eui';
-import Header from '../../../components/header';
-import { loginStyles } from '../index.styles';
+import Header from '../../components/header';
+import { css } from '@emotion/react';
+
+const formContainer = css`
+  padding: 0 40px;
+  margin: auto;
+  position: relative;
+`;
+
+const formPanel = css`
+  width: 430px;
+`;
+
+const header = css`
+  text-align: center;
+  position: relative;
+  top: -50px;
+`;
+
+const verticalRule = css`
+  text-align: center;
+  background: ${euiTheme.colors.lightShade};
+  width: 1px;
+  height: 50%;
+  margin: 0 40px;
+`;
+
+const ruleText = css`
+  margin: 100px 0 0 -8px;
+  background: ${euiTheme.colors.body};
+  padding: 8px 0;
+`;
 
 const Signup = () => {
   const { euiTheme } = useEuiTheme();
-  const styles = loginStyles(euiTheme);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
@@ -32,7 +61,7 @@ const Signup = () => {
   return (
     <>
       <Header accountType="signup" />
-      <EuiFlexGroup direction="column" css={styles.header}>
+      <EuiFlexGroup direction="column" css={header}>
         <EuiSpacer size="m" />
         <EuiFlexItem>
           <EuiTitle size="m">
@@ -44,7 +73,7 @@ const Signup = () => {
           </EuiText>
         </EuiFlexItem>
       </EuiFlexGroup>
-      <div css={styles.formContainer}>
+      <div css={formContainer}>
         <EuiSpacer size="xxl" />
         <EuiFlexGroup
           direction="row"
@@ -52,7 +81,7 @@ const Signup = () => {
           alignItems="flexStart"
         >
           <EuiFlexItem grow={false}>
-            <EuiPanel paddingSize="l" css={styles.formPanel}>
+            <EuiPanel paddingSize="l" css={formPanel}>
               <EuiTitle size="s">
                 <EuiTextAlign textAlign="center">
                   <h3>Sign up for a free 14-day trial</h3>
@@ -127,8 +156,8 @@ const Signup = () => {
           </EuiFlexItem>
 
           <EuiFlexItem grow={false}>
-            <div css={styles.verticalRule}>
-              <EuiText color="subdued" size="s" css={styles.ruleText}>
+            <div css={verticalRule}>
+              <EuiText color="subdued" size="s" css={ruleText}>
                 OR
               </EuiText>
             </div>

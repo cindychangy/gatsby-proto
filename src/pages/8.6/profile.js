@@ -16,12 +16,21 @@ import {
   EuiFlexItem,
   EuiButton,
 } from '@elastic/eui';
-import Header from '../../../components/header';
-import { profileStyles } from './profile.styles';
-import { EXPERIENCE, PURPOSE } from './profile.data';
+import Header from '../../components/header';
+import { EXPERIENCE, PURPOSE } from '../../constants/profile.data';
+import { css } from '@emotion/react';
+
+const formContainer = css`
+  max-width: 550px;
+  margin: auto;
+  width: 100%;
+`;
+
+const panel = css`
+  padding: 30px;
+`;
 
 const Profile = () => {
-  const styles = profileStyles();
   const [experience, setExperience] = useState('');
   const [purpose, setPurpose] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -36,9 +45,9 @@ const Profile = () => {
   return (
     <>
       <Header signedIn />
-      <div css={styles.formContainer}>
+      <div css={formContainer}>
         <EuiPanel paddingSize="l">
-          <div css={styles.panel}>
+          <div css={panel}>
             <EuiText size="s" textAlign="center">
               <h1>Welcome to Elastic</h1>
               <EuiTextColor color="subdued">

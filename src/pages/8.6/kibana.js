@@ -18,7 +18,7 @@ import {
   EuiText,
 } from '@elastic/eui';
 import { navigate, withPrefix } from 'gatsby';
-import Account from '../../../components/account';
+import Account from '../../components/account';
 
 const KibanaHome = () => {
   if (typeof HTMLElement !== `undefined`) {

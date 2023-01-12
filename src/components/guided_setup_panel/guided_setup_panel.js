@@ -23,7 +23,7 @@ import {
 } from '@elastic/eui';
 import PanelSection from './panel_section/panel_section';
 import { GuidedSetupPanelStyles } from './guided_setup_panel.styles';
-import { GUIDE_DATA } from '../../pages/8.6/guided-setup/guided-setup.data';
+import { GUIDE_DATA } from '../../constants/guided-setup.data';
 
 const GuidedSetupPanel = ({
   guideOpen,
