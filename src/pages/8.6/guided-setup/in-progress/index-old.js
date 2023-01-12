@@ -13,10 +13,12 @@ import {
   EuiButtonEmpty,
   EuiFlexGrid,
   EuiHorizontalRule,
+  useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../../layouts/kibana';
 import { GUIDE_DATA } from '../../../../constants/guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
+import { css } from '@emotion/react';
 
 const GuidedSetup = () => {
   const { euiTheme } = useEuiTheme();

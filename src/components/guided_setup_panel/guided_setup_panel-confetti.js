@@ -36,8 +36,8 @@ const GuidedSetupPanel = ({
   completedSteps,
 }) => {
   const { euiTheme } = useEuiTheme();
-  const FOOTER_BG = withPrefix('/images/panel-bg-top-gray.svg');
-  const HEADER_BG = withPrefix('/images/panel-bg-bottom-gray.svg');
+  const HEADER_BG = withPrefix('/images/panel-bg-top-gray.svg');
+  const FOOTER_BG = withPrefix('/images/panel-bg-bottom-gray.svg');
 
   const iconQuestion = css`
     .euiIcon {
@@ -301,11 +301,7 @@ const GuidedSetupPanel = ({
                 </EuiFlexGroup>
               )}
             </EuiFlyoutBody>
-            <EuiFlyoutFooter
-              css={css`
-                align-self: flex-end;
-              `}
-            >
+            <EuiFlyoutFooter css={panelFooterBg}>
               <EuiFlexGroup alignItems="center" justifyContent="center">
                 <EuiButtonEmpty
                   iconType="questionInCircle"
