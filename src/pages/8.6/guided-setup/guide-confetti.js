@@ -13,7 +13,7 @@ import {
   EuiBadge,
   useEuiTheme,
 } from '@elastic/eui';
-import KibanaLayout from '../../../layouts/kibana/kibana-confetti';
+import KibanaLayout from '../../../layouts/kibana-confetti';
 import { GuidedSetupStyles } from './guided-setup.styles';
 import { GUIDE_DATA } from '../../../constants/guided-setup-confetti.data';
 import { navigate, withPrefix } from 'gatsby';

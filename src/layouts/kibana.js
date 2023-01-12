@@ -16,7 +16,6 @@ import {
   EuiTitle,
   EuiText,
   EuiPageTemplate,
-  useEuiTheme,
   EuiModal,
   EuiModalBody,
   EuiModalFooter,
@@ -24,10 +23,35 @@ import {
   EuiSpacer,
   EuiButton,
 } from '@elastic/eui';
-import Account from '../../components/account';
-import GuidedSetupPanel from '../../components/guided_setup_panel/guided_setup_panel';
-import { kibanaLayoutStyles } from './kibana.styles';
-import '../../styles/global.css';
+import Account from '../components/account';
+import GuidedSetupPanel from '../components/guided_setup_panel/guided_setup_panel';
+import '../styles/global.css';
+
+const mainWrapper = css`
+  padding-top: 96px; // two top navs
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const contentWrapper = css`
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  z-index: 0;
+  position: relative;
+`;
+
+const header = css`
+  background: ${euiTheme.colors.body};
+  padding: 45px 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  border-bottom: 2px solid ${euiTheme.colors.lightestShade};
+`;
 
 const KibanaLayout = ({
   onClick,
@@ -45,8 +69,6 @@ const KibanaLayout = ({
   completedSteps,
   ...rest
 }) => {
-  const { euiTheme } = useEuiTheme();
-  const styles = kibanaLayoutStyles(euiTheme);
   const [navIsOpen, setNavIsOpen] = useState(false);
   const [exitGuide, setExitGuide] = useState(false);
   const [removeGuideButton, setRemoveGuideButton] = useState(false);
@@ -162,7 +184,7 @@ const KibanaLayout = ({
     return (
       <>
         {exitGuideModal}
-        <div css={styles.mainWrapper}>
+        <div css={mainWrapper}>
           <EuiHeader
             position="fixed"
             theme="dark"
@@ -241,7 +263,7 @@ const KibanaLayout = ({
           />
 
           {pageHeader && (
-            <div css={styles.header}>
+            <div css={header}>
               <div className="euiPageBody--restrictWidth-default">
                 <EuiTitle size="l">
                   <h1>{pageHeader}</h1>
@@ -250,7 +272,7 @@ const KibanaLayout = ({
             </div>
           )}
 
-          <div css={styles.contentWrapper} className="fullBody">
+          <div css={contentWrapper} className="fullBody">
             {hasSidebar ? (
               children
             ) : (

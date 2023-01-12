@@ -15,7 +15,7 @@ import {
   EuiTitle,
   EuiTourStep,
 } from '@elastic/eui';
-import KibanaLayout from '../layouts/kibana/kibana';
+import KibanaLayout from '../layouts/kibana';
 import SolutionSidebar from './solution_sidebar';
 
 const StepPlaceholder = ({
