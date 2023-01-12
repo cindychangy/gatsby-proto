@@ -140,11 +140,7 @@ const GuidedSetupPanel = ({
           aria-labelledby="onboarding-guide"
         >
           <>
-            <EuiFlyoutHeader
-              css={css`
-                background: url(${panelHeaderBg}) no-repeat;
-              `}
-            >
+            <EuiFlyoutHeader css={panelHeaderBg}>
               <EuiSpacer size="m" />
               <EuiLink
                 href={withPrefix('/8.6/guided-setup')}
