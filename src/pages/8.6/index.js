@@ -18,7 +18,7 @@ import {
   EuiButtonEmpty,
   useEuiTheme,
 } from '@elastic/eui';
-import Header from '../../components/header/header';
+import Header from '../../components/header';
 import { loginStyles } from './index.styles';
 
 const Login = () => {

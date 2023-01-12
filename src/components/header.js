@@ -7,13 +7,22 @@ import {
   EuiImage,
   EuiText,
   EuiButton,
-  EuiSpacer,
 } from '@elastic/eui';
 import { navigate, withPrefix } from 'gatsby';
-import { headerStyles } from './header.styles';
+import { css } from '@emotion/react';
+
+const container = css`
+  margin: 35px 30px 40px 30px;
+  position: relative;
+`;
+
+const logo = css`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -85%);
+`;
 
 const Header = ({ accountType, signedIn }) => {
-  const styles = headerStyles();
   const login = accountType === 'login';
 
   const handleClick = (route) => {
@@ -24,7 +33,7 @@ const Header = ({ accountType, signedIn }) => {
 
   return (
     <>
-      <div css={styles.container}>
+      <div css={container}>
         {signedIn ? (
           <EuiFlexGroup justifyContent="flexEnd" alignItems="center">
             <EuiFlexItem grow={false}>
@@ -64,7 +73,7 @@ const Header = ({ accountType, signedIn }) => {
               : withPrefix('images/logo-elastic.png')
           }
           alt="Elastic logo"
-          css={styles.logo}
+          css={logo}
         />
       </div>
     </>

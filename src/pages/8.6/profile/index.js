@@ -16,7 +16,7 @@ import {
   EuiFlexItem,
   EuiButton,
 } from '@elastic/eui';
-import Header from '../../../components/header/header';
+import Header from '../../../components/header';
 import { profileStyles } from './profile.styles';
 import { EXPERIENCE, PURPOSE } from './profile.data';
 
