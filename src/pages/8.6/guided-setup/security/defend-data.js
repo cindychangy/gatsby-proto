@@ -1,5 +1,5 @@
 import React from 'react';
-import StepPlaceholder from '../../../../components/step_placeholder/step_placeholder';
+import StepPlaceholder from '../../../../components/step_placeholder';
 
 const BREADCRUMBS = [
   {
