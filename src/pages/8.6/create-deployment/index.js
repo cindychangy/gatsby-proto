@@ -15,7 +15,7 @@ import {
   EuiLink,
 } from '@elastic/eui';
 
-import Navbar from '../../../components/navbar/navbar';
+import Navbar from '../../../components/navbar';
 import { deploymentStyles } from './create-deployment.styles';
 import { navigate, withPrefix } from 'gatsby';
 

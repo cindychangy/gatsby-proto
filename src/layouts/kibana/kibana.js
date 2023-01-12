@@ -24,7 +24,7 @@ import {
   EuiSpacer,
   EuiButton,
 } from '@elastic/eui';
-import Account from '../../components/account/account';
+import Account from '../../components/account';
 import GuidedSetupPanel from '../../components/guided_setup_panel/guided_setup_panel';
 import { kibanaLayoutStyles } from './kibana.styles';
 import '../../styles/global.css';

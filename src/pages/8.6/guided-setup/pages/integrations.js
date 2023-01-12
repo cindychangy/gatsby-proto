@@ -13,7 +13,7 @@ import {
   EuiHorizontalRule,
   EuiText,
 } from '@elastic/eui';
-import Navbar from '../../../../components/navbar/navbar';
+import Navbar from '../../../../components/navbar';
 import { withPrefix } from 'gatsby';
 
 const Integrations = () => {

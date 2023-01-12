@@ -17,7 +17,7 @@ import {
 } from '@elastic/eui';
 import { navigate } from 'gatsby';
 import { css } from '@emotion/react';
-import Account from '../../components/account/account';
+import Account from './account';
 
 const Navbar = ({ crumbs, isCloud, isIntegrations }) => {
   const { euiTheme } = useEuiTheme();
