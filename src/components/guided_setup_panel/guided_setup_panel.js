@@ -22,7 +22,6 @@ import {
   EuiHorizontalRule,
 } from '@elastic/eui';
 import PanelSection from './panel_section/panel_section';
-import { GuidedSetupPanelStyles } from './guided_setup_panel.styles';
 import { GUIDE_DATA } from '../../constants/guided-setup.data';
 
 const GuidedSetupPanel = ({
@@ -37,7 +36,32 @@ const GuidedSetupPanel = ({
   completedSteps,
 }) => {
   const { euiTheme } = useEuiTheme();
-  const styles = GuidedSetupPanelStyles(euiTheme);
+  const HEADER_BG = withPrefix('/images/panel-bg-top.svg');
+  const FOOTER_BG = withPrefix('/images/panel-bg-bottom.svg');
+  const iconQuestion = css`
+    .euiIcon {
+      width: 21px;
+      height: 21px;
+      margin-left: -2px;
+    }
+  `;
+
+  const panelHeaderBg = css`
+    background: url(${HEADER_BG}) no-repeat;
+  `;
+
+  const panelFooterBg = css`
+    background: url(${FOOTER_BG}) no-repeat !important;
+    background-size: cover !important;
+  `;
+
+  const media = css`
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  `;
 
   const mountedStyle = { animation: 'transitionIn 850ms ease-in-out' };
   const [toggleStep, setToggleStep] = useState(stepNumber);
@@ -92,7 +116,11 @@ const GuidedSetupPanel = ({
 
   return (
     <>
-      <div css={styles.buttonContainer}>
+      <div
+        css={css`
+          margin: 0 10px;
+        `}
+      >
         <EuiButton
           color="success"
           size="s"
@@ -112,7 +140,11 @@ const GuidedSetupPanel = ({
           aria-labelledby="onboarding-guide"
         >
           <>
-            <EuiFlyoutHeader css={styles.panelHeaderBg}>
+            <EuiFlyoutHeader
+              css={css`
+                background: url(${panelHeaderBg}) no-repeat;
+              `}
+            >
               <EuiSpacer size="m" />
               <EuiLink
                 href={withPrefix('/8.6/guided-setup')}
@@ -134,7 +166,7 @@ const GuidedSetupPanel = ({
 
             <EuiFlyoutBody>
               {data.media && (
-                <div css={styles.media}>
+                <div css={media}>
                   {endGuide ? null : (
                     <>
                       <div dangerouslySetInnerHTML={{ __html: data.media }} />
@@ -257,14 +289,14 @@ const GuidedSetupPanel = ({
                 </EuiFlexGroup>
               )}
             </EuiFlyoutBody>
-            <EuiFlyoutFooter css={styles.panelFooterBg}>
+            <EuiFlyoutFooter css={panelFooterBg}>
               <EuiFlexGroup alignItems="center" justifyContent="center">
                 <EuiButtonEmpty
                   iconType="questionInCircle"
                   iconSide="right"
                   href="https://cloud.elastic.co/support"
                   style={{ color: euiTheme.colors.darkShade, fontWeight: 400 }}
-                  css={styles.iconQuestion}
+                  css={iconQuestion}
                 >
                   Need help?
                 </EuiButtonEmpty>

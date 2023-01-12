@@ -17,38 +17,23 @@ import {
 import Header from '../../components/header';
 import { css } from '@emotion/react';
 
-const formContainer = css`
-  padding: 0 40px;
-  margin: auto;
-  position: relative;
-`;
-
-const formPanel = css`
-  width: 430px;
-`;
-
-const header = css`
-  text-align: center;
-  position: relative;
-  top: -50px;
-`;
-
-const verticalRule = css`
-  text-align: center;
-  background: ${euiTheme.colors.lightShade};
-  width: 1px;
-  height: 50%;
-  margin: 0 40px;
-`;
-
-const ruleText = css`
-  margin: 100px 0 0 -8px;
-  background: ${euiTheme.colors.body};
-  padding: 8px 0;
-`;
-
 const Signup = () => {
   const { euiTheme } = useEuiTheme();
+
+  const verticalRule = css`
+    text-align: center;
+    background: ${euiTheme.colors.lightShade};
+    width: 1px;
+    height: 50%;
+    margin: 0 40px;
+  `;
+
+  const ruleText = css`
+    margin: 100px 0 0 -8px;
+    background: ${euiTheme.colors.body};
+    padding: 8px 0;
+  `;
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = () => {
@@ -61,7 +46,14 @@ const Signup = () => {
   return (
     <>
       <Header accountType="signup" />
-      <EuiFlexGroup direction="column" css={header}>
+      <EuiFlexGroup
+        direction="column"
+        css={css`
+          text-align: center;
+          position: relative;
+          top: -50px;
+        `}
+      >
         <EuiSpacer size="m" />
         <EuiFlexItem>
           <EuiTitle size="m">
@@ -73,7 +65,13 @@ const Signup = () => {
           </EuiText>
         </EuiFlexItem>
       </EuiFlexGroup>
-      <div css={formContainer}>
+      <div
+        css={css`
+          padding: 0 40px;
+          margin: auto;
+          position: relative;
+        `}
+      >
         <EuiSpacer size="xxl" />
         <EuiFlexGroup
           direction="row"
@@ -81,7 +79,12 @@ const Signup = () => {
           alignItems="flexStart"
         >
           <EuiFlexItem grow={false}>
-            <EuiPanel paddingSize="l" css={formPanel}>
+            <EuiPanel
+              paddingSize="l"
+              css={css`
+                width: 430px;
+              `}
+            >
               <EuiTitle size="s">
                 <EuiTextAlign textAlign="center">
                   <h3>Sign up for a free 14-day trial</h3>

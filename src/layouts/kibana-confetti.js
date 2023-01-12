@@ -28,32 +28,6 @@ import Account from '../components/account';
 import GuidedSetupPanel from '../components/guided_setup_panel/guided_setup_panel-confetti';
 import '../styles/global.css';
 
-const mainWrapper = css`
-  padding-top: 96px; // two top navs
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
-
-const contentWrapper = css`
-  display: flex;
-  flex-flow: column nowrap;
-  flex-grow: 1;
-  z-index: 0;
-  position: relative;
-`;
-
-const header = css`
-  background: ${euiTheme.colors.body};
-  padding: 45px 0;
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
-  border-bottom: 2px solid ${euiTheme.colors.lightestShade};
-`;
-
 const KibanaLayout = ({
   onClick,
   guideOpen,
@@ -70,6 +44,34 @@ const KibanaLayout = ({
   completedSteps,
   ...rest
 }) => {
+  const { euiTheme } = useEuiTheme();
+
+  const mainWrapper = css`
+    padding-top: 96px; // two top navs
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  `;
+
+  const contentWrapper = css`
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    z-index: 0;
+    position: relative;
+  `;
+
+  const header = css`
+    background: ${euiTheme.colors.body};
+    padding: 45px 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    border-bottom: 2px solid ${euiTheme.colors.lightestShade};
+  `;
+
   const [navIsOpen, setNavIsOpen] = useState(false);
   const [exitGuide, setExitGuide] = useState(false);
   const [removeGuideButton, setRemoveGuideButton] = useState(false);

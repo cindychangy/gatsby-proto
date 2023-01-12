@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   EuiSpacer,
   EuiTitle,
@@ -11,44 +11,22 @@ import {
   EuiFlexGroup,
   EuiCard,
   EuiBadge,
-  useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana-confetti';
-import { GuidedSetupStyles } from './guided-setup.styles';
 import { GUIDE_DATA } from '../../../constants/guided-setup-confetti.data';
-import { navigate, withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 import { css } from '@emotion/react';
 
-const guideCard = css`
-  .euiCard__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
-const customBadge = css`
-  padding: 5px;
-  borderradius: 24px;
-  padding: 2px 12px;
-  fontsize: 0.8571rem;
-  lineheight: 24px;
-  border: 1px solid rgb(211 218 230);
-  fontweight: 700;
-  texttransform: uppercase;
-  letterspacing: 0.05em;
-  position: absolute;
-  insetblockstart: 0px;
-  insetinlinestart: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  mininlinesize: min(30%, 112px);
-  maxinlinesize: calc(100% - 32px);
-`;
-
 const GuidedSetup = () => {
-  const { euiTheme } = useEuiTheme();
-  const styles = GuidedSetupStyles(euiTheme);
+  const guideCard = css`
+    .euiCard__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  `;
+
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -87,7 +65,11 @@ const GuidedSetup = () => {
       newUserStartPage={newUserStartPage}
     >
       <EuiSpacer size="xxl" />
-      <div css={styles.container}>
+      <div
+        css={css`
+          padding: 10px 10px 0;
+        `}
+      >
         <EuiTitle size="l" className="eui-textCenter">
           <h1>What would you like to do&nbsp;first?</h1>
         </EuiTitle>

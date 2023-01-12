@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   EuiAvatar,
   EuiButtonEmpty,
@@ -8,11 +8,6 @@ import {
   EuiHeaderSectionItemButton,
   EuiIcon,
   EuiPopover,
-  EuiFlexGroup,
-  EuiPanel,
-  EuiText,
-  EuiFlexItem,
-  EuiHorizontalRule,
   useEuiTheme,
 } from '@elastic/eui';
 import { navigate } from 'gatsby';

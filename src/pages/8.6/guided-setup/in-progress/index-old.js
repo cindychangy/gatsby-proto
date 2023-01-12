@@ -13,16 +13,24 @@ import {
   EuiButtonEmpty,
   EuiFlexGrid,
   EuiHorizontalRule,
-  useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../../layouts/kibana';
-import { GuidedSetupStyles } from '../guided-setup.styles';
 import { GUIDE_DATA } from '../../../../constants/guided-setup.data';
 import { navigate, withPrefix } from 'gatsby';
 
 const GuidedSetup = () => {
   const { euiTheme } = useEuiTheme();
-  const styles = GuidedSetupStyles(euiTheme);
+  const footer = css`
+    span.euiProgress__label {
+      flex-grow: 0;
+      margin-bottom: 5px;
+    }
+
+    span.euiProgress__valueText {
+      color: ${euiTheme.colors.darkShade};
+    }
+  `;
+
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -80,7 +88,11 @@ const GuidedSetup = () => {
     >
       <EuiSpacer size="xxl" />
       <EuiPanel paddingSize="l">
-        <div css={styles.container}>
+        <div
+          css={css`
+            padding: 10px 10px 0;
+          `}
+        >
           <EuiTitle size="l" className="eui-textCenter">
             <h1>What would you like to do&nbsp;first?</h1>
           </EuiTitle>
@@ -109,7 +121,7 @@ const GuidedSetup = () => {
                     label: guide.section,
                   }}
                   footer={
-                    <div css={styles.footer}>
+                    <div css={footer}>
                       {guide.startPageProgress && (
                         <>
                           <EuiProgress

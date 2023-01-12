@@ -16,7 +16,6 @@ import {
   EuiIcon,
   useEuiTheme,
 } from '@elastic/eui';
-import { GuidedSetupPanelStyles } from '../guided_setup_panel.styles';
 
 const PanelSection = ({
   step,
@@ -29,7 +28,64 @@ const PanelSection = ({
   forceState,
 }) => {
   const { euiTheme } = useEuiTheme();
-  const styles = GuidedSetupPanelStyles(euiTheme);
+  const checkAnimate = css`
+    height: 150px;
+    text-align: center;
+  `;
+
+  const stepText = css`
+    p {
+      margin-left: 32px;
+    }
+
+    ul {
+      padding-left: 28px;
+    }
+  `;
+
+  const stepDone = css`
+    svg.euiIcon.euiIcon--medium.euiIcon--customColor {
+      background: ${euiTheme.colors.success};
+      border: 2px solid ${euiTheme.colors.success};
+      flex-wrap: nowrap;
+      transition: 0.3s ease-in-out;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+
+    .euiText.euiText--medium {
+      color: ${euiTheme.colors.title};
+    }
+
+    button.euiButtonIcon.euiButtonIcon--text.euiButtonIcon--empty.euiButtonIcon--xSmall.euiAccordion__iconButton.euiAccordion__iconButton--right {
+      display: none;
+    }
+  `;
+
+  const stepOutline = css`
+    button.euiAccordion__button .euiText.euiText--small {
+      border: 2px solid ${euiTheme.colors.success};
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+  `;
+
+  const stepStyle = css`
+    button.euiAccordion__button .euiText.euiText--small {
+      border: 2px solid ${euiTheme.colors.lightShade};
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  `;
 
   const currentStep = stepNumber === step.order;
   const nowFinished = completedSteps[`step-${step.order}`] === 'done';
@@ -45,11 +101,11 @@ const PanelSection = ({
   }, []);
 
   const accordionStyles = [
-    styles.step,
-    newUserStartPage && step.order === 1 && styles.stepOutline,
-    currentStep && styles.stepOutline,
-    forceState && styles.stepOutline,
-    nowFinished && styles.stepDone,
+    stepStyle,
+    newUserStartPage && step.order === 1 && stepOutline,
+    currentStep && stepOutline,
+    forceState && stepOutline,
+    nowFinished && stepDone,
   ];
 
   const showStartButton =
@@ -111,9 +167,7 @@ const PanelSection = ({
             <EuiPanel
               paddingSize="none"
               style={{ position: 'relative', boxShadow: 'none' }}
-              css={
-                confetti && currentStep && !stepComplete && styles.checkAnimate
-              }
+              css={confetti && currentStep && !stepComplete && checkAnimate}
               // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
               {confetti && currentStep && !stepComplete ? (
@@ -129,7 +183,7 @@ const PanelSection = ({
                     <EuiText
                       size="s"
                       dangerouslySetInnerHTML={{ __html: step.description }}
-                      css={styles.stepText}
+                      css={stepText}
                     />
                     {step.link && (
                       <EuiButtonEmpty

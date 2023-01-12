@@ -11,17 +11,6 @@ import {
 import { navigate, withPrefix } from 'gatsby';
 import { css } from '@emotion/react';
 
-const container = css`
-  margin: 35px 30px 40px 30px;
-  position: relative;
-`;
-
-const logo = css`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -85%);
-`;
-
 const Header = ({ accountType, signedIn }) => {
   const login = accountType === 'login';
 
@@ -33,7 +22,12 @@ const Header = ({ accountType, signedIn }) => {
 
   return (
     <>
-      <div css={container}>
+      <div
+        css={css`
+          margin: 35px 30px 40px 30px;
+          position: relative;
+        `}
+      >
         {signedIn ? (
           <EuiFlexGroup justifyContent="flexEnd" alignItems="center">
             <EuiFlexItem grow={false}>
@@ -73,7 +67,11 @@ const Header = ({ accountType, signedIn }) => {
               : withPrefix('images/logo-elastic.png')
           }
           alt="Elastic logo"
-          css={logo}
+          css={css`
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -85%);
+          `}
         />
       </div>
     </>

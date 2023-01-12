@@ -20,16 +20,6 @@ import Header from '../../components/header';
 import { EXPERIENCE, PURPOSE } from '../../constants/profile.data';
 import { css } from '@emotion/react';
 
-const formContainer = css`
-  max-width: 550px;
-  margin: auto;
-  width: 100%;
-`;
-
-const panel = css`
-  padding: 30px;
-`;
-
 const Profile = () => {
   const [experience, setExperience] = useState('');
   const [purpose, setPurpose] = useState('');
@@ -45,9 +35,19 @@ const Profile = () => {
   return (
     <>
       <Header signedIn />
-      <div css={formContainer}>
+      <div
+        css={css`
+          max-width: 550px;
+          margin: auto;
+          width: 100%;
+        `}
+      >
         <EuiPanel paddingSize="l">
-          <div css={panel}>
+          <div
+            css={css`
+              padding: 30px;
+            `}
+          >
             <EuiText size="s" textAlign="center">
               <h1>Welcome to Elastic</h1>
               <EuiTextColor color="subdued">

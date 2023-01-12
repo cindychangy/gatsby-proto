@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   EuiSpacer,
   EuiTitle,
@@ -13,12 +13,10 @@ import {
   EuiBadge,
   EuiTextColor,
   EuiIcon,
-  useEuiTheme,
 } from '@elastic/eui';
 import KibanaLayout from '../../../../layouts/kibana';
-import { GuidedSetupStyles } from '../guided-setup.styles';
 import { GUIDE_DATA } from '../../../../constants/guided-setup.data';
-import { navigate, withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 import { css } from '@emotion/react';
 
 const guideCard = css`
@@ -30,27 +28,7 @@ const guideCard = css`
   }
 `;
 
-const customBadge = css`
-  padding: 5px;
-  borderradius: 24px;
-  padding: 2px 12px;
-  fontsize: 0.8571rem;
-  lineheight: 24px;
-  border: 1px solid rgb(211 218 230);
-  fontweight: 700;
-  texttransform: uppercase;
-  letterspacing: 0.05em;
-  position: absolute;
-  insetblockstart: 0px;
-  insetinlinestart: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  mininlinesize: min(30%, 112px);
-  maxinlinesize: calc(100% - 32px);
-`;
-
 const GuidedSetupInProgress = () => {
-  const { euiTheme } = useEuiTheme();
-  const styles = GuidedSetupStyles(euiTheme);
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -89,7 +67,11 @@ const GuidedSetupInProgress = () => {
       newUserStartPage={newUserStartPage}
     >
       <EuiSpacer size="xxl" />
-      <div css={styles.container}>
+      <div
+        css={css`
+          padding: 10px 10px 0;
+        `}
+      >
         <EuiTitle size="l" className="eui-textCenter">
           <h1>What would you like to do&nbsp;first?</h1>
         </EuiTitle>
