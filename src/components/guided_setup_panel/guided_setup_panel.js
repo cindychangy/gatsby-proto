@@ -203,13 +203,12 @@ const GuidedSetupPanel = ({
                     >
                       {data.link.title}
                     </EuiLink>
-                    <EuiSpacer size="m" />
                   </EuiText>
                 </>
               )}
               <EuiSpacer size="xs" />
               {Object.keys(completedSteps).length === 0 && confetti && (
-                <>
+                <div style={{ paddingTop: '15px' }}>
                   <EuiProgress
                     valueText={`${Object.keys(completedSteps).length}/4 steps`}
                     value={
@@ -226,11 +225,10 @@ const GuidedSetupPanel = ({
                     }
                   />
                   <EuiSpacer size="s" />
-                </>
+                </div>
               )}
               {Object.keys(completedSteps).length !== 0 && (
-                <>
-                  {/* <EuiSpacer size="l" /> */}
+                <div style={{ paddingTop: '15px' }}>
                   <EuiProgress
                     valueText={`${Object.keys(completedSteps).length}/4 steps`}
                     value={
@@ -247,7 +245,7 @@ const GuidedSetupPanel = ({
                     }
                   />
                   <EuiSpacer size="s" />
-                </>
+                </div>
               )}
               <EuiHorizontalRule />
               {data.steps.map((step) => (

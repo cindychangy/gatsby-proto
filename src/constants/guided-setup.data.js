@@ -3,7 +3,7 @@ export const GUIDE_DATA = [
     section: 'Search',
     title: 'Add search to your website',
     intro:
-      "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
+      "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs.",
     link: {
       title: 'Learn more about Elastic Enterprise Search',
       url: '#',
