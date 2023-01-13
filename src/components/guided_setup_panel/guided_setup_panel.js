@@ -34,6 +34,7 @@ const GuidedSetupPanel = ({
   onClick,
   handleOptOut,
   completedSteps,
+  loadGif,
 }) => {
   const { euiTheme } = useEuiTheme();
   const HEADER_BG = withPrefix('/images/panel-bg-top.svg');
@@ -259,6 +260,7 @@ const GuidedSetupPanel = ({
                   section={section}
                   stepComplete={step.stepComplete}
                   completedSteps={completedSteps}
+                  loadGif={loadGif}
                   forceState={
                     toggleStep === step.order
                       ? 'open'

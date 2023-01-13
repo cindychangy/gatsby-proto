@@ -42,6 +42,7 @@ const KibanaLayout = ({
   hasSidebar,
   children,
   completedSteps,
+  loadGif,
   ...rest
 }) => {
   const { euiTheme } = useEuiTheme();
@@ -217,6 +218,7 @@ const KibanaLayout = ({
                       newUserStartPage={newUserStartPage}
                       stepNumber={stepNumber}
                       completedSteps={completedSteps}
+                      loadGif={loadGif}
                     />
                   ),
                   ,

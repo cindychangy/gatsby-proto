@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { navigate, withPrefix } from 'gatsby';
 import { css } from '@emotion/react';
 import {
@@ -26,6 +26,7 @@ const PanelSection = ({
   completedSteps,
   section,
   forceState,
+  loadGif,
 }) => {
   const { euiTheme } = useEuiTheme();
   const checkAnimate = css`
@@ -170,7 +171,7 @@ const PanelSection = ({
               css={confetti && currentStep && !stepComplete && checkAnimate}
               // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
-              {confetti && currentStep && !stepComplete ? (
+              {confetti && currentStep && !stepComplete && loadGif ? (
                 <img
                   src={withPrefix('/images/step-complete-animation.gif')}
                   alt="Step complete"
