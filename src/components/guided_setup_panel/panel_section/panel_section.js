@@ -92,7 +92,7 @@ const PanelSection = ({
   const nowFinished = completedSteps[`step-${step.order}`] === 'done';
 
   useEffect(() => {
-    if (stepNumber !== 1) {
+    if (stepNumber !== 0) {
       setTimeout(() => {
         document
           .getElementById('currentStep')

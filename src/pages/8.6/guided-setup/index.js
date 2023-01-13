@@ -97,7 +97,7 @@ const GuidedSetup = () => {
       completedSteps={COMPLETED_STEPS}
       newUserStartPage={newUserStartPage}
     >
-      <EuiSpacer size="xxl" />
+      <EuiSpacer size="l" />
       <div
         css={css`
           padding: 10px 10px 0;
