@@ -71,7 +71,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'monitoring/step-1',
+        stepPath: 'observability/add-data',
         order: 1,
       },
       {
@@ -79,7 +79,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'monitoring/step-2',
+        stepPath: 'observability/alert',
         order: 2,
       },
       {
@@ -87,7 +87,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'monitoring/step-3',
+        stepPath: 'observability/tour',
         order: 3,
       },
       {
@@ -95,7 +95,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'monitoring/step-4',
+        stepPath: 'observability/do-more',
         order: 4,
       },
     ],
@@ -113,46 +113,42 @@ export const GUIDE_DATA = [
     intro:
       "We'll help you quickly gain visibility into your environment using Elastic's out-of-the-box integrations.",
     link: {
-      title: 'Observability 101 Documentation',
+      title: 'Security 101 Documentation',
       url: '#',
     },
     startPageProgress: true,
     startPageSteps: 2,
     steps: [
       {
-        title: 'Add data',
+        title: 'Security step 1',
         description:
           '<ul><li>Send your data easily.</li><li>Quickly monitor popular cloud services, applications, systems, containers, and more.</li><li>Select your integrations.</li></ul>',
-        link: {
-          title: 'Integrations for Observability',
-          url: '#',
-        },
-        stepPath: 'observability/add-data',
+        stepPath: 'security/defend-data',
         order: 1,
       },
       {
-        title: 'Tour Elastic Observability',
+        title: 'Security step 2',
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'observability/tour',
+        stepPath: 'security/rules',
         order: 2,
       },
       {
-        title: 'Create an Alert',
+        title: 'Security step 3',
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'observability/alert',
+        stepPath: 'security/alerts',
         pageProgressOpen: true,
         order: 3,
       },
       {
-        title: 'Do more with Elastic Observability',
+        title: 'Security step 4',
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'observability/do-more',
+        stepPath: 'security/cases-investigation',
         order: 4,
       },
     ],
@@ -216,38 +212,35 @@ export const GUIDE_DATA = [
     },
     steps: [
       {
-        title: 'Add data',
+        title: 'Monitoring Step 1',
         description:
-          '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
-        link: {
-          title: 'Getting started with Elastic Enterprise Search',
-          url: '#',
-        },
-        stepPath: 'search/add-data',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+        link: null,
+        stepPath: 'observability/add-data',
         order: 1,
       },
       {
-        title: 'Build a search experience',
+        title: 'Monitoring Step 2',
         description:
-          '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/build',
+        stepPath: 'observability/alert',
         order: 2,
       },
       {
-        title: 'Optimize your search relevance',
+        title: 'Monitoring Step 3',
         description:
-          '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/optimize',
+        stepPath: 'observability/tour',
         order: 3,
       },
       {
-        title: 'Review your search analytics',
+        title: 'Monitoring Step 4',
         description:
-          '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/review',
+        stepPath: 'observability/do-more',
         order: 4,
       },
     ],
@@ -264,38 +257,35 @@ export const GUIDE_DATA = [
     },
     steps: [
       {
-        title: 'Add data',
+        title: 'Security step 1',
         description:
-          '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
-        link: {
-          title: 'Getting started with Elastic Enterprise Search',
-          url: '#',
-        },
-        stepPath: 'search/add-data',
+          '<ul><li>Send your data easily.</li><li>Quickly monitor popular cloud services, applications, systems, containers, and more.</li><li>Select your integrations.</li></ul>',
+        stepPath: 'security/defend-data',
         order: 1,
       },
       {
-        title: 'Build a search experience',
+        title: 'Security step 2',
         description:
-          '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/build',
+        stepPath: 'security/rules',
         order: 2,
       },
       {
-        title: 'Optimize your search relevance',
+        title: 'Security step 3',
         description:
-          '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/optimize',
+        stepPath: 'security/alerts',
+        pageProgressOpen: true,
         order: 3,
       },
       {
-        title: 'Review your search analytics',
+        title: 'Security step 4',
         description:
-          '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/review',
+        stepPath: 'security/cases-investigation',
         order: 4,
       },
     ],
@@ -409,38 +399,35 @@ export const GUIDE_DATA = [
     },
     steps: [
       {
-        title: 'Add data',
+        title: 'Security step 1',
         description:
-          '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
-        link: {
-          title: 'Getting started with Elastic Enterprise Search',
-          url: '#',
-        },
-        stepPath: 'search/add-data',
+          '<ul><li>Send your data easily.</li><li>Quickly monitor popular cloud services, applications, systems, containers, and more.</li><li>Select your integrations.</li></ul>',
+        stepPath: 'security/defend-data',
         order: 1,
       },
       {
-        title: 'Build a search experience',
+        title: 'Security step 2',
         description:
-          '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/build',
+        stepPath: 'security/rules',
         order: 2,
       },
       {
-        title: 'Optimize your search relevance',
+        title: 'Security step 3',
         description:
-          '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/optimize',
+        stepPath: 'security/alerts',
+        pageProgressOpen: true,
         order: 3,
       },
       {
-        title: 'Review your search analytics',
+        title: 'Security step 4',
         description:
-          '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/review',
+        stepPath: 'security/cases-investigation',
         order: 4,
       },
     ],
@@ -458,38 +445,35 @@ export const GUIDE_DATA = [
     // started: false,
     steps: [
       {
-        title: 'Add data',
+        title: 'Monitoring Step 1',
         description:
-          '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
-        link: {
-          title: 'Getting started with Elastic Enterprise Search',
-          url: '#',
-        },
-        stepPath: 'search/add-data',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
+        link: null,
+        stepPath: 'observability/add-data',
         order: 1,
       },
       {
-        title: 'Build a search experience',
+        title: 'Monitoring Step 2',
         description:
-          '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/build',
+        stepPath: 'observability/alert',
         order: 2,
       },
       {
-        title: 'Optimize your search relevance',
+        title: 'Monitoring Step 3',
         description:
-          '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/optimize',
+        stepPath: 'observability/tour',
         order: 3,
       },
       {
-        title: 'Review your search analytics',
+        title: 'Monitoring Step 4',
         description:
-          '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
+          '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'search/review',
+        stepPath: 'observability/do-more',
         order: 4,
       },
     ],
