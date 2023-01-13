@@ -32,14 +32,6 @@ const StepPlaceholder = ({
   const [isTourStep, setIsTourStep] = useState(0);
   const [loadGif, setLoadGif] = useState(false);
 
-  const showAnimatedCheckmark = () => {
-    setLoadGif(true);
-
-    setTimeout(() => {
-      setLoadGif(false);
-    }, 2000);
-  };
-
   const handleGuideClick = () => {
     setGuide(!guideOpen);
   };
@@ -47,14 +39,23 @@ const StepPlaceholder = ({
   const handleCompleteStep = () => {
     setGuide(true);
     setConfetti(true);
-    showAnimatedCheckmark();
+    setLoadGif(true);
+
+    setTimeout(() => {
+      setLoadGif(false);
+    }, 2000);
   };
 
   const handleTourClick = () => {
     setIsTourStep(isTourStep + 1);
     setGuide(true);
     setConfetti(true);
-    showAnimatedCheckmark();
+    setLoadGif(true);
+
+    setTimeout(() => {
+      setLoadGif(false);
+      console.log(loadGif);
+    }, 2000);
   };
 
   //Tours

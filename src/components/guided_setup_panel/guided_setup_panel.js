@@ -71,17 +71,17 @@ const GuidedSetupPanel = ({
 
   let data = GUIDE_DATA[0];
 
-  // if (section === 'Search') {
-  //   data = GUIDE_DATA[0];
-  // }
+  if (section === 'Search') {
+    data = GUIDE_DATA[0];
+  }
 
-  // if (section === 'Observe') {
-  //   data = GUIDE_DATA[1];
-  // }
+  if (section === 'Observability') {
+    data = GUIDE_DATA[1];
+  }
 
-  // if (section === 'Security') {
-  //   data = GUIDE_DATA[3];
-  // }
+  if (section === 'Security') {
+    data = GUIDE_DATA[2];
+  }
 
   let endGuide = data.guideCompleted || showEndState;
 

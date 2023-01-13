@@ -75,8 +75,6 @@ const GuidedSetup = () => {
     },
   ];
 
-  let COMPLETED_STEPS = {};
-
   const handleGuideClick = (section) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
@@ -85,8 +83,6 @@ const GuidedSetup = () => {
       setNewUserStartPage(true);
     }
   };
-
-  console.log(activeFilter);
 
   return (
     <KibanaLayout
