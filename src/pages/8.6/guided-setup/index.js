@@ -10,6 +10,7 @@ import {
   EuiFlexGrid,
   EuiFlexGroup,
   EuiCard,
+  EuiButton,
   EuiBadge,
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana';
@@ -26,11 +27,43 @@ const guideCard = css`
   }
 `;
 
+const filterButton = css`
+  border-radius: 20px !important;
+  min-width: 0 !important;
+  padding: 0 8px !important;
+  height: 32px !important;
+  background: #e9edf3 !important;
+
+  &:hover {
+    text-decoration: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+`;
+
+const activeFilterFill = css`
+  background: #343741 !important;
+  color: #fff !important;
+`;
+
+const hideGuide = css`
+  display: none;
+`;
+
+const showAllGuides = css`
+  display: flex !important;
+`;
+
 const GuidedSetup = () => {
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [newUserStartPage, setNewUserStartPage] = useState(true);
+  const [activeFilter, setActiveFilter] = useState('All');
 
   const BREADCRUMBS = [
     {
@@ -52,6 +85,8 @@ const GuidedSetup = () => {
       setNewUserStartPage(true);
     }
   };
+
+  console.log(activeFilter);
 
   return (
     <KibanaLayout
@@ -77,13 +112,68 @@ const GuidedSetup = () => {
         <EuiText color="text" size="m" textAlign="center">
           <p>Select an option below and we'll help you get started</p>
         </EuiText>
-        <EuiSpacer size="xxl" />
+        <EuiSpacer size="xl" />
 
         <div>
           <EuiSpacer size="l" />
+          <EuiFlexGroup justifyContent="center" gutterSize="s">
+            <EuiFlexItem grow={false}>
+              <EuiButton
+                onClick={() => setActiveFilter('All')}
+                color="text"
+                css={[filterButton, activeFilter === 'All' && activeFilterFill]}
+              >
+                All
+              </EuiButton>
+            </EuiFlexItem>
+            <EuiFlexItem grow={false}>
+              <EuiButton
+                onClick={() => setActiveFilter('Search')}
+                color="text"
+                css={[
+                  filterButton,
+                  activeFilter === 'Search' && activeFilterFill,
+                ]}
+              >
+                Search
+              </EuiButton>
+            </EuiFlexItem>
+            <EuiFlexItem grow={false}>
+              <EuiButton
+                onClick={() => setActiveFilter('Observability')}
+                color="text"
+                css={[
+                  filterButton,
+                  activeFilter === 'Observability' && activeFilterFill,
+                ]}
+              >
+                Observability
+              </EuiButton>
+            </EuiFlexItem>
+            <EuiFlexItem grow={false}>
+              <EuiButton
+                onClick={() => setActiveFilter('Security')}
+                color="text"
+                css={[
+                  filterButton,
+                  activeFilter === 'Security' && activeFilterFill,
+                ]}
+                key="security"
+              >
+                Security
+              </EuiButton>
+            </EuiFlexItem>
+          </EuiFlexGroup>
+          <EuiSpacer size="xxl" />
           <EuiFlexGrid columns={3} gutterSize="xl">
             {GUIDE_DATA.map((guide, index) => (
-              <EuiFlexItem key={index}>
+              <EuiFlexItem
+                key={index}
+                css={[
+                  guide.section !== activeFilter && hideGuide,
+                  activeFilter === 'All' && showAllGuides,
+                ]}
+              >
                 <EuiCard
                   style={{ position: 'relative', minHeight: '100px' }}
                   css={guideCard}

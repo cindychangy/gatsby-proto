@@ -255,7 +255,7 @@ export const GUIDE_DATA = [
   {
     section: 'Security',
     title: 'Secure my hosts',
-    complete: true,
+    progress: '1/4 steps complete',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -351,7 +351,7 @@ export const GUIDE_DATA = [
   {
     section: 'Observability',
     title: 'Monitor hosts',
-    progress: '3/4 steps complete',
+    complete: true,
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -359,7 +359,6 @@ export const GUIDE_DATA = [
       url: '#',
     },
     // started: false,
-    progress: '3/4 steps complete',
     steps: [
       {
         title: 'Add data',
