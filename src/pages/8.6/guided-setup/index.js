@@ -97,7 +97,7 @@ const GuidedSetup = () => {
       completedSteps={COMPLETED_STEPS}
       newUserStartPage={newUserStartPage}
     >
-      <EuiSpacer size="l" />
+      <EuiSpacer size="m" />
       <div
         css={css`
           padding: 10px 10px 0;
@@ -110,7 +110,7 @@ const GuidedSetup = () => {
         <EuiText color="text" size="m" textAlign="center">
           <p>Select an option below and we'll help you get started</p>
         </EuiText>
-        <EuiSpacer size="xl" />
+        <EuiSpacer size="l" />
 
         <div>
           <EuiSpacer size="l" />
@@ -165,7 +165,7 @@ const GuidedSetup = () => {
           <EuiSpacer size="xxl" />
           <EuiFlexGrid
             columns={3}
-            gutterSize="xl"
+            gutterSize="l"
             style={{ justifyContent: 'center' }}
           >
             {GUIDE_DATA.map((guide, index) => (
@@ -232,7 +232,7 @@ const GuidedSetup = () => {
             ))}
           </EuiFlexGrid>
         </div>
-        <EuiSpacer size="xl" />
+        <EuiSpacer size="l" />
         <EuiText size="s" textAlign="center">
           <EuiButtonEmpty
             iconSide="right"
