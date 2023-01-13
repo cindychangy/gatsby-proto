@@ -28,7 +28,7 @@ const guideCard = css`
   }
 `;
 
-const GuidedSetupInProgress = () => {
+const GuidedSetupProgress = () => {
   const [guideOpen, setGuide] = useState(false);
   const [section, setSection] = useState('Observability');
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -89,7 +89,7 @@ const GuidedSetupInProgress = () => {
                 <EuiCard
                   style={{ position: 'relative', minHeight: '100px' }}
                   css={guideCard}
-                  onClick={() => handleGuideClick(section)}
+                  onClick={() => handleGuideClick(guide.section)}
                   title={
                     <>
                       <EuiSpacer size="s" />
@@ -145,14 +145,6 @@ const GuidedSetupInProgress = () => {
                   //       >
                   //         {guide.section}
                   //       </EuiBadge>
-                  //       {guide.progress && (
-                  //         <EuiTextColor color="subdued">
-                  //           <small>{guide.progress}</small>
-                  //         </EuiTextColor>
-                  //       )}
-                  //       {guide.complete && (
-                  //         <EuiIcon type="checkInCircleFilled" color="#00BFB3" />
-                  //       )}
                   //     </EuiFlexItem>
                   //   </EuiFlexGroup>
                   // }
@@ -176,4 +168,4 @@ const GuidedSetupInProgress = () => {
   );
 };
 
-export default GuidedSetupInProgress;
+export default GuidedSetupProgress;
