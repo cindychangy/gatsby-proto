@@ -1,7 +1,7 @@
 export const GUIDE_DATA = [
   {
     section: 'Search',
-    title: 'Add a search bar to my website',
+    title: 'Add search to your website',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -53,7 +53,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Observability',
-    title: 'Monitor my logs',
+    title: 'Monitor logs',
     progress: '2/4 steps complete',
     // cardTitle: 'Observe my data',
     // cardSummary:
@@ -159,7 +159,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Search',
-    title: 'Add a search bar to my website',
+    title: 'Build an application on top of Elasticsearch',
     complete: true,
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -302,7 +302,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Search',
-    title: 'Add a search bar to my website',
+    title: 'Search across databases and business systems',
     progress: '1/4 steps complete',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -407,6 +407,55 @@ export const GUIDE_DATA = [
       title: 'Learn more about Elastic Enterprise Search',
       url: '#',
     },
+    steps: [
+      {
+        title: 'Add data',
+        description:
+          '<ul><li>Select an ingestion method </li><li>Create a new Elasticsearch index.</li><li>Configure your ingestion setting.</li></ul>',
+        link: {
+          title: 'Getting started with Elastic Enterprise Search',
+          url: '#',
+        },
+        stepPath: 'search/add-data',
+        order: 1,
+      },
+      {
+        title: 'Build a search experience',
+        description:
+          '<p>Learn how you can easily unlock the power of the Elastic search platform to build world-class search experiences for your users, customers, and employees.</p>',
+        link: null,
+        stepPath: 'search/build',
+        order: 2,
+      },
+      {
+        title: 'Optimize your search relevance',
+        description:
+          '<p style="margin-bottom: 10px;">Take a tour of Elastic’s relevance refinement tools, including</p><ul><li>Relevance and precision tuning</li><li>Adaptive relevance and curations</li><li>Snynonym management</li></ul>',
+        link: null,
+        stepPath: 'search/optimize',
+        order: 3,
+      },
+      {
+        title: 'Review your search analytics',
+        description:
+          '<p style="margin-bottom: 10px;">Explore recent activity in your search engines, including:</p><ul><li>Recent queries, clicks, and other events</li><li>Popular queries and documents</li><li>Underperforming metrics, like queries with no results</li></ul>',
+        link: null,
+        stepPath: 'search/review',
+        order: 4,
+      },
+    ],
+  },
+  {
+    section: 'Observability',
+    title: 'Monitor kubernetes clusters',
+    complete: true,
+    intro:
+      "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
+    link: {
+      title: 'Learn more about Elastic Enterprise Search',
+      url: '#',
+    },
+    // started: false,
     steps: [
       {
         title: 'Add data',

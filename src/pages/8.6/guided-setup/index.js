@@ -163,7 +163,11 @@ const GuidedSetup = () => {
             </EuiFlexItem>
           </EuiFlexGroup>
           <EuiSpacer size="xxl" />
-          <EuiFlexGrid columns={3} gutterSize="xl">
+          <EuiFlexGrid
+            columns={3}
+            gutterSize="xl"
+            style={{ justifyContent: 'center' }}
+          >
             {GUIDE_DATA.map((guide, index) => (
               <EuiFlexItem
                 key={index}
