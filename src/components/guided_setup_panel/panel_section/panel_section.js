@@ -97,7 +97,7 @@ const PanelSection = ({
         document
           .getElementById('currentStep')
           ?.scrollIntoView({ behavior: 'smooth' });
-      }, 10);
+      }, 0);
     }
   }, [stepNumber]);
 
@@ -171,7 +171,7 @@ const PanelSection = ({
               css={confetti && currentStep && !stepComplete && checkAnimate}
               // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
-              {confetti && currentStep && !stepComplete && loadGif ? (
+              {confetti && currentStep && !stepComplete && loadGif === true ? (
                 <img
                   src={withPrefix('/images/step-complete-animation.gif')}
                   alt="Step complete"

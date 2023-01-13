@@ -54,7 +54,6 @@ const StepPlaceholder = ({
 
     setTimeout(() => {
       setLoadGif(false);
-      console.log(loadGif);
     }, 2000);
   };
 
