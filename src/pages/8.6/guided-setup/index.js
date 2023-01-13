@@ -1,6 +1,6 @@
 /** @jsx jsx */
+import React, { useState } from 'react';
 import { jsx } from '@emotion/react';
-import { useState } from 'react';
 import {
   EuiSpacer,
   EuiTitle,
@@ -85,50 +85,55 @@ const GuidedSetup = () => {
             {GUIDE_DATA.map((guide, index) => (
               <EuiFlexItem key={index}>
                 <EuiCard
-                  style={{ position: 'relative', minHeight: '114px' }}
+                  style={{ position: 'relative', minHeight: '100px' }}
                   css={guideCard}
                   onClick={() => handleGuideClick(guide.section)}
-                  title={<h3 style={{ fontWeight: 600 }}>{guide.title}</h3>}
+                  title={
+                    <>
+                      <EuiSpacer size="s" />
+                      <h3 style={{ fontWeight: 600 }}>{guide.title}</h3>
+                    </>
+                  }
                   titleSize="xs"
                   betaBadgeProps={{
                     label: guide.section,
                   }}
-                  children={
-                    <EuiFlexGroup>
-                      <EuiFlexItem>
-                        {/* <EuiBadge
-                          color="hollow"
-                          iconType={
-                            (guide.section === 'Search' &&
-                              'logoElasticsearch') ||
-                            (guide.section === 'Observability' &&
-                              'logoObservability') ||
-                            (guide.section === 'Security' && 'logoSecurity')
-                          }
-                          iconSide="left"
-                          style={{
-                            padding: '5px',
-                            borderRadius: '24px',
-                            padding: '2px 12px',
-                            fontSize: '0.8571rem',
-                            lineHeight: '24px',
-                            border: '1px solid rgb(211 218 230)',
-                            fontWeight: '700',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.05em',
-                            position: 'absolute',
-                            insetBlockStart: '0px',
-                            insetInlineStart: '50%',
-                            transform: 'translateX(-50%) translateY(-50%)',
-                            minInlineSize: 'min(30%, 112px)',
-                            maxInlineSize: 'calc(100% - 32px)',
-                          }}
-                        >
-                          {guide.section}
-                        </EuiBadge> */}
-                      </EuiFlexItem>
-                    </EuiFlexGroup>
-                  }
+                  // children={
+                  //   <EuiFlexGroup>
+                  //     <EuiFlexItem>
+                  //       <EuiBadge
+                  //         color="hollow"
+                  //         iconType={
+                  //           (guide.section === 'Search' &&
+                  //             'logoElasticsearch') ||
+                  //           (guide.section === 'Observability' &&
+                  //             'logoObservability') ||
+                  //           (guide.section === 'Security' && 'logoSecurity')
+                  //         }
+                  //         iconSide="left"
+                  //         style={{
+                  //           padding: '5px',
+                  //           borderRadius: '24px',
+                  //           padding: '2px 12px',
+                  //           fontSize: '0.8571rem',
+                  //           lineHeight: '24px',
+                  //           border: '1px solid rgb(211 218 230)',
+                  //           fontWeight: '700',
+                  //           textTransform: 'uppercase',
+                  //           letterSpacing: '0.05em',
+                  //           position: 'absolute',
+                  //           insetBlockStart: '0px',
+                  //           insetInlineStart: '50%',
+                  //           transform: 'translateX(-50%) translateY(-50%)',
+                  //           minInlineSize: 'min(30%, 112px)',
+                  //           maxInlineSize: 'calc(100% - 32px)',
+                  //         }}
+                  //       >
+                  //         {guide.section}
+                  //       </EuiBadge>
+                  //     </EuiFlexItem>
+                  //   </EuiFlexGroup>
+                  // }
                 />
                 <EuiSpacer size="m" />
               </EuiFlexItem>
