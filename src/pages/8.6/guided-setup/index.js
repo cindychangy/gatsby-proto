@@ -75,6 +75,8 @@ const GuidedSetup = () => {
     },
   ];
 
+  let COMPLETED_STEPS = {};
+
   const handleGuideClick = (section) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
