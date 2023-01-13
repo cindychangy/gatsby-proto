@@ -9,7 +9,8 @@ export const GUIDE_DATA = [
       url: '#',
     },
     // started: false,
-    media: '<img src="/images/mock-animation.gif">',
+    media:
+      '<img src="https://cindychangy.github.io/platform-onboarding/images/mock-animation.gif">',
     // media: '<img src="https://cindychangy.github.io/platform-onboarding/images/media-mock-search.png">',
     progress: '3/4 steps complete',
     steps: [
