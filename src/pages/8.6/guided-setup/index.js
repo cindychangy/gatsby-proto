@@ -81,7 +81,7 @@ const GuidedSetup = () => {
 
         <div>
           <EuiSpacer size="l" />
-          <EuiFlexGrid columns={4} gutterSize="l">
+          <EuiFlexGrid columns={3} gutterSize="xl">
             {GUIDE_DATA.map((guide, index) => (
               <EuiFlexItem key={index}>
                 <EuiCard
@@ -90,10 +90,13 @@ const GuidedSetup = () => {
                   onClick={() => handleGuideClick(guide.section)}
                   title={<h3 style={{ fontWeight: 600 }}>{guide.title}</h3>}
                   titleSize="xs"
+                  betaBadgeProps={{
+                    label: guide.section,
+                  }}
                   children={
                     <EuiFlexGroup>
                       <EuiFlexItem>
-                        <EuiBadge
+                        {/* <EuiBadge
                           color="hollow"
                           iconType={
                             (guide.section === 'Search' &&
@@ -122,7 +125,7 @@ const GuidedSetup = () => {
                           }}
                         >
                           {guide.section}
-                        </EuiBadge>
+                        </EuiBadge> */}
                       </EuiFlexItem>
                     </EuiFlexGroup>
                   }
