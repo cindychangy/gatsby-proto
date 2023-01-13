@@ -99,7 +99,7 @@ const PanelSection = ({
           ?.scrollIntoView({ behavior: 'smooth' });
       }, 10);
     }
-  }, []);
+  }, [stepNumber]);
 
   const accordionStyles = [
     stepStyle,
