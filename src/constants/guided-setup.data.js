@@ -1,7 +1,7 @@
 export const GUIDE_DATA = [
   {
     section: 'Search',
-    title: 'Add search to my application',
+    title: 'Add a search bar to my website',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -50,7 +50,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Observability',
-    title: 'Monitor my Kubernetes',
+    title: 'Monitor my logs',
     progress: '2/4 steps complete',
     // cardTitle: 'Observe my data',
     // cardSummary:
@@ -99,7 +99,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Security',
-    title: 'Manage my security information and events',
+    title: 'Detect threats in my data with SIEM',
     // cardTitle: 'Observe my Kubernetes infrastructure',
     // cardSummary:
     //   'Monitor your Kubernetes infrastructure by consolidating your logs and metrics.',
@@ -156,7 +156,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Search',
-    title: 'Add search to my ecommerce store',
+    title: 'Add a search bar to my website',
     complete: true,
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -204,7 +204,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Observability',
-    title: "Monitor my application's performance (APM)",
+    title: 'Monitor my application performance (APM/tracing)',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
     link: {
@@ -251,7 +251,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Security',
-    title: 'Protect my cloud assets',
+    title: 'Secure my hosts',
     complete: true,
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -299,7 +299,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Search',
-    title: 'Search my internal workplace documents',
+    title: 'Add a search bar to my website',
     progress: '1/4 steps complete',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -347,7 +347,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Observability',
-    title: 'Analyze my logs',
+    title: 'Monitor hosts',
     progress: '3/4 steps complete',
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
@@ -397,7 +397,7 @@ export const GUIDE_DATA = [
   },
   {
     section: 'Security',
-    title: 'Protect my endpoints',
+    title: 'Secure my cloud assets',
     complete: true,
     intro:
       "We'll help you build world-class search experiences with your data, using Elastic's out-of-the-box web crawler, connectors, and our robust APIs. Gain deep insights from the built-in search analytics and use that data to inform changes to relevance.",
