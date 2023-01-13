@@ -20,18 +20,18 @@ export const PURPOSE = [
   },
   {
     id: `purpose__1`,
-    label: 'Set up Elastic for an active project',
+    label: 'Migrate an existing self-managed environment',
   },
   {
     id: `purpose__2`,
-    label: 'Migrate an existing Elasticsearch environment',
+    label: 'Get pricing information or demos',
   },
   {
     id: `purpose__3`,
-    label: 'Learn more about Elastic',
+    label: 'Just explore Elastic',
   },
   {
     id: `purpose__4`,
-    label: 'Do something else',
+    label: 'Something else',
   },
 ];
