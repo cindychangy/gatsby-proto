@@ -90,6 +90,8 @@ const PanelSection = ({
 
   const currentStep = stepNumber === step.order;
   const nowFinished = completedSteps[`step-${step.order}`] === 'done';
+  const stepGif =
+    'https://cindychangy.github.io/platform-onboarding/images/step-complete-animation.gif?v=';
 
   useEffect(() => {
     if (stepNumber !== 0) {
@@ -172,15 +174,7 @@ const PanelSection = ({
               // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
               {confetti && currentStep && !stepComplete && loadGif ? (
-                <img
-                  src={
-                    loadGif
-                      ? withPrefix('/images/step-complete-animation.gif')
-                      : ''
-                  }
-                  alt="Step complete"
-                  width="70%"
-                />
+                <img src={stepGif + loadGif} alt="Step complete" width="70%" />
               ) : (
                 <>
                   <>
