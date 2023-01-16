@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import React, { useEffect, useState } from 'react';
-import { navigate, withPrefix } from 'gatsby';
+import React, { useEffect } from 'react';
+import { navigate } from 'gatsby';
 import { css } from '@emotion/react';
 import {
   EuiButton,
