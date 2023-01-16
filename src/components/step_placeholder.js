@@ -41,9 +41,11 @@ const StepPlaceholder = ({
     setConfetti(true);
     setLoadGif(true);
 
-    setTimeout(() => {
-      setLoadGif(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setLoadGif(false);
+    // }, 2000);
+
+    console.log('Step Complete');
   };
 
   const handleTourClick = () => {
@@ -52,9 +54,9 @@ const StepPlaceholder = ({
     setConfetti(true);
     setLoadGif(true);
 
-    setTimeout(() => {
-      setLoadGif(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setLoadGif(false);
+    // }, 2000);
   };
 
   //Tours
