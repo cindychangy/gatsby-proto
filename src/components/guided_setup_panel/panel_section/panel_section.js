@@ -171,9 +171,13 @@ const PanelSection = ({
               css={confetti && currentStep && !stepComplete && checkAnimate}
               // css={confetti && currentStep && !stepComplete && styles.confetti}
             >
-              {confetti && currentStep && !stepComplete && loadGif === true ? (
+              {confetti && currentStep && !stepComplete && loadGif ? (
                 <img
-                  src={withPrefix('/images/step-complete-animation.gif')}
+                  src={
+                    loadGif
+                      ? withPrefix('/images/step-complete-animation.gif')
+                      : ''
+                  }
                   alt="Step complete"
                   width="70%"
                 />
