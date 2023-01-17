@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[802],{2778:function(e,t,r){r.r(t);r(67294);var a=r(54063),n=r(23431),c=[{text:"Search",href:"#"},{text:"Setup guide",href:"../../"},{text:"Step 3: search experience"}],p={"step-1":"done","step-2":"done"};t.default=function(){return(0,n.tZ)(a.Z,{title:"Optimize your search relevance",breadcrumbs:c,section:"Search",stepNumber:3,completedSteps:p,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-search-optimize-js-1755d072947c1754fdf5.js.map

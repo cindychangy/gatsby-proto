@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[994],{82061:function(e,t,r){r.r(t);r(67294);var a=r(54063),u=r(23431),d=[{text:"Security",href:"#"},{text:"Setup guide",href:"../"},{text:"Step 1: defend your data"}],n={"step-1":""};t.default=function(){return(0,u.tZ)(a.Z,{title:"Add and view your data with Elastic Defend",breadcrumbs:d,section:"Security",stepNumber:1,completedSteps:n,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-security-defend-data-js-66178e4aea630a0d0c09.js.map

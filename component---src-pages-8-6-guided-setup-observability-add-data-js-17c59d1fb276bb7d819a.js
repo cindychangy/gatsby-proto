@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[6147],{85676:function(t,e,a){a.r(e);a(67294);var r=a(54063),d=a(23431),i=[{text:"Observability",href:"#"},{text:"Setup guide",href:"../"},{text:"Step 1: add data"}],b={};e.default=function(){return(0,d.tZ)(r.Z,{title:"Add data",breadcrumbs:i,section:"Observability",stepNumber:1,completedSteps:b,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-observability-add-data-js-17c59d1fb276bb7d819a.js.map

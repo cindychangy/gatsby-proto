@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[409],{78098:function(e,t,r){r.r(t);r(67294);var a=r(54063),n=r(23431),c=[{text:"Search",href:"#"},{text:"Setup guide",href:"../../"},{text:"Step 2: search experience"}],p={"step-1":"done"};t.default=function(){return(0,n.tZ)(a.Z,{title:"Build a search experience",breadcrumbs:c,section:"Search",stepNumber:2,completedSteps:p,hasSidebar:!0})}}}]);
+//# sourceMappingURL=component---src-pages-8-6-guided-setup-search-build-js-082912bc97a477764bc8.js.map
