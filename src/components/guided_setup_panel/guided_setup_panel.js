@@ -35,6 +35,7 @@ const GuidedSetupPanel = ({
   handleOptOut,
   completedSteps,
   loadGif,
+  guideIndex,
 }) => {
   const { euiTheme } = useEuiTheme();
   const HEADER_BG = withPrefix('/images/panel-bg-top.svg');
@@ -69,21 +70,9 @@ const GuidedSetupPanel = ({
   const [showEndState, setShowEndState] = useState(false);
   const [showZeroState, setShowZeroState] = useState(0);
 
-  let data = GUIDE_DATA[0];
+  let data = GUIDE_DATA[guideIndex];
 
-  if (section === 'Search') {
-    data = GUIDE_DATA[0];
-  }
-
-  if (section === 'Observability') {
-    data = GUIDE_DATA[1];
-  }
-
-  if (section === 'Security') {
-    data = GUIDE_DATA[2];
-  }
-
-  let endGuide = data.guideCompleted || showEndState;
+  let endGuide = showEndState;
 
   useEffect(() => {
     if (confetti) {

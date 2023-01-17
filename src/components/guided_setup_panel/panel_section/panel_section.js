@@ -202,7 +202,10 @@ const PanelSection = ({
                           <EuiButton
                             fill
                             onClick={() =>
-                              navigate(`/8.6/guided-setup/${step.stepPath}`)
+                              // navigate(`/8.6/guided-setup/${step.stepPath}`)
+                              navigate(`/8.6/guided-setup/${step.stepPath}`, {
+                                state: { foo: 'bar' },
+                              })
                             }
                           >
                             Start

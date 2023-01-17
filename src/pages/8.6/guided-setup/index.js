@@ -11,7 +11,6 @@ import {
   EuiFlexGroup,
   EuiCard,
   EuiButton,
-  EuiBadge,
 } from '@elastic/eui';
 import KibanaLayout from '../../../layouts/kibana';
 import { GUIDE_DATA } from '../../../constants/guided-setup.data';
@@ -64,6 +63,7 @@ const GuidedSetup = () => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [newUserStartPage, setNewUserStartPage] = useState(true);
   const [activeFilter, setActiveFilter] = useState('All');
+  const [guideIndex, setGuideIndex] = useState(0);
 
   const BREADCRUMBS = [
     {
@@ -77,9 +77,11 @@ const GuidedSetup = () => {
 
   let COMPLETED_STEPS = {};
 
-  const handleGuideClick = (section) => {
+  const handleGuideClick = (section, index) => {
     setGuide(!guideOpen);
     setButtonDisabled(!buttonDisabled);
+    setGuideIndex(index);
+
     if (section) {
       setSection(section);
       setNewUserStartPage(true);
@@ -96,6 +98,7 @@ const GuidedSetup = () => {
       onClick={() => handleGuideClick(section)}
       completedSteps={COMPLETED_STEPS}
       newUserStartPage={newUserStartPage}
+      guideIndex={guideIndex}
     >
       <EuiSpacer size="m" />
       <div
@@ -179,7 +182,7 @@ const GuidedSetup = () => {
                 <EuiCard
                   style={{ position: 'relative', minHeight: '100px' }}
                   css={guideCard}
-                  onClick={() => handleGuideClick(guide.section)}
+                  onClick={() => handleGuideClick(guide.section, index)}
                   title={
                     <>
                       <EuiSpacer size="s" />

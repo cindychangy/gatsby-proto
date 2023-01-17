@@ -79,7 +79,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'observability/alert',
+        stepPath: 'observability/tour',
         order: 2,
       },
       {
@@ -87,7 +87,7 @@ export const GUIDE_DATA = [
         description:
           '<ul><li>Lorem ipsum dolor sit amet, consectetur.</li><li>Sed ut perspiciatis.</li><li>Nemo enim ipsam voluptatem quia.</li></ul>',
         link: null,
-        stepPath: 'observability/tour',
+        stepPath: 'observability/alert',
         order: 3,
       },
       {

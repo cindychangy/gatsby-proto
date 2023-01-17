@@ -43,6 +43,8 @@ const KibanaLayout = ({
   children,
   completedSteps,
   loadGif,
+  guideIndex,
+  data,
   ...rest
 }) => {
   const { euiTheme } = useEuiTheme();
@@ -219,6 +221,7 @@ const KibanaLayout = ({
                       stepNumber={stepNumber}
                       completedSteps={completedSteps}
                       loadGif={loadGif}
+                      guideIndex={guideIndex}
                     />
                   ),
                   ,

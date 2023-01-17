@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import React, { useState } from 'react';
-import { withPrefix } from 'gatsby';
+import { withPrefix, navigate } from 'gatsby';
 import {
   EuiButtonEmpty,
   EuiFlexGroup,
@@ -17,6 +17,7 @@ import {
 } from '@elastic/eui';
 import KibanaLayout from '../layouts/kibana';
 import SolutionSidebar from './solution_sidebar';
+import { GUIDE_DATA } from '../constants/guided-setup.data';
 
 const StepPlaceholder = ({
   title,
@@ -48,6 +49,20 @@ const StepPlaceholder = ({
     setConfetti(true);
     setLoadGif(Math.random());
   };
+
+  let guideIndex;
+
+  if (section === 'Search') {
+    guideIndex = 0;
+  }
+
+  if (section === 'Observability') {
+    guideIndex = 1;
+  }
+
+  if (section === 'Security') {
+    guideIndex = 2;
+  }
 
   //Tours
   const TourStep = ({
@@ -169,6 +184,7 @@ const StepPlaceholder = ({
         stepNumber={stepNumber}
         completedSteps={completedSteps}
         loadGif={loadGif}
+        guideIndex={guideIndex}
       >
         {hasSidebar ? (
           <EuiPageTemplate
