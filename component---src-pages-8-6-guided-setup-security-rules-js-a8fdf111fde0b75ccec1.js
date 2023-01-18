@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[1274],{30545:function(e,t,r){r.r(t);r(67294);var u=r(48437),n=r(23431),s=[{text:"Security",href:"#"},{text:"Guided setup",href:"../"},{text:"Step 2: turn on rules"}],p={"step-1":"done","step-2":"","step-3":"","step-4":""};t.default=function(){return(0,n.tZ)(u.Z,{title:"Turn on rules",breadcrumbs:s,section:"Security",stepNumber:2,completedSteps:p,hasSidebar:!0})}}}]);
-//# sourceMappingURL=component---src-pages-8-6-guided-setup-security-rules-js-a8fdf111fde0b75ccec1.js.map

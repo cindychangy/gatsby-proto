@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[5442],{48742:function(e,t,r){r.r(t);r(67294);var a=r(48437),n=r(23431),s=[{text:"Observability",href:"#"},{text:"Setup guide",href:"../"},{text:"Step 3: create an alert"}],i={"step-1":"done","step-2":"done"};t.default=function(){return(0,n.tZ)(a.Z,{title:"Create an Alert",breadcrumbs:s,section:"Observability",stepNumber:3,completedSteps:i,hasSidebar:!0})}}}]);
-//# sourceMappingURL=component---src-pages-8-6-guided-setup-observability-alert-js-88a19ee2ff70e883c4c8.js.map

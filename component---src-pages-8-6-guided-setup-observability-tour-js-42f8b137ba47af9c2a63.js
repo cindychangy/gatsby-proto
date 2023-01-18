@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkplatform_onboarding=self.webpackChunkplatform_onboarding||[]).push([[5212],{21370:function(t,e,r){r.r(e);r(67294);var i=r(48437),a=r(23431),s=[{text:"Observability",href:"#"},{text:"Setup guide",href:"../"},{text:"Step 2: tour Elastic observability"}],b={"step-1":"done"};e.default=function(){return(0,a.tZ)(i.Z,{title:"Tour Elastic Observability",breadcrumbs:s,section:"Observability",stepNumber:2,completedSteps:b,hasSidebar:!0})}}}]);
-//# sourceMappingURL=component---src-pages-8-6-guided-setup-observability-tour-js-42f8b137ba47af9c2a63.js.map
