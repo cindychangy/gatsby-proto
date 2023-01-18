@@ -1,5 +1,5 @@
 <h1 align="center">
-  UX Guided Onboarding Prototype
+  UX Guided Onboarding Prototype [archived]
 </h1>
 <br><br>
 
